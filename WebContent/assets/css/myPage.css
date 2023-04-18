@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.container {
+  font-family: "Noto Sans KR", sans-serif;
+  width: 1200px;
+  margin: 20px auto 20px;
+  color: #4d4d4d;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+a:visited {
+  color: black;
+}
+
+button {
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
+}
+li {
+  list-style: none;
+}
+
+/* main1 프로필*/
+.main1--top {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display : flex
+}
+
+.user-follow {
+  color: #009a3e;
+  background-color: white;
+  margin-left : 10px;
+  position : relative;
+  top : 5px;
+}
+
+.following {
+  background-color: white;
+  color: #808080;
+}
+
+.grade {
+  color: #009a3e;
+}
+.main1--bottom {
+  padding: 30px 80px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+/* 회원정보수정 */
+.main1--modify {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.main1--modify a,
+.main1--modify button {
+  padding: 0 18px;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* 프로필 */
+.main1--profile {
+  display: flex;
+  padding-top: 20px;
+  height: 200px;
+}
+.profile-left {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+/* 프로필사진 */
+.profile-photo-regist {
+  position: relative;
+}
+.profile-photo {
+  border: 1px solid #4d4d4d;
+  border-radius: 50%;
+  background-color: white;
+  height: 120px;
+  width: 120px;
+  margin-bottom: 25px;
+  background-size: cover;
+}
+.profile-photo img {
+  border-radius: 50%;
+  background-color: white;
+  height: 120px;
+  width: 120px;
+  margin-bottom: 25px;
+  object-fit: cover;
+}
+
+.profile-photo-regist button {
+  position: absolute;
+  border: 1px solid #4d4d4d;
+  border-radius: 50%;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  top: 60%;
+  right: 0px;
+}
+
+.profile-photo-btn > svg {
+  width: 10px;
+  height: 10px;
+}
+
+/* 한줄소개 */
+.profile-content-wrap {
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-content > p {
+  font-size: 13px;
+}
+.profile-modify-btn > button {
+  display: flex;
+  align-items: center;
+}
+.profile-modify-btn > button > img {
+  width: 13px;
+  height: 13px;
+  margin-left: 10px;
+}
+/* 한줄소개수정박스 */
+.modify-box {
+  border-radius: 5px;
+  width: 100%;
+  height: 34px;
+  background-color: white;
+  display: flex;
+  justify-content: baseline;
+}
+.modify-box input {
+  height: 100%;
+  padding-left: 15px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.modify-box input:focus {
+  outline: 1px solid #009a3e;
+}
+
+.modify-box button {
+  border-radius: 5px;
+  height: 100%;
+  width: 45px;
+  margin-left: 5px;
+  font-size: 14px;
+  background-color: white;
+  color: #009a3e;
+}
+
+/* 게시물, 팔로우 팔로잉 */
+.profile-right {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile-right > div > a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #4d4d4d;
+}
+.profile-right > div > a > p {
+  font-size: 15px;
+}
+
+/* main3 스토리*/
+.main3 {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+.main3--top {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main3--bottom{
+	margin-top : 20px;
+}
+.write-story a {
+  background-color: #009a3e;
+  color: #f2f2f2;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+/* 스토리목록 */
+.story-list-ul {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding-left: 18px;
+}
+.story-list {
+  width: 380px;
+  height: 280px;
+  margin-bottom: 20px;
+  margin-right: 8px;
+  overflow : hidden;
+  border-radius : 5px;
+}
+.cover-div{
+	overflow : hidden;
+	height : 250px;
+	border-radius : 5px;
+}
+.story-list img {
+  width: 380px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.cover-div>img:hover{
+  transform: scale(1.1,1.1);
+  transition : 0.5s ease-in-out;
+}
+.story-list p {
+  color: #4d4d4d;
+}
+/* 식고수인경우 main3 -2 */
+.answer-btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.question-btn a {
+  background-color: #009a3e;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  height: 23px;
+  line-height: 23px;
+}
+
+.answer-btn-ul {
+  display: flex;
+  padding: 5px 0;
+  align-items: center;
+  height: 33px;
+}
+
+.answer-btn {
+  background-color: #f2f2f2;
+  color: #4d4d4d;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  height: 23px;
+  line-height: 23px;
+}
+
+.active {
+  background-color: #009a3e;
+  color: white;
+}
+
+/*긴 버튼 */
+.main2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main2 > div {
+  width: 100%;
+  border: 1px solid #009a3e;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 10px;
+}
+
+.main2 > div > a {
+  text-align: center;
+  width: 100%;
+  color: #009a3e;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.main2 a:hover {
+  text-decoration: underline;
+}
+
+/* 모달창스타일 */
+/* 프로필사진등록, 회원등급 */
+.photo-modal-box,
+.grade-modal-box {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo-modal,
+.grade-modal {
+  background-color: white;
+  position: relative;
+  border-radius: 10px;
+  padding: 0 30px 30px;
+}
+
+.photo-modal h1 {
+  color: #009a3e;
+  font-weight: 700;
+  line-height: 64px;
+}
+
+.photo-x-box,
+.grade-x-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 64px;
+  width: 35px;
+  line-height: 64px;
+  cursor: pointer;
+  color: #4d4d4d;
+}
+
+.photo-modal label,
+.photo-modal > button {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #009a3e;
+  color: #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  height: 50px;
+  width: 320px;
+  line-height: 50px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+.photo-modal input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+
+/* 회원등급모달 */
+.grade-modal h1{
+  margin-top: 10px;
+  color: #009a3e;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.none {
+  display: none;
+}
+
+.empty{
+	display : inline-block;
+	height : 300px;
+	width : 100% ;
+	line-height : 300px;
+	text-align : center;
+	
+}
+

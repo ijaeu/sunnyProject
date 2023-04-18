@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+header a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.header2-munu-list-ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* 헤더1 회색배경*/
+.header1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* 로그인, 회원가입, 로그아웃*/
+.header1--top {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.header1-btn-group{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  line-height: 30px;
+  width: 1200px;
+  text-align: center;
+}
+
+.header1-a {
+  color:#808080;
+  font-size: 14px;
+  margin-left: 18px;
+}
+
+.header1-a:visited {
+  color: #808080;
+}
+
+/* 로고 */
+.header1--bottom {
+  height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header1--bottom>a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header1--bottom h1 {
+  color: #009a3e;
+  font-weight: 700;
+  font-family: "Dongle", sans-serif;
+  font-size: 35px;
+}
+.header1-logo {
+  width: 35px;
+  height: 35px;
+}
+.header1-logo>svg {
+  height: 35px;
+  fill: #009a3e;
+}
+
+/* 헤더2 메뉴바, 버튼2개 */
+.header2 {
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header2-wrap{
+  width: 1200px;
+  height: 28px;
+  padding: 9px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 헤더2 메뉴바 */
+.header2-menu-list-ul {
+  display: flex;
+}
+
+.header2-menu-list {
+  position: relative;
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 36px 0 0;
+  list-style-type: none;
+  flex: none;
+  list-style: none;
+}
+.header2-menu-list>a{
+  color: #4d4d4d;
+}
+.header2-menu-list>a:visited{
+  color: #4d4d4d;
+}
+/* 헤더2 오른쪽 버튼2개 */
+.header2-btn-list-ul {
+  display: flex;
+  position: relative;
+}
+
+.header2-btn-list{
+  list-style: none;
+}
+.header2-btn-list > a {
+  height: 28px;
+  margin-left: 18px;
+  line-height: 28px;
+  font-size: 14px;
+  flex: none;
+}
+
+.header2-btn-list >a > img {
+  height: 15px;
+  width: 15px;
+}
+/* 페이지 선택한 경우  */
+.header-active {
+  color: #009a3e !important;
+}
+.header-active:visited {
+  color: #009a3e;
+}
+
+.header-active::after {
+  position: absolute;
+  top: 35px;
+  left: 45%;
+  content: "";
+  z-index: 10;
+  width: 5px;
+  height: 5px;
+  background-color: #009a3e;
+  border-radius: 50%;
+}

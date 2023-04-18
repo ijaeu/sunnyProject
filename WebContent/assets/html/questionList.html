@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식고수페이지</title>
+    <link rel="stylesheet" href="./plus.css">
+</head>
+
+<header>
+  <section class="header1">
+    <div class="header1--top">
+      <div class="btn-group">
+        <!-- 로그인경로처리 -->
+        <a href="#" class="login-btn">로그인</a>
+        <!-- 회원가입경로처리 -->
+        <a href="#" class="join-btn">회원가입</a>
+      </div>
+    </div>
+    <div class="header1--bottom">
+      <!-- 로고 누르면 홈으로 경로처리 -->
+      <a href="">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M384 312.7c-55.1 136.7-187.1 54-187.1 54-40.5 81.8-107.4 134.4-184.6 134.7-16.1 0-16.6-24.4 0-24.4 64.4-.3 120.5-42.7 157.2-110.1-41.1 15.9-118.6 27.9-161.6-82.2 109-44.9 159.1 11.2 178.3 45.5 9.9-24.4 17-50.9 21.6-79.7 0 0-139.7 21.9-149.5-98.1 119.1-47.9 152.6 76.7 152.6 76.7 1.6-16.7 3.3-52.6 3.3-53.4 0 0-106.3-73.7-38.1-165.2 124.6 43 61.4 162.4 61.4 162.4.5 1.6.5 23.8 0 33.4 0 0 45.2-89 136.4-57.5-4.2 134-141.9 106.4-141.9 106.4-4.4 27.4-11.2 53.4-20 77.5 0 0 83-91.8 172-20z"/></svg>
+        </div>
+        <h1><span>볕 들 무렵</span></h1>
+      </a>
+    </div>
+  </section>
+
+  <section class="header2">
+    <div class="header2--left">
+      <ul class="menu-list-ul">
+        <!-- 메뉴바 경로처리 -->
+        <li class="menu-list"><a href="#"> 홈</a></li>
+        <li class="menu-list"><a href="#"> 스토리</a></li>
+        <li class="menu-list"><a href="#"> 식고수에게 물어보기</a></li>
+        <li class="menu-list"><a href="#"> 반려식물 찾기</a></li>
+        <li class="menu-list"><a href="#"> 마이페이지</a></li>
+      </ul>
+    </div>
+    <!-- 아이콘경로처리 -->
+    <!-- 둘다 로그인되어있지 않으면 로그인페이지로 -->
+    <div class="header2--right">
+      <ul class="btn-list-ul">
+        <!-- 마이페이지로 -->
+        <li class="btn-list"><a href="#"><img src="../resource/icon_user.png" alt=""></a></li>
+        <!-- 스토리 글쓰기 페이지로 -->
+        <li class="btn-list"><a href="#"><img src="../resource/icon_pen.png" alt=""></a></li>
+      </ul>
+    </div>
+  </section>
+</header>
+
+<body>
+    <div class="pcontainer">
+      
+      <div class="info">
+        <h3> <strong>
+          9지인
+          <!-- 회원닉네임 가져오기 -->
+          <c:out value="#"/>
+        </strong> 
+        님의 질문목록</h3>
+        <div class="infozone">
+          <h3> <strong>글작성팁</strong>
+            식물에게 문제가 생기면 고수님에게 직접 도움을 요청해보세요
+          </h3>
+          <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA3MiA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTQyLjY5IDBoMTUuMjI4YzEuNzU3IDAgMy40My4zNDggNC45NTEuOTc3QzY4LjIxMyAzLjAyIDcyIDguMDc0IDcyIDEzLjk5OWMwIDcuMDkyLTUuNDE4IDEzLjA2NS0xMi40NDUgMTMuOTg2LTEuMDIxLjEzNC0xLjkzNy0uNjMxLTEuOTM3LTEuNjM1di0xLjY0NUg0Mi42OWMtNy4wMDggMC0xMi42OS01LjUzLTEyLjY5LTEyLjM1M0MzMCA1LjUzMSAzNS42ODIgMCA0Mi42OSAwIiBmaWxsPSIjODBEQkI0Ii8+CiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDEgMTEpIiBmaWxsPSIjRkZGIj4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTAiIGN5PSIyIiByPSIyIi8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjE4IiBjeT0iMiIgcj0iMiIvPgogICAgICAgIDwvZz4KICAgICAgICA8Zz4KICAgICAgICAgICAgPHBhdGggZD0iTTI5LjMxIDEySDE0LjA4MmMtMS43NTcgMC0zLjQzLjM0OC00Ljk1MS45NzdDMy43ODcgMTUuMDIgMCAyMC4wNzQgMCAyNS45OTljMCA3LjA5MiA1LjQxOCAxMy4wNjUgMTIuNDQ1IDEzLjk4NiAxLjAyMS4xMzQgMS45MzctLjYzMSAxLjkzNy0xLjYzNXYtMS42NDVIMjkuMzFjNy4wMDggMCAxMi42OS01LjUzIDEyLjY5LTEyLjM1M0M0MiAxNy41MzEgMzYuMzE4IDEyIDI5LjMxIDEyIiBmaWxsPSIjNDVDNTlCIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNS42NjcgMjIuMjVoLS44OWMtLjk4MSAwLTEuNzc3Ljc4My0xLjc3NyAxLjc1djUuMjVjMCAuOTY3Ljc5NiAxLjc1IDEuNzc4IDEuNzVoLjg4OWMuNDkgMCAuODg5LS4zOTIuODg5LS44NzV2LTdhLjg4Mi44ODIgMCAwIDAtLjg5LS44NzVtMTEuNTU2IDBoLTQuNDQ0bC43MzQtMi43MDZhMS43MzcgMS43MzcgMCAwIDAtLjczOC0xLjg4bC0uNzg3LS41MTdhLjg5Ny44OTcgMCAwIDAtMS4yODguMzM3bC0yLjAwNCA0LjAzOWEzLjQ1NiAzLjQ1NiAwIDAgMC0uMzYxIDEuNTM2djYuMTkxYzAgLjk2Ny43OTUgMS43NSAxLjc3NyAxLjc1aDYuMDQ0Yy44NDcgMCAxLjU3Ny0uNTg5IDEuNzQzLTEuNDA3bDEuMDY3LTUuMjVjLjIyLTEuMDgyLS42MjItMi4wOTMtMS43NDMtMi4wOTMiIGZpbGw9IiMxNTlBNkQiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=" alt="">
+        </div>
+      </div>
+  
+        <div class="question">
+            <h3 class="qq">질문</h3>
+            <div class="q1">
+                <div class="noanswer">
+                   <button type="button">미답변</button>
+
+                  <!-- ========== 게시글 목록 =========== -->
+                  <div class="postingList">
+                    <div class="p">
+                      <!-- 이미지 클릭하면 그 게시물로 이동 -->
+                      <a href="#">
+                        <img src="../20230321_104528.png" alt="" class="imgz">
+                      </a>
+                      <!-- 스토리 제목  -->
+                      <div class="title">이거 어떻게 키우나요</div>
+                    </div>
+                    <div class="p">
+                      <a href="#">
+                        <img src="../2.png" alt="" class="imgz">
+                      </a>
+                      <div class="title">이 식물은 뭐죠?</div>
+                    </div>
+                    <div class="p">
+                      <a href="">
+                        <img src="../3.png" alt="" class="imgz">
+                      </a>
+                      <div class="title">궁금한게 있습니다!</div>
+                    </div>
+                  </div>
+                </div>
+                    <!-- ========== 게시글 목록 =========== -->
+                 
+                  
+                   <!-- ========== 페이징 처리 ============ -->
+                   <div class="pagination">
+                    <ul>
+                       <li><a href="#" class="prev">&lt;</a></li>
+                       <li><a href="#" class="active">1</a></li>
+                       <li><a href="#">2</a></li>
+                       <li><a href="#">3</a></li>
+                       <li><a href="#" class="next">&gt;</a></li>
+                       <!-- ========== 페이징 처리 ============ -->
+                     </ul>
+                   </div>
+                      <!-- ========== 페이징 처리============ -->
+                  
+                    </div>
+                  <div class="answercom">
+                     <button type="button">답변완료</button>
+  
+                     <!-- ========== 게시글 목록 =========== -->
+                     <div class="postingList">
+                      <div class="p">
+                        <!-- 이미지 클릭하면 그 게시물로 이동 -->
+                        <a href="#">
+                          <img src="../20230321_104528.png" alt="" class="imgz">
+                        </a>
+                        <!-- 스토리 제목 js -->
+                        <div class="title">23.03.21 궁금한게 있습니다</div>
+                      </div>
+                      <div class="p">
+                        <a href="#">
+                          <img src="../2.png" alt="" class="imgz">
+                        </a>
+                        <div class="title">이거 어떻게 키우나요?</div>
+                      </div>
+                      <div class="p">
+                        <a href="#">
+                          <img src="../3.png" alt=""class="imgz">
+                        </a>
+                        <div class="title">궁금해요</div>
+                      </div>
+                    </div>
+                      <!-- ========== 게시글 목록 =========== -->
+                  </table>
+                    
+                     <!-- ========== 페이징 처리 ============ -->
+                     <div class="pagination">
+                     <ul>
+                        <li><a href="#" class="prev">&lt;</a></li>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#" class="next">&gt;</a></li>
+                        <!-- ========== 페이징 처리 ============ -->
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
+               </div>
+                </div>
+
+    </div>
+    <script src="./plus.js"></script>
+</body>
+</html>
+

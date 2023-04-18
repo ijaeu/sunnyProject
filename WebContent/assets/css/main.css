@@ -1,0 +1,831 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+
+/* ------------------------------------------------------------Hedaer-----------------------------------------------------------------------*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 일반 스타일 */
+body {
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  font-family: "Noto Sans KR", sans-serif;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+footer {
+  background-color: #151414;
+  color: #bbb;
+  width: 100%;
+  height: 20%;
+  margin-top:400px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+a:visited {
+  color: black;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+/* 헤더1 로그인,회원가입 / 로고 */
+.header1 {
+  display: flex;
+  flex-direction: column;
+}
+/* 로그인, 회원가입 */
+.header1--top {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  background-color: #f2f2f2;
+  line-height: 30px;
+}
+.header1--top a {
+  color: #808080;
+  font-size: 14px;
+  margin-right: 18px;
+}
+/* 로고 */
+.header1--bottom {
+  height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header1--bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header1--bottom h1 {
+  color: #009a3e;
+  font-weight: 700;
+  font-family: "Dongle", sans-serif;
+  font-size: 35px;
+}
+.logo {
+  width: 35px;
+  height: 35px;
+}
+.logo svg {
+  height: 35px;
+  fill: #009a3e;
+}
+
+/* 헤더2 메뉴바, 버튼2개 */
+.header2 {
+  height: 28px;
+  padding: 9px 0;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 헤더2 메뉴바 */
+.menu-list-ul {
+  display: flex;
+}
+
+.menu-list {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 18px;
+  list-style-type: none;
+  flex: none;
+}
+
+/* 헤더2 오른쪽 버튼2개 */
+.btn-list-ul {
+  display: flex;
+}
+
+.btn-list a {
+  height: 28px;
+  margin-right: 18px;
+  line-height: 28px;
+  font-size: 14px;
+  flex: none;
+}
+
+.btn-list a > img {
+  height: 15px;
+  width: 15px;
+}
+
+
+
+
+
+/* ------------------------------------------------------------Main-------------------------------------------------------------------------- */
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.bntslide {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.holder {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.loopslider {
+  border-radius: 4px;
+}
+
+.swiper-wrapper {
+  height: 262px;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+
+.span1{
+  color: #009a3e; 
+  margin-left:1010px; 
+  font-size: 15px;
+}
+
+
+
+
+ul {
+  list-style: none;
+}
+
+.swiper-slide {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.wraphover > img {
+  max-width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+.subtit {
+  line-height: 57px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* 스토리 이미지 */
+
+.holder2 {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.listUl {
+  width: calc(100% + 20px);
+  list-style: none;
+}
+
+.listLi {
+  float: left;
+  position: relative;
+  margin-top: 10px;
+  margin-right: 20px;
+  width: calc(33.33% - 20px);
+}
+
+.sl .tBox {
+  position: relative;
+  height: 56px;
+}
+
+.sl a {
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tBox .proimg {
+  margin: 10px 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  border: 1px solid #d9d9d9;
+  background-image: url("https://www.shouse.garden/data/profile/230218_230009_jpeg");
+}
+
+.proimg {
+  background-position: center center;
+  background-size: cover;
+}
+
+.p1 {
+  float: left;
+}
+
+.profile.p1 {
+  max-width: 65%;
+}
+
+.top .profile {
+  margin-left: 10px;
+  margin-right: 18px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+.top .follow.dir {
+  position: relative;
+  height: 56px;
+  line-height: 56px;
+  font-size: 13px;
+  color: #009a3e;
+}
+
+.following {
+  position: relative;
+  height: 56px;
+  line-height: 56px;
+  font-size: 13px;
+  color: #4d4d4d;
+}
+
+.likeBtn {
+  right: 7px;
+  bottom: 7px;
+  width: 37px;
+  height: 34px;
+  background-position: center center;
+  z-index: 100;
+  position: absolute;
+  background: url("https://www.shouse.garden/images/ico/state_like.png");
+  font-size: 0;
+  vertical-align: top;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgtilte {
+  height: 40px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #808080;
+}
+
+.outer {
+  border: 6px solid rgb(248, 248, 248);
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.inner-list {
+  display: flex;
+  transition: .3s ease-out;
+  height: 100%;
+}
+
+.inner {
+  border: 6px solid rgb(249, 249, 249);
+  padding: 0 16px;
+  border-radius: 20px;
+}
+
+.button-list {
+  text-align: center;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.coverimg {
+  width: 100%;
+  height: 255px;
+  background-image: url("https://www.shouse.garden/data/photo_list/s230321_21511410615.jpeg");
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.coverimg:hover {
+  transform: scale(1.1);
+}
+
+
+
+
+section > .question{
+  width: 1150px; 
+  height: 500px; 
+  margin:auto;
+}
+
+
+
+.question-title{
+
+  font-size: 30px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+
+
+.question-button > button {
+  color: #fff;
+  background-color: #009a3e;
+  width: 52px;
+  height: 33px;
+  border-radius: 4px;
+  border: none;
+  margin-top: 30px;
+}
+
+
+.question-container{
+
+  display:flex; 
+  margin-top: 40px; 
+  justify-content: space-between; 
+  text-align: center;
+
+}
+
+
+.wrapper,
+.wrapper .img-area,
+.social-icons a,
+.buttons button{
+  background: #f3f4f3;
+  box-shadow: -3px -3px 7px #ffffff,
+               3px 3px 5px #d2d2d3;
+}
+.wrapper{
+  width: 550px;
+  padding: 100px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.wrapper .icon{
+  font-size: 17px;
+  color: #31344b;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.7;
+  top: 15px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.wrapper .icon i{
+  position: relative;
+  z-index: 9;
+}
+.wrapper .icon.arrow{
+  left: 15px;
+}
+.wrapper .icon.dots{
+  right: 15px;
+}
+.wrapper .img-area{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-area .inner-area{
+  height: calc(100% - 25px);
+  width: calc(100% - 25px);
+  border-radius: 50%;
+}
+.inner-area img{
+  background-image: url('../../assets/img/main/전문가 아이콘.png');
+  background-image: url('../../assets/img/전문가 아이콘.png');
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-size: cover;
+}
+.wrapper .name{
+  font-size: 23px;
+  font-weight: 500;
+  color: #31344b;
+  margin: 10px 0 5px 0;
+}
+.wrapper .about{
+  color: #44476a;
+  font-weight: 400;
+  font-size: 16px;
+}
+.wrapper .social-icons{
+  margin: 15px 0 25px 0;
+
+}
+.social-icons a{
+  position: relative;
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.social-icons a:hover::before,
+.wrapper .icon:hover::before,
+.buttons button:hover:before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  background: #ecf0f3;
+  box-shadow: inset -3px -3px 7px #dce9dc,
+              inset 3px 3px 5px #c3c3cf;
+}
+.buttons button:hover:before{
+  z-index: -1;
+  border-radius: 5px;
+}
+.social-icons a i{
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+}
+.social-icons a.fb i{
+  color: #4267B2;
+}
+.social-icons a.twitter i{
+  color: #1DA1F2;
+}
+.social-icons a.insta i{
+  color: #E1306C;
+}
+.social-icons a.yt i{
+  color: #ff0000;
+}
+.wrapper .buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.buttons button{
+  position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  color: #31344b;
+  font-size: 17px;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 4;
+}
+.buttons button:first-child{
+  margin-right: 10px;
+}
+.buttons button:last-child{
+  margin-left: 10px;
+}
+.wrapper .social-share{
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 5px;
+  justify-content: space-between;
+}
+.social-share .row{
+  color: #31344b;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+}
+.social-share .row::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 2px;
+  background: #e0e6eb;
+  margin-left: -25px;
+}
+.row:first-child::before{
+  background: none;
+}
+.social-share .row i.icon-2{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  color: #31344b;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.row:nth-child(1):hover i.fa-heart,
+.row:nth-child(2):hover i.fa-comment{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+/*슬라이드에 직접 적용되는 스타일*/
+[name="slide"] { display: none; } /*클래스 slidebox 내 name="slide"부분 */
+.slidebox { 
+  max-width: 1000px; 
+  width: 100%;
+  margin: 0 auto;    
+}
+.slidebox img { /*자신의 넓이 이상으로 커지지 않도록 함, 반응형 사용 가능*/
+  max-width: 1200px;
+}
+.slidebox .slidelist {
+  white-space: nowrap;
+  font-size:0; /*빈공간을 없애기 위함*/
+  overflow: hidden; /*초과해서 이미지가 나올 경우 나오지 않게 함*/
+}
+.slidebox .slideitem {
+  position: relative;
+  display: inline-block; /*세로 정렬을 가운데 맞추기 위함*/
+  vertical-align: middle;
+  width: 100%;
+  transition: all .35s; /*자연스러운 전환 속성을 위함*/
+}
+.slidebox .slideitem label {
+  position: absolute; /*자율 배치하는 값*/
+  z-index: 1; /*기본값 1*/
+  top: 50%;
+  transform: translateY(-50%); /*가운데 지정*/
+  padding: 20px;
+  border-radius: 50%; /*둥근 버튼 모양*/
+  cursor: pointer; /*마우스가 올라가면 커서가 포인터로 바뀌도록 함*/
+}
+label.left {
+  left: 20px;
+  background-color: white;
+  background-image:url('/html/img/left.png');
+  background-position: center center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+label.right {
+  right: 20px;
+  background-color: white;
+  background-image:url('/html/img/right.png');
+  background-position: center center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+[id="slide01"]:checked ~ .slidelist .slideitem {transform:translateX(0); animation:slide01 10s infinite}
+[id="slide02"]:checked ~ .slidelist .slideitem {transform:translateX(-100%); animation:slide02 10s infinite}
+[id="slide03"]:checked ~ .slidelist .slideitem {transform:translateX(-200%); animation:slide03 10s infinite}
+[id="slide04"]:checked ~ .slidelist .slideitem {transform:translateX(-300%); animation:slide04 10s infinite}
+
+@keyframes slide01 {
+  0% {left: 0%;} /*첫 번째 스크린*/
+  25% {left: 0%;} /*두 번째로 위치 이동*/
+  48% {left: -100%;} /*두 번째로 위치 이동, 두 번쨰 스크린*/
+  50% {left: -100%;}/*세 번째로 위치 이동*/
+  73%    {left: -200%;}/*세 번째로 위치 이동, 세 번쨰 스크린*/
+  75% {left: -200%;}/*네 번째로 위치 이동, 네 번째 스크린*/
+  98% {left: -300%;} /*네 번째 스크린*/
+  100% {left:0%} /*첫 번째 스크린 이동*/
+}
+@keyframes slide02 {
+  0% {left: 0%;} /*첫 번째 스크린*/
+  23% {left: 0%;}
+  25% {left: -100%;} 
+  48% {left: -100%;} 
+  50% {left: -200%;}
+  73%    {left: -200%;}
+  75% {left: 100%;}/*첫 스크린 이동*/
+  98% {left: 100%;} /*첫 스크린 이동*/
+  100% {left:0%}
+}
+@keyframes slide03 {
+  0% {left: 0%;} /*첫 번째 스크린*/
+  23% {left: 0%;}
+  25% {left: -100%;} 
+  48% {left: -100%;} 
+  50% {left: 200%;}
+  73%    {left: 200%;}
+  75% {left: 100%;}/*첫 스크린 이동*/
+  98% {left: 100%;} /*첫 스크린 이동*/
+  100% {left:0%}
+}
+@keyframes slide04 {
+  0% {left: 0%;} /*첫 번째 스크린*/
+  23% {left: 0%;}
+  25% {left: 300%;} 
+  48% {left: 300%;} 
+  50% {left: 200%;}
+  73%    {left: 200%;}
+  75% {left: 100%;}/*첫 스크린 이동*/
+  98% {left: 100%;} /*첫 스크린 이동*/
+  100% {left:0%}
+}
+
+
+.findMyPlant-title{
+
+  background-color: #f2f2f2; 
+  margin-top: 200px;
+  height: 600px; 
+  margin:auto;
+  margin-top: 200px;
+  padding: 50px 0px;
+
+
+}
+
+
+.holder{
+
+  margin: 0 auto;
+}
+
+.find1{
+
+  margin-bottom: 40px; font-size: 30px;
+}
+
+.img1{
+
+  width:285px; height:370px;
+  
+}
+
+.img2{
+  width:285px; height:370px;
+}
+
+.img3{
+  width:285px; height:370px;
+}
+
+.img4{
+  width:285px; height:370px;
+}
+
+/* --------------------------------------------------------------------Footer------------------------------------------------------------- */
+
+
+
+footer a:visited {
+  text-decoration: none;
+  color: #bbb;
+}
+
+footer a:link {
+  text-decoration: none;
+  color: #bbb;
+}
+
+footer a:hover {
+  color: #0076c0;
+  text-decoration-line: underline;
+}
+
+.footer-all {
+  width: 2000px;
+  margin: auto;
+  display: flex;
+}
+.footer-container1 {
+  width: 1800px;
+  height: 500px;
+}
+
+.parrot-and-teamname {
+  display: flex;
+}
+
+.team-name {
+  display: flex;
+  align-items: center;
+}
+
+.team-name {
+  font-size: 30px;
+}
+
+.footer-service {
+  margin: 10px 0px 30px 0px;
+}
+
+.team-explain {
+  margin-bottom: 30px;
+}
+
+.team-explanation-li {
+  list-style: none;
+}
+
+.team-logo {
+  height: 300px;
+  width: 300px;
+}
+
+.footer-container2 {
+  width: 40%;
+  margin-right: 300px;
+}
+.team-logo-box {
+  display: flex;
+  justify-content: right;
+}
+
+.icon-link {
+  margin-top: 10px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-ul li {
+  float: left;
+  margin-left: 20px;
+}
+

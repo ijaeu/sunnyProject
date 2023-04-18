@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>질문</title>
+    <link rel="stylesheet" href="./question.css">
+</head>
+
+<header>
+    <section class="header1">
+      <div class="header1--top">
+        <div class="btn-group">
+          <!-- 로그인경로처리 -->
+          <a href="#" class="login-btn">로그인</a>
+          <!-- 회원가입경로처리 -->
+          <a href="#" class="join-btn">회원가입</a>
+        </div>
+      </div>
+      <div class="header1--bottom">
+        <!-- 로고 누르면 홈으로 경로처리 -->
+        <a href="">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M384 312.7c-55.1 136.7-187.1 54-187.1 54-40.5 81.8-107.4 134.4-184.6 134.7-16.1 0-16.6-24.4 0-24.4 64.4-.3 120.5-42.7 157.2-110.1-41.1 15.9-118.6 27.9-161.6-82.2 109-44.9 159.1 11.2 178.3 45.5 9.9-24.4 17-50.9 21.6-79.7 0 0-139.7 21.9-149.5-98.1 119.1-47.9 152.6 76.7 152.6 76.7 1.6-16.7 3.3-52.6 3.3-53.4 0 0-106.3-73.7-38.1-165.2 124.6 43 61.4 162.4 61.4 162.4.5 1.6.5 23.8 0 33.4 0 0 45.2-89 136.4-57.5-4.2 134-141.9 106.4-141.9 106.4-4.4 27.4-11.2 53.4-20 77.5 0 0 83-91.8 172-20z"/></svg>
+          </div>
+          <h1><span>볕 들 무렵</span></h1>
+        </a>
+      </div>
+    </section>
+  
+    <section class="header2">
+      <div class="header2--left">
+        <ul class="menu-list-ul">
+          <!-- 메뉴바 경로처리 -->
+          <li class="menu-list"><a href="#"> 홈</a></li>
+          <li class="menu-list"><a href="#"> 스토리</a></li>
+          <li class="menu-list"><a href="#"> 식고수에게 물어보기</a></li>
+          <li class="menu-list"><a href="#"> 반려식물 찾기</a></li>
+          <li class="menu-list"><a href="#"> 마이페이지</a></li>
+        </ul>
+      </div>
+      <!-- 아이콘경로처리 -->
+      <!-- 둘다 로그인되어있지 않으면 로그인페이지로 -->
+      <div class="header2--right">
+        
+      </div>
+    </section>
+  </header>
+  
+<body>
+    
+
+    <div class="container">
+        <article class="view-top">
+          <div class="infomation">
+            <div class="txt-area">
+              <a href="">
+                <div class="profile-img"></div>
+                <p class="profile">홍길동</p>
+              </a>
+              <button type="button" class="follow dir">팔로우</button>
+              <p class="txt"></p>
+            </div>
+          </div>
+      
+            </button>
+
+            <div class="title-wrap">
+              <span class="hit">조회수</span>
+              <!-- 임시 조회수 -->
+              <div class="content-hit">
+                 <c:out value="#" />
+              </div>
+           </div>
+
+          </div>
+        </article>
+      
+      
+                  <!-- 임시 내용 -->
+      
+                  <!-- 임시 첨부 파일 -->
+                  <div class="view-attach">
+                      <c:forEach var="file" items="">
+                          <div class="img-box">
+                              <img src="">
+                          </div>
+                      </c:forEach>
+                  </div>
+                  
+            
+                  <div class="btn-group">
+                    <!-- 각 버튼 처리 경로 js로 수정하기 -->
+                    <button type="button" class="list-btn" data-boardnumber="#">목록</button>
+                    
+                    <c:if test="#">
+                       <button type="button" class="modify-btn">수정</button>
+                       <button type="button" class="delete-btn">삭제</button>
+                    </c:if>
+                 </div>
+      
+            <div class="story-date">
+              <p class="todate">2023-03-21</p>
+            </div>
+      
+                 
+			<!-- 댓글 수정중 -->
+      
+          <div class="comment-form">
+            <div class="holder">
+              <h3 class="subtit">댓글
+                <span class="fc1" id="comment-count">12</span>
+              </h3>
+            </div>
+            <form id="comment-form">
+              <input type="hidden" name="boardNumber"
+                value="${board.getBoardNumber()}">
+              <div class="form-group">
+                <textarea name="content" id="content" placeholder="댓글 내용을 입력하세요."></textarea>
+              </div>
+              <button type="button" class="submit-btn">댓글 작성</button>
+            </form>
+          </div>
+      
+                  <div class="comment-list">
+                      <!-- 리스트 예시 -->
+                      <ul id="comment-list">
+                          <li>
+                              <div class="comment-info">
+                                  <span class="writer">홍길동</span> <span class="date">2222-22-22</span>
+                              </div>
+                              <div class="comment-content-wrap">
+                                  <div class="comment-content">
+                                      <p>안녕하세요</p>
+                                  </div>
+                                  <div class="comment-btn-group">
+                                      <button type=button class="comment-modify-ready">수정</button>
+                                      <button type=button class="comment-delete">삭제</button>
+                                  </div>
+                                  <div class="comment-btn-group none">
+                                      <button type=button class="comment-modify">수정 완료</button>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                      <!-- /리스트 예시 -->
+                  </div>
+      
+                  <!-- 댓글 수정중 -->
+      
+              </div>
+              
+    <script src="./question.js"></script>
+</body>
+</html>
