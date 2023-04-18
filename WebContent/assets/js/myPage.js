@@ -221,13 +221,21 @@ function questionAjax(status){
 function showQuestionList(questions){
 	let text = '';
 	questions.forEach(question =>{
+		console.log(question.fileSystemName);
 		text +=`
 									<li class="story-list question-list">
-										<a href="contextPath/question/questionReadOk.qs?questionNumber=${question.questionNumber}">
+										<a href="${contextPath}/question/questionReadOk.qs?questionNumber=${question.questionNumber}">
 											<div class="cover-div">
-												<img
-													src="contextPath/questionUpload/${question.fileSystemName}"
-													alt="" />
+											`
+		if(!question.fileSystemName){
+						text +=`<img src="${contextPath}/assets/img/myPage/logo.png" />`
+		}else{
+						text +=`<img
+											src="${contextPath}/upload/questionUpload/${question.fileSystemName}"
+											alt="" />`
+		}
+		
+		text +=`
 											</div>
 											<p>${question.questionTitle}</p>
 										</a>
@@ -235,7 +243,7 @@ function showQuestionList(questions){
 		`
 	});
 	$('.question-list-ul').html(text);
-}
+};
 
 $answerBtn.on("click", function() {
 	// console.log(this);
