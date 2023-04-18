@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>질문하기</title>
+    <link rel="stylesheet" href="../css/storyWrite.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <link rel="stylesheet" href="./questionWrite.css">
+  </head>
+  <header>
+    <section class="header1">
+      <div class="header1--top">
+        <div class="btn-group">
+          <!-- 로그인경로처리 -->
+          <a href="#" class="login-btn">로그인</a>
+          <!-- 회원가입경로처리 -->
+          <a href="#" class="join-btn">회원가입</a>
+        </div>
+      </div>
+      <div class="header1--bottom">
+        <!-- 로고 누르면 홈으로 경로처리 -->
+        <a href="">
+          <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M384 312.7c-55.1 136.7-187.1 54-187.1 54-40.5 81.8-107.4 134.4-184.6 134.7-16.1 0-16.6-24.4 0-24.4 64.4-.3 120.5-42.7 157.2-110.1-41.1 15.9-118.6 27.9-161.6-82.2 109-44.9 159.1 11.2 178.3 45.5 9.9-24.4 17-50.9 21.6-79.7 0 0-139.7 21.9-149.5-98.1 119.1-47.9 152.6 76.7 152.6 76.7 1.6-16.7 3.3-52.6 3.3-53.4 0 0-106.3-73.7-38.1-165.2 124.6 43 61.4 162.4 61.4 162.4.5 1.6.5 23.8 0 33.4 0 0 45.2-89 136.4-57.5-4.2 134-141.9 106.4-141.9 106.4-4.4 27.4-11.2 53.4-20 77.5 0 0 83-91.8 172-20z"/></svg>
+          </div>
+          <h1><span>볕 들 무렵</span></h1>
+        </a>
+      </div>
+    </section>
+
+    <section class="header2">
+      <div class="header2--left">
+        <ul class="menu-list-ul">
+          <!-- 메뉴바 경로처리 -->
+          <li class="menu-list"><a href="#"> 홈</a></li>
+          <li class="menu-list"><a href="#"> 스토리</a></li>
+          <li class="menu-list"><a href="#"> 식고수에게 물어보기</a></li>
+          <li class="menu-list"><a href="#"> 반려식물 찾기</a></li>
+          <li class="menu-list"><a href="#"> 마이페이지</a></li>
+        </ul>
+      </div>
+      <!-- 아이콘경로처리 -->
+      <!-- 둘다 로그인되어있지 않으면 로그인페이지로 -->
+      <div class="header2--right">
+        <ul class="btn-list-ul">
+          <!-- 마이페이지로 -->
+          <li class="btn-list"><a href="#"><img src="../resource/icon_user.png" alt=""></a></li>
+          <!-- 스토리 글쓰기 페이지로 -->
+          <li class="btn-list"><a href="#"><img src="../resource/icon_pen.png" alt=""></a></li>
+        </ul>
+      </div>
+    </section>
+  </header>
+  
+  <body>
+
+    <div class="container">
+      <h1 class="sub-title">
+        <span class="story-ico"></span>
+        질문하기
+        <span class="story-txt">나만의 볕 들 스토리</span>
+      </h1>
+      <form action="">
+      <div class="form-group">
+        <input type="text" id="title" name="boardTitle" required placeholder="* 스토리 제목을 입력해주세요!" required/>
+      </div>
+
+        <!-- 첨부 파일 -->
+
+        <div class="form-group">
+          <div class="image-upload-wrap">
+            <input type="file" id="file" name="boardFile"
+              accept=".jpg, .jpeg, .png" multiple />
+            <div class="image-upload-box">
+              <div class="upload-text">
+                <div class="upload-icon">
+                 <img src="https://www.shouse.garden/images/ico/photo_g.png" class="upload-icon">
+                </div>
+                <div class="upload-count">
+                  커버사진 업로드
+                </div>
+              </div>
+              <div class="upload-text">커버사진 1개만 업로드 가능(<span class="cnt">0</span>/1)</div>
+              <div class="upload-text">파일 형식 : jpg, png</div>
+              <div class="upload-text">※ 이미지를 등록하면 즉시 반영됩니다.</div>
+            </div>
+          </div>
+          <div class="img-controller-box">
+            <ul class="file-list">
+
+            </ul>
+          </div>
+        </div>
+        <!-- 첨부파일 -->
+
+      <h1 class="mini-title">상세 내용 입력</h1>
+      <div class="textEditor">
+           <textarea class="summernote" name="editordata"></textarea>    
+      </div>
+
+        <div class="btn-group">
+          <button type="submit" class="submit-btn">등록 하기</button>
+          <!-- 취소버튼 js로 처리하기 -->
+          <button type="button" class="cancel-btn">취소</button>
+        </div>
+      </form>
+    </form>
+  </form>
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+      $('.summernote').summernote({
+          height: 450,
+          lang: "ko-KR"
+        });
+    });
+    
+      </script>
+<script src="./questionWrite.js"></script>
+  </body>
+</html>

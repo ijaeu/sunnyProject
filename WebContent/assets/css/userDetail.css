@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #151414;
+  color: #bbb;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+  color: #bbb;
+}
+
+a:visited {
+  text-decoration: none;
+  color: #bbb;
+}
+
+.sidebar-read-all {
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.sidevar {
+  margin-top: 20px;
+  width: 200px;
+}
+
+.board-read-all {
+  width: 980px;
+}
+
+.admin-info-all {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+.admin-info {
+  background-color: #054920;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding-bottom: 10px;
+}
+.admin-info2 {
+  height: 200px;
+  background-color: #393939;
+  margin-bottom: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 1px solid #44d62c;
+}
+
+.info-top {
+  width: 100%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.admin-imgbox {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+}
+.admin-img {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+
+.adming-img img {
+  width: 120px;
+  height: 120px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.admin-name-date {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #bbb;
+}
+
+.admin-name-date div {
+  margin-top: 5px;
+}
+
+.admin-name {
+  font-size: 20px;
+}
+
+.admin-date {
+  font-size: 12px;
+}
+
+.board-read-all {
+  margin-left: 20px;
+}
+
+.manage-all {
+  background-color: #393939;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+  min-height: 150px;
+}
+
+.user-manage-ul {
+  list-style: none;
+}
+
+.manage-all a:visited {
+  text-decoration: none;
+  color: #bbb;
+}
+
+.manage-all a:link {
+  text-decoration: none;
+  color: #bbb;
+}
+
+.manage-all a:hover {
+  color: white;
+}
+
+.hr hr {
+  border-top: 3px double #bbb;
+  box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.5);
+
+  /* height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #bbb inset; */
+}
+
+.user-manage-list {
+  margin-top: 15px;
+}
+
+.user-manage-list div {
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+}
+
+.all-user-manage:hover,
+.gosu-user-manage:hover,
+.gosu-application-user-manage:hover {
+  background-color: #009a3e;
+  color: white;
+}
+
+.user-manage-headline {
+  display: flex;
+}
+
+.user-manage-headline h2 {
+  margin-left: 10px;
+  color: white;
+}
+
+.read-container {
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 20px;
+}
+
+.view-title {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #393939;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+.view-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 7px;
+}
+
+.board_wrap {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+.view-wrap {
+  margin-bottom: 50px;
+}
+
+.user-detail {
+  margin: auto;
+  display: flex;
+}
+
+table.user-detail-explain {
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  width: 980px;
+  font-size: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+table.user-detail-explain thead th {
+  padding: 10px 10px 10px 20px;
+  font-weight: bold;
+  vertical-align: top;
+  text-align: center;
+  color: #009a3e;
+  border-bottom: 3px solid #009a3e;
+}
+table.user-detail-explain tbody th {
+  width: 40%;
+  padding: 10px 10px 10px 20px;
+  font-weight: bold;
+  vertical-align: top;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  background: #393939;
+}
+table.user-detail-explain td {
+  width: 60%;
+  padding: 10px 10px 10px 20px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-btn-groups {
+  text-align: right;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ben-btn {
+  color: #fff;
+  font-size: 20px;
+  background-color: #009a3e;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.ben-btn:hover {
+  background-color: rgb(213, 45, 45);
+  color: #fff;
+}

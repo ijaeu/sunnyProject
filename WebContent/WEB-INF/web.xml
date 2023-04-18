@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>sunny</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>User</servlet-name>
+    <servlet-class>com.sunny.app.user.UserFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>User</servlet-name>
+    <url-pattern>*.us</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+   <servlet-name>Grade</servlet-name>
+    <servlet-class>com.sunny.app.grade.GradeFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Grade</servlet-name>
+    <url-pattern>*.gr</url-pattern>
+  </servlet-mapping>
+  
+  
+ <servlet>
+  <servlet-name>UserFile</servlet-name>
+    <servlet-class>com.sunny.app.user.file.UserFileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UserFile</servlet-name>
+    <url-pattern>*.uf</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Follow</servlet-name>
+    <servlet-class>com.sunny.app.follow.FollowFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Follow</servlet-name>
+    <url-pattern>*.fo</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>FindPasswordQuestion</servlet-name>
+    <servlet-class>com.sunny.app.find.password.question.FindPasswordQuestionFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FindPasswordQuestion</servlet-name>
+    <url-pattern>*.fpq</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  <servlet-name>FindPassword</servlet-name>
+    <servlet-class>com.sunny.app.find.password.FindPasswordFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FindPassword</servlet-name>
+    <url-pattern>*.fp</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>Field</servlet-name>
+    <servlet-class>com.sunny.app.field.FieldFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Field</servlet-name>
+    <url-pattern>*.fe</url-pattern>
+  </servlet-mapping>
+  
+  
+ <servlet>
+  <servlet-name>GosuApply</servlet-name>
+    <servlet-class>com.sunny.app.gosu.apply.GosuApplyFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GosuApply</servlet-name>
+    <url-pattern>*.ga</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>GosuApplyFile</servlet-name>
+    <servlet-class>com.sunny.app.gosu.apply.file.GosuApplyFileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GosuApplyFile</servlet-name>
+    <url-pattern>*.gaf</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+ <servlet-name>Gosu</servlet-name>
+    <servlet-class>com.sunny.app.gosu.GosuFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Gosu</servlet-name>
+    <url-pattern>*.gu</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>GosuField</servlet-name>
+    <servlet-class>com.sunny.app.gosu.field.GosuFieldFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GosuField</servlet-name>
+    <url-pattern>*.gf</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  <servlet-name>Story</servlet-name>
+    <servlet-class>com.sunny.app.story.StoryFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Story</servlet-name>
+    <url-pattern>*.st</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  <servlet-name>StoryFile</servlet-name>
+    <servlet-class>com.sunny.app.story.file.StoryFileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>StoryFile</servlet-name>
+    <url-pattern>*.sf</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>StoryReply</servlet-name>
+    <servlet-class>com.sunny.app.story.reply.StoryReplyFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>StoryReply</servlet-name>
+    <url-pattern>*.sr</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>Question</servlet-name>
+    <servlet-class>com.sunny.app.question.QuestionFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Question</servlet-name>
+    <url-pattern>*.qs</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>QuestionFile</servlet-name>
+    <servlet-class>com.sunny.app.question.file.QuestionFileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>QuestionFile</servlet-name>
+    <url-pattern>*.qf</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>QuestionReply</servlet-name>
+    <servlet-class>com.sunny.app.question.reply.QuestionReplyFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>QuestionReply</servlet-name>
+    <url-pattern>*.qr</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Algorithm</servlet-name>
+    <servlet-class>com.sunny.app.algorithm.AlgorithmFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Algorithm</servlet-name>
+    <url-pattern>*.ag</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Plant</servlet-name>
+    <servlet-class>com.sunny.app.plant.PlantFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Plant</servlet-name>
+    <url-pattern>*.pt</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>PlantFile</servlet-name>
+    <servlet-class>com.sunny.app.plant.file.PlantFileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>PlantFile</servlet-name>
+    <url-pattern>*.pe</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>com.sunny.app.admin.AdminFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>*.ad</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Main</servlet-name>
+    <servlet-class>com.sunny.app.main.MainFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>Main</servlet-name>
+    <url-pattern>*.ma</url-pattern>
+  </servlet-mapping>
+  
+  
+  	
+</web-app>

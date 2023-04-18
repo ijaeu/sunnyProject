@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  width: 1200px;
+  height: 700px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.nav{
+  width: 1150px;
+  height: 35px;
+  background-color: #F2F2F2;
+  display: flex;
+  position:relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 23px 0 23px;
+}
+
+.menu{
+  /* display: flex; */
+  position:relative;
+  left: 950px;
+  top: 5px;
+}
+
+.menu>a{
+  text-decoration: none;
+  color: #808080;
+  font-size: 13px;
+  margin: 0 10px 0 0;
+  /* font-family: "SpoqaHanSans-Regular"; */
+}
+
+.logo1{
+  display: flex;
+  justify-content: center;
+  margin: 120px 0 40px 0;
+  position: relative;
+  right: 10px;
+}
+
+.logo1>svg{
+  width: 50px;
+  height: 50px;
+  fill: #009a3e;
+  margin: 10px 0 0 0;
+}
+
+.text-logo{
+  font-size: 50px;
+  font-family: 'Dongle', sans-serif;
+  color:#009a3e;
+}
+
+.joinOk-logo{
+  font-size: 25px;
+  color:#009a3e;
+  font-family: "SpoqaHanSans-Bold";
+  position: relative;
+  right: 5px;
+  top: -35px;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 15px 0;
+}
+
+.mem-joinOk{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2{
+  font-size: 18px;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.subtitle{
+  font-size: 14px;
+  margin: 58px 0 63px 0;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.main-button{
+  width: 140px;
+  height: 45px;
+  font-size: 14px;
+  background-color: #009a3e;
+  border-radius: 5px;
+  border: 1px solid #009a3e;
+  color: white;
+  font-family: "SpoqaHanSans-Regular";
+  cursor: pointer;
+}
+
+.login-button{
+  width: 140px;
+  height: 45px;
+  font-size: 14px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #009a3e;
+  color: #009a3e;
+  font-family: "SpoqaHanSans-Regular";
+  margin: 0 0 0 5px;
+  cursor: pointer;
+}

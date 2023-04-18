@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.header {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0 auto;
+  background-color: #151414;
+}
+
+.top-btn-group a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+.logout-btn:visited {
+  color: #bbb;
+}
+
+.logout-btn:hover {
+  color: #009a3e;
+  text-decoration: underline;
+}
+
+.logo-box a:hover {
+  text-decoration: none;
+}
+
+.logo-box a:link {
+  text-decoration: none;
+}
+
+.logo-box a:visited {
+  text-decoration: none;
+}
+
+/* 로그인, 회원가입, 로그아웃*/
+
+.header-top {
+  display: block;
+  background-color: #202020;
+  margin: auto;
+}
+
+.header-top a {
+  color: #bbb;
+  font-size: 14px;
+  margin-right: 18px;
+}
+.header-top-size {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: right;
+  line-height: 30px;
+  margin: auto;
+}
+
+.header-top-size,
+.header-bottom-size {
+  width: 1200px;
+}
+
+/* 로고 */
+.header-bottom {
+  height: 87px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #151414;
+}
+
+.header-bottom a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-bottom h1 {
+  color: #009a3e;
+  font-weight: 700;
+  font-family: "Dongle", sans-serif;
+  font-size: 35px;
+}
+.logo-box {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+}
+.logo svg {
+  height: 35px;
+  fill: #009a3e;
+}

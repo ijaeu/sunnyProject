@@ -1,0 +1,287 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  width: 1200px;
+  height: 1900px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.nav{
+  width: 1150px;
+  height: 35px;
+  background-color: #F2F2F2;
+  display: flex;
+  position:relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 23px 0 23px;
+}
+
+.menu{
+  /* display: flex; */
+  position:relative;
+  left: 950px;
+  top: 5px;
+}
+
+.menu>a{
+  text-decoration: none;
+  color: #808080;
+  font-size: 13px;
+  margin: 0 10px 0 0;
+  /* font-family: "SpoqaHanSans-Regular"; */
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  margin: 120px 0 40px 0;
+  position: relative;
+  right: 10px;
+}
+
+.logo>svg{
+  width: 50px;
+  height: 50px;
+  fill: #009a3e;
+  margin: 10px 0 0 0;
+}
+
+.text-logo{
+  font-size: 50px;
+  font-family: 'Dongle', sans-serif;
+  color:#009a3e;
+}
+
+.join-logo{
+  font-size: 26px;
+  color:#009a3e;
+  font-weight: bold;
+  position: relative;
+  left: 22px;
+  top: 20px;
+}
+
+.modal-box3,
+.modal-box2,
+.modal-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.agree-box3,
+.agree-box2,
+.agree-box {
+  background-color: white;
+  width: 340px;
+  /* height: 1000px; */
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.agree-box2{
+  flex-wrap: nowrap;
+  overflow: scroll;
+  height: 90%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.x-box3,
+.x-box2,
+.x-box {
+  font-size: 20px;
+  /* font-weight: bold; */
+  cursor: pointer;
+  position: absolute;
+  left: 340px;
+  /* top: -50px; */
+  z-index: 1;
+}
+
+.txt1{
+  margin: 5px 0 20px 0;
+  font-size: 19px;
+  font-family: "SpoqaHanSans-Bold";
+}
+
+.txt2{
+  font-size: 13px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#393737;
+  margin: 0 0 5px 0;
+}
+
+.txt3{
+  font-size: 13px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#949292;
+  margin: 0 0 30px 0;
+}
+
+.private-txt1{
+  font-size: 19px;
+  font-family: "SpoqaHanSans-Bold";
+  margin: 30px 0 20px 0;
+}
+
+.private-txt2{
+  font-size: 13px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#949292;
+}
+
+.private-txt3{
+  font-size: 13px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#393737;
+  margin: 30px 0 3px 0;
+}
+
+.private-txt4{
+  font-size: 13px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#949292;
+}
+
+.choice-txt1{
+  font-size: 21px;
+  font-family: "SpoqaHanSans-Bold";
+  margin: 5px 0 20px 0;
+}
+
+.choice-txt2{
+  font-size: 14px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#393737;
+}
+
+.choice-txt3{
+  font-size: 14px;
+  font-family: "SpoqaHanSans-Regular";
+  color:#949292;
+  margin: 5px 0 0 0;
+}
+
+.submit-button{
+  width: 398px;
+  height: 45px;
+  background-color: #009a3e;
+  border-radius: 5px;
+  border:#009a3e;
+  color: white;
+  cursor: pointer;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.input-tag > input{
+  width: 375px;
+  height: 45px;
+  border-radius: 5px;
+  border: 0.5px solid #cfcccc;
+  padding: 0 0 0 20px;
+  margin: -5px 0 0 0;
+}
+
+.input-tag{
+  margin: 0 0 0 420px;
+}
+
+.input-text3{
+  display: flex;
+}
+
+.input-text{
+  font-family: "SpoqaHanSans-Bold";
+}
+
+.input-text2{
+  color: #a9a6a6;
+}
+
+#select{
+  width: 398px;
+  height: 45px;
+  border: 1px solid #cfcccc;
+  border-radius: 5px;
+}
+
+.agree{
+  border: 1px solid #cfcccc;
+  width: 395px;
+  height: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  display: flex;
+  border-radius: 5px 5px 0 0;
+}
+
+.agree>label{
+  margin: 0 0 0 10px;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.label-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.label-box > input[type=checkbox]{
+  margin-right: 20px;
+}
+
+.required1{
+  margin: 0 0 0 10px;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.agree2{
+  border: 1px solid #cfcccc;
+  width: 395px;
+  height: 130px;
+  border-top-style: none;
+  padding-top: 20px;
+  border-radius: 0 0 5px 5px;
+}
+
+.agree>input{
+  margin: 0 0 0 289px;
+}
+
+.required2{
+  color: #009a3e;
+  font-family: "SpoqaHanSans-Regular";
+} 
+
+.required-box > label,
+.required-box2 > label,
+.required-box3 > label,
+.agree > label{
+  cursor: pointer;
+}
+
+#check-id-msg, #check-pw-msg, #password-error, #nickname-error, #name-error, #phone-msg, #check-email-msg{
+	display: block;
+	font-size: 12px;
+	margin-top: 5px;
+	color: red;
+}
+

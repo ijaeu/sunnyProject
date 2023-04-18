@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+ width: 1200px;
+ /* height: 915px; */
+  position: relative;
+  margin: 0 auto;
+}
+
+.nav{
+  width: 1150px;
+  height: 35px;
+  background-color: #F2F2F2;
+  display: flex;
+  position:relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 23px 0 23px;
+}
+
+.icon{
+  display: flex;
+  position:relative;
+  left: 100px;
+  
+}
+
+.menu{
+  /* display: flex; */
+  position:relative;
+  left: 950px;
+  top: 5px;
+}
+
+.menu>a{
+  text-decoration: none;
+  color: #808080;
+  font-size: 13px;
+  margin: 0 10px 0 0;
+  /* font-family: "SpoqaHanSans-Regular"; */
+}
+
+.main{
+  width: 1200px;
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  margin: 120px 0 40px 0;
+  position: relative;
+  right: 10px;
+}
+
+.logo>svg{
+  width: 50px;
+  height: 50px;
+  fill: #009a3e;
+  margin: 10px 0 0 0;
+}
+
+.text-logo{
+  font-size: 50px;
+  font-family: 'Dongle', sans-serif;
+  color:#009a3e;
+}
+
+.memlogin{
+  width: 500px;
+  height: 600px;
+  /* margin: 0 300px 0 300px; */
+  justify-content: center;
+}
+
+.input> input{
+  width: 375px;
+  height: 45px;
+  margin: 0 0 13px 0;
+  padding: 0px 0 0 10px;
+  border-radius: 4px;
+  border-width: 0.1px;
+  border: 1px solid #d5d2d2; 
+}
+
+.input > input::placeholder{
+  font-family: "SpoqaHanSans-Regular";
+  color:#a19e9e;
+}
+
+.login1{
+  width: 389px;
+  height: 45px;
+  text-align: center;
+  background-color: black;
+  font-size: 14px;
+  color: white;
+  border-radius: 4px;
+  margin: 0 0 7px 0;
+  cursor: pointer;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.check > label{
+  font-size: 14px;
+  color: #222624;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.menu2{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 0 5px;
+  padding: 0 50px;
+}
+
+.copy{
+  width: 1200px;
+  height: 50px;
+}
+
+.copy>p{
+  text-align: center;
+  line-height: 50px;
+  color: #808080;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.button2 > a{
+  color: #808080;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 0 10px 0 0;
+  font-family: "SpoqaHanSans-Regular";
+}
+
+.button2 > a:nth-child(1)::after{
+  content: "|";
+  position: relative;
+  left: 9px;
+  color: #808080;
+}

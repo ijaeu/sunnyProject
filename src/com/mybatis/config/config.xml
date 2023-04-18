@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/> 
+	</settings>
+	
+	
+	<typeAliases>
+		<typeAlias type="com.sunny.app.user.dto.UserDTO" alias ="UserDTO"/>
+		<typeAlias type="com.sunny.app.user.vo.UserVO" alias ="UserVO"/>
+		<typeAlias type="com.sunny.app.grade.dto.GradeDTO" alias ="GradeDTO"/>
+		<typeAlias type="com.sunny.app.user.file.dto.UserFileDTO" alias ="UserFileDTO"/>
+		<typeAlias type="com.sunny.app.follow.dto.FollowDTO" alias ="FollowDTO"/>
+		<typeAlias type="com.sunny.app.find.password.question.dto.FindPasswordQuestionDTO" alias ="FindPasswordQuestionDTO"/>
+		<typeAlias type="com.sunny.app.find.password.dto.FindPasswordDTO" alias ="FindPasswordDTO"/>
+		<typeAlias type="com.sunny.app.field.dto.FieldDTO" alias ="FieldDTO"/>
+		<typeAlias type="com.sunny.app.gosu.apply.dto.GosuApplyDTO" alias ="GosuApplyDTO"/>
+		<typeAlias type="com.sunny.app.gosu.apply.file.dto.GosuApplyFileDTO" alias ="GosuApplyFileDTO"/>
+		<typeAlias type="com.sunny.app.gosu.dto.GosuDTO" alias ="GosuDTO"/>
+		<typeAlias type="com.sunny.app.gosu.field.dto.GosuFieldDTO" alias ="GosuFieldDTO"/>
+		<typeAlias type="com.sunny.app.story.dto.StoryDTO" alias ="StoryDTO"/>
+		<typeAlias type="com.sunny.app.story.vo.StoryVO" alias ="StoryVO"/>
+		<typeAlias type="com.sunny.app.story.vo.StoryListVO" alias ="StoryListVO"/>
+		<typeAlias type="com.sunny.app.story.file.dto.StoryFileDTO" alias ="StoryFileDTO"/>
+		<typeAlias type="com.sunny.app.story.reply.dto.StoryReplyDTO" alias ="StoryReplyDTO"/>
+		<typeAlias type="com.sunny.app.story.reply.vo.StoryReplyVO" alias ="StoryReplyVO"/>
+		<typeAlias type="com.sunny.app.question.dto.QuestionDTO" alias ="QuestionDTO"/>
+		<typeAlias type="com.sunny.app.question.file.dto.QuestionFileDTO" alias ="QuestionFileDTO"/>
+		<typeAlias type="com.sunny.app.question.reply.dto.QuestionReplyDTO" alias ="QuestionReplyDTO"/>
+		<typeAlias type="com.sunny.app.question.reply.vo.QuestionReplyVO" alias ="QuestionReplyVO"/>
+		<typeAlias type="com.sunny.app.algorithm.dto.AlgorithmDTO" alias ="AlgorithmDTO"/>
+		<typeAlias type="com.sunny.app.plant.dto.PlantDTO" alias ="PlantDTO"/>
+		<typeAlias type="com.sunny.app.plant.file.dto.PlantFileDTO" alias ="PlantFileDTO"/>
+		<typeAlias type="com.sunny.app.admin.dto.AdminDTO" alias ="AdminDTO"/>
+		<typeAlias type="com.sunny.app.user.vo.UserVO" alias="UserVO"/>
+		<typeAlias type="com.sunny.app.admin.dto.UserManageDTO" alias ="UserManageDTO"/>
+		<typeAlias type="com.sunny.app.admin.vo.UserManageVO" alias ="UserManageVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.UserDetailVO" alias ="UserDetailVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuManageVO" alias ="GosuManageVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuDetailVO" alias ="GosuDetailVO"/>
+		<typeAlias type="com.sunny.app.user.file.vo.UserFileVO" alias="UserFileVO"/>
+		<typeAlias type="com.sunny.app.follow.vo.FollowVO" alias="FollowVO"/>
+		<typeAlias type="com.sunny.app.my.page.dto.MyPageDTO" alias="MyPageDTO"/>
+		<typeAlias type="com.sunny.app.story.file.vo.StoryFileVO" alias ="StoryFileVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationVO" alias ="GosuApplicationVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.GosuApplicationReadVO" alias ="GosuApplicationReadVO"/>
+		<typeAlias type="com.sunny.app.admin.vo.HeaderInfoVO" alias ="HeaderInfoVO"/>
+		<typeAlias type="com.sunny.app.gosu.vo.GosuVO" alias ="GosuVO"/>
+		<typeAlias type="com.sunny.app.question.vo.QuestionVO" alias ="QuestionVO"/>
+
+
+	</typeAliases>
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/sunny"/>
+				<property name="username" value="root"/>
+				<property name="password" value="1234"/>
+			</dataSource>
+		</environment>	
+	</environments>
+	
+	<mappers>
+		<mapper resource ="com/mybatis/mapper/AdminMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/AlgorithmMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/FieldMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/FindPasswordMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/FindPasswordQuestionMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/FollowMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/GosuApplyFileMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/GosuApplyMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/GosuFieldMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/GosuMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/GradeMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/PlantFileMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/PlantMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/QuestionFileMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/QuestionMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/QuestionReplyMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/StoryFileMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/StoryMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/StoryReplyMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/UserFileMapper.xml"/>
+		<mapper resource ="com/mybatis/mapper/UserMapper.xml"/>
+	</mappers>
+</configuration>

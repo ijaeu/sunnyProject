@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="algorithm">
+
+	<select id="algorithmResult" parameterType="AlgorithmDTO" resultType="AlgorithmDTO">
+		select p.plant_number, p.plant_name, p.plant_content, p.algorithm_result
+		from tbl_plant p
+		inner join tbl_algorithm a
+		on p.algorithm_result = a.algorithm_result
+		where a.select_one = #{selectOne}
+		and a.select_two = #{selectTwo}
+		and a.select_three = #{selectThree}
+		and a.select_four = #{selectFour}
+		and a.select_five = #{selectFive}
+	</select>
+	
+<select id="selectPlant" parameterType="AlgorithmDTO" resultType="AlgorithmDTO">
+  select plant_name, plant_content, plant_img
+  from tbl_plant
+  where algorithm_result = #{algorithmResult}
+</select>
+
+</mapper>
