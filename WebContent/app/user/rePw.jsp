@@ -8,7 +8,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>비밀번호 재설정 | 볕 들 무렵</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/RePw.css">
+
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/rePw.css">
+
   <style>
     @font-face {
       font-family: SpoqaHanSans-Regular;
@@ -48,7 +50,7 @@
       <form action="${pageContext.request.contextPath}/find/findPwOk.fp" method="POST">
       <div class="whole-container">
         <div class="question-container">
-          <h2>비밀번호 찾기</h2>
+          <h2>나의 회원 정보 입력</h2>
           <div class="question">
           <div class="id-input">
           	<div class="title1">아이디</div><br>
@@ -70,34 +72,16 @@
 
           <button type="submit" value="확인" class="check-button">확인</button>
         </div>
-
-
-        <div class="change-container">
-          <h2>비밀번호 변경</h2>
-          <div class="newPw">
-            <div class="title-container1">
-              <div class="title2">
-                새로운 비밀번호</div>
-              <input type="password" name="newPassword" required>
-              <div class="alert">※ 공백 없는 영문숫자 포함 8-15자</div>
-            </div>
-            <div class="title-container2">
-              <div class="title3">비밀번호 확인</div>
-              <input type="password" name="newPassword" class="inputPw" required>
-            </div>
-          </div>
-
-          <button type="submit" value="비밀번호 변경" class="change-button">비밀번호 변경</button>
-        </div>
-      </div>
-    </form>
-    </div>
-
+        
+	
   </div>
-
+		</form>
+	
+	</div>
   </div>
+  
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-  	<script src="${pageContext.request.contextPath}/assets/js/RePw.js"></script>
+  	<script src="${pageContext.request.contextPath}/assets/js/rePw.js"></script>
 </body>
 
 </html>

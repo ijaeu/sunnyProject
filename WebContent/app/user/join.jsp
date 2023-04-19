@@ -140,7 +140,7 @@
             <br><br><br>
             <div class="input-text3">
               <div class="input-text">닉네임</div>
-              <div class="input-text2">(변경 불가)</div>
+              <!-- <div class="input-text2">(변경 불가)</div> -->
             </div> <br>
             <input type="text" placeholder="닉네임(2~10자)" name="userNickname" minlength="2" maxlength="10" required>
             <span id="nickname-error" class="error"></span>

@@ -16,11 +16,14 @@ public class LoginController implements Execute {
 		
 		if(cookies != null) {
 			for(Cookie cookie : cookies) {
-				if(cookie.getName().equals("userId")) {
-					req.setAttribute("userId", cookie.getValue());
+		            String name = cookie.getName(); // 쿠키 이름 가져오기
+		            String value = cookie.getValue(); // 쿠키 값 가져오기
+		            if (name.equals("userId")) {
+		            	System.out.println("value = " +value);
+		            	req.setAttribute("userId", value);
+		            }
 				}
 			}
-		}
 		
 		req.getRequestDispatcher("/app/user/login.jsp").forward(req, resp);
 		
