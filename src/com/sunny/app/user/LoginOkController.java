@@ -24,6 +24,8 @@ public class LoginOkController implements Execute {
 		String path = null;
 		HttpSession session = req.getSession();
 		
+		System.out.println("remember = " + remember);
+		
 		userDTO.setUserId(userId);
 		userDTO.setUserPassword(userPassword);
 		System.out.println("=============");
@@ -44,7 +46,9 @@ public class LoginOkController implements Execute {
 		if(remember != null && remember.equals("check")) {
 			Cookie cookie = new Cookie("userId", userId);
 			cookie.setMaxAge(60 * 60 * 24);	//쿠키 유효시간 1일(60초 * 60분 * 24시간)
+			cookie.setPath("/");
 			resp.addCookie(cookie);
+			System.out.println("cookie = " + cookie);
 		}
 		
 //		if(userNumber == -1) {
@@ -53,11 +57,22 @@ public class LoginOkController implements Execute {
 //			path = "/story/storyListOk.st";
 //		}
 		
-		
+		    Cookie[] cookies=req.getCookies(); // 모든 쿠키 가져오기
+		    System.out.println("cookies = " + cookies);
+		    if(cookies!=null){
+		        for (Cookie c : cookies) {
+		            String name = c.getName(); // 쿠키 이름 가져오기
+		            String value = c.getValue(); // 쿠키 값 가져오기
+		            if (name.equals("userId")) {
+		            	System.out.println("value = " +value);
+		            }
+		        }
+		    }
 
-		
 		resp.sendRedirect(path);
 		
 		
 	}
+	
+
 }
