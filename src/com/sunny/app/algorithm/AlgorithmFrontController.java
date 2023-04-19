@@ -23,8 +23,8 @@ public class AlgorithmFrontController extends HttpServlet {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 		System.out.println(target);
 		switch (target) {
-		case "/algorithm/index.ag":
-			req.getRequestDispatcher("/app/algorithm/index.jsp").forward(req, resp);
+		case "/algorithm/start.ag":
+			req.getRequestDispatcher("/app/algorithm/start.jsp").forward(req, resp);
 			break;
 		case "/algorithm/testOne.ag":
 			new TestOneOkController().execute(req, resp);
