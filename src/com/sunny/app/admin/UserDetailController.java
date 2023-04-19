@@ -21,11 +21,16 @@ public class UserDetailController implements Execute{
 		UserDetailDAO userDetailDAO = new UserDetailDAO();
 		UserDetailVO userDetailVO = userDetailDAO.userDetail(userNumber);
 		
+		int adminNumber = 0;
+		
 		// 세션체크
-		if (!AdminUtils.sessionCheck(req)) {
-			resp.sendRedirect("/admin/login.ad?login=noInfo");
-			return;
+		if (AdminUtils.sessionCheck(req)==0) {
+			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+		} else {
+			adminNumber = AdminUtils.sessionCheck(req);
 		}
+		
+		System.out.println("adminNumber = " + adminNumber);
 		
 		// 회원정보
 		

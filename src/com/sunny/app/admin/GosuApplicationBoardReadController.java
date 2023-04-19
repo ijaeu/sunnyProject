@@ -15,11 +15,16 @@ public class GosuApplicationBoardReadController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		int adminNumber = 0;
+		
 		// 세션체크
-		if (!AdminUtils.sessionCheck(req)) {
-			resp.sendRedirect("/admin/login.ad?login=noInfo");
-			return;
+		if (AdminUtils.sessionCheck(req)==0) {
+			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+		} else {
+			adminNumber = AdminUtils.sessionCheck(req);
 		}
+		
+		System.out.println("adminNumber = " + adminNumber);
 		
 		int applyNumber = Integer.parseInt(req.getParameter("applyNumber"));
 		System.out.println("applyNumber = " + applyNumber);
