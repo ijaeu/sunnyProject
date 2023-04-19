@@ -1,5 +1,7 @@
 console.log(gradeNumber);
 console.log(checkFollow);
+
+// 헤더부분 초록색 동그라미 띄우기
 let $headerList = $('.header2-menu-list>a');
 $headerList.removeClass('header-active');
 

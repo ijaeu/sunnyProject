@@ -66,7 +66,7 @@
 										<!-- 프로필을 누르면 이사람의 마이페이지로 이동 -->
 										<a href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${mainStory.getUserNumber()}">
 											<div class="story-user-photo">
-												<img src="${pageContext.request.contextPath}/uploadProfile/${mainStory.getUserProfileImage()}" alt="">
+												<img src="${pageContext.request.contextPath}/upload/profileUpload/${mainStory.getUserProfileImage()}" alt="">
 											</div>
 											<p>${mainStory.getUserNickname()}</p>
 										</a>
@@ -76,7 +76,7 @@
 										<a href="${pageContext.request.contextPath}/story/storyListOk.st?storyNumber=${mainStory.getStoryNumber()}">
 										<!-- 스토리커버사진, 제목 -->
 											<div class="story-cover-photo">
-												<img src="${pageContext.request.contextPath}/storyUpload/${mainStory.getFileSystemName()}" alt="">
+												<img src="${pageContext.request.contextPath}/upload/storyUpload/${mainStory.getFileSystemName()}" alt="">
 											</div>
 											<p>${mainStory.getStoryTitle()}</p>
 										</a>
@@ -108,7 +108,7 @@
 									<h3>물어보세요</h3>
 								</div> <!-- 식고수프로필사진 꽂아준다 -->
 								<div class="main3-gosu-photo">
-									<img src="${pageContext.request.contextPath}/uploadProfile/${main.getGosu().getFileSystemName()}" alt="">
+									<img src="${pageContext.request.contextPath}/upload/profileUpload/${main.getGosu().getFileSystemName()}" alt="">
 								</div> <!-- 식물분야 span에 꽂아준다 -->
 								<p>
 									<span><c:out value="${main.getGosu().getGosuFields()}" /></span> 키우는 꿀팁!
@@ -138,7 +138,7 @@
 			<!-- 식물찾기 알고리즘 페이지로 이동 -->
 			<div class="main4-box"
 				style="background-image:url('${pageContext.request.contextPath}/assets/img/main/mainBanner3.jpg')">
-				<a href="${pageContext.request.contextPath}/app/algorithm/index.jsp">
+				<a href="${pageContext.request.contextPath}/algorithm/index.ag">
 					<p>나에게 꼭 맞는 반려식물을 찾아보세요</p>
 				</a>
 			</div>

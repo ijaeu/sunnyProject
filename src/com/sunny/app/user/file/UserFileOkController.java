@@ -31,7 +31,7 @@ public class UserFileOkController implements Execute {
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
 		
 		
-	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "uploadProfile/";
+	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/profileUpload/";
 	      int fileSize = 1024 * 1024 * 5; //5MB
 	      System.out.println(uploadPath);
 	      

@@ -50,9 +50,18 @@ $currentPwInput.on('blur', function(){
 	}
 });
 
+//변경비밀번호를 입력하지 않으면 메세지
+$userPwInput.on('blur', function(){
+	if($(this).val()==''){
+		$userPwMsg.text('변경할 비밀번호를 입력하세요');
+	}
+});
+
 // 변경 비밀번호를 입력하고 그 다음칸에 같은걸 입력했는지 확인
 $checkPwInput.on('blur', function(){
-	if($userPwInput.val()==$checkPwInput.val()){
+	if($(this).val()==''){
+		$chPwMsg.text('변경할 비밀번호를 입력하세요');
+	} else if($userPwInput.val()==$checkPwInput.val()){
 		$chPwMsg.text("비밀번호가 일치합니다.");
 	}else{
 		$chPwMsg.text("비밀번호가 일치하지 않습니다.");
@@ -65,7 +74,7 @@ $nicknameInput = $('#user-nickname');
 $nicknameMsg = $('#check-nickname-msg');
 
 // 중복된 닉네임인지 확인
-$nicknameInput.on('blur', function(){
+$nicknameInput.on('change', function(){
 	if($nicknameInput.val()==''){
 		$nicknameMsg.text('닉네임을 입력하세요');
 	}else{
