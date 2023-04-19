@@ -178,8 +178,8 @@ if (algorithmResult.equals("00000")) {
           빛이 부족해서 그럴 수 있어요! 밝은 곳으로 옮겨 주세요</li>
         </ul>
       </h6>
-      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/algorithm/index.ag';">다시하기</button>
-      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/mainOk/main.ma';">홈페이지</button>
+      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/algorithm/start.ag';">다시하기</button>
+      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/main/mainOk.ma';">홈페이지</button>
     </div>
     </div>
   </section>
