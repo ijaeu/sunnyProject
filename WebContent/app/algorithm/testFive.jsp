@@ -17,8 +17,8 @@
 <body>
 	    <section id="qna" class="mx-auto my-5 py-5 px-3">
       <progress value="200" max="200" id="my_skill"></progress>
-      <a href="http://localhost:8085/algorithm/index.ag">
-      <img src="../../assets/img/algorithm/index/home.png" 
+      <a href="http://localhost:8085/algorithm/start.ag">
+      <img src="../../assets/img/algorithm/start/home.png" 
         class = "img"></a>
       <div class="questionContainer">
         <h1>5. 실내온도가 18도 이상인 공간이 있나요?</h1>

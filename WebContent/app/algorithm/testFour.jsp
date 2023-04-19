@@ -17,8 +17,8 @@
 <body>
 	<section id="qna" class="mx-auto my-5 py-5 px-3">
       <progress value="160" max="200" id="my_skill"></progress>
-      <a href="http://localhost:8085/algorithm/index.ag">
-      <img src="../../assets/img/algorithm/index/home.png" 
+      <a href="http://localhost:8085/algorithm/start.ag">
+      <img src="../../assets/img/algorithm/start/home.png" 
         class = "img"></a>
       <div class="questionContainer">
         <a href="http://127.0.0.1:5500/html/FindMyPlant/test3/test3.html">

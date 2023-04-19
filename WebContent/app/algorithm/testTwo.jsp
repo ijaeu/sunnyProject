@@ -15,8 +15,8 @@
 <body>
 <section id="qna" class="mx-auto my-5 py-5 px-3">
     <progress value="80" max="200" id="my_skill"></progress>
-    <a href="http://localhost:8085/algorithm/index.ag">
-        <img src="../../assets/img/algorithm/index/home.png" class="img">
+    <a href="http://localhost:8085/algorithm/start.ag">
+        <img src="../../assets/img/algorithm/start/home.png" class="img">
     </a>
     <div class="questionContainer">
         <h1>2. 집안에 창문이 있는 곳에 <br> 식물을 놓을 계획이 있나요? </h1>
