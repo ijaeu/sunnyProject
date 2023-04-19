@@ -22,7 +22,7 @@ public class UserFileDeleteController implements Execute {
 		HttpSession session = req.getSession();
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
 		
-		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "uploadProfile/";
+		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/profileUpload/";
 		
 		if(userFileDAO.select(userNumber)>0) {
 			 UserFileVO userFileVO = userFileDAO.selectFile(userNumber);

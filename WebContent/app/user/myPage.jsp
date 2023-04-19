@@ -44,13 +44,13 @@
 						<div class="profile-photo-regist">
 							<div class="profile-photo">
 								<c:choose>
-									<c:when test="${empty myPage.getUserFile()}">
+									<c:when test="${empty myPage.getFileSystemName()}">
 										<img
 											src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
 									</c:when>
 									<c:otherwise>
 										<img
-											src="${pageContext.request.contextPath}/uploadProfile/${myPage.getUserFile().getFileSystemName()}"
+											src="${pageContext.request.contextPath}/upload/profileUpload/${myPage.getFileSystemName()}"
 											alt="" />
 									</c:otherwise>
 								</c:choose>
@@ -150,7 +150,7 @@
 					<!-- 스토리쓰기 페이지로 이동 -->
 					<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
 						<a
-							href="${pageContext.request.contextPath}/app/story/storyWrite.jsp">글쓰기</a>
+							href="${pageContext.request.contextPath}/question/questionWrite.qs">글쓰기</a>
 					</c:if>
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 											<c:choose>
 												<c:when test="${not empty myStory.getFileSystemName()}">
 													<img
-														src="${pageContext.request.contextPath}/storyUpload/${myStory.getFileSystemName()}"
+														src="${pageContext.request.contextPath}/upload/storyUpload/${myStory.getFileSystemName()}"
 														alt="" />
 												</c:when>
 												<c:otherwise>
