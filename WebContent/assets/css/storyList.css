@@ -152,7 +152,7 @@ ul {
   color: #009a3e;
 }
 
-.following {
+.follow.dir.following {
   position: relative;
   height: 56px;
   line-height: 60px;
