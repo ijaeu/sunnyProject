@@ -38,7 +38,7 @@ public class AdminFrontController extends HttpServlet {
 				 break;
 		     case "/admin/select.ad":
 			 		// 세션체크 
-			 		if (!AdminUtils.sessionCheck(req)) {
+			 		if (AdminUtils.sessionCheck(req)==0) {
 			 			resp.sendRedirect("/admin/login.ad?login=noInfo");
 			 			return;
 			 		}

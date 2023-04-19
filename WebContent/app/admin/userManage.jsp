@@ -74,6 +74,12 @@
 					</div>
 					<p>전체 회원관리를 할 수 있습니다. 회원 닉네임을 클릭시 회원상세페이지로 넘어갑니다.</p>
 				</div>
+				<div class="search" id="search">
+					<input type="text" class="input" placeholder="Search name..." value="" id="searchPram" onkeyup="if(window.event.keyCode==13){searchAction()}"/>
+					<button class="btn">
+						<i class="fas fa-search"></i>
+					</button>
+				</div>
 				<table class="user-manage-table">
 					<thead>
 						<tr>
@@ -103,18 +109,11 @@
 						</c:choose>
 					</tbody>
 				</table>
-
-				<div class="search" id="search">
-					<input type="text" class="input" placeholder="Search name..." value="" id="searchPram" onkeyup="if(window.event.keyCode==13){searchAction()}"/>
-					<button class="btn">
-						<i class="fas fa-search"></i>
-					</button>
-				</div>
 			</div>
 		</div>
 	</div>
 	<jsp:include
-	page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
+	page="${pageContext.request.contextPath}/app/admin/adminFooter.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="../../assets/js/userManage.js"></script>
 </body>
