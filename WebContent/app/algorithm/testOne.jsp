@@ -28,10 +28,7 @@
 				<input type="button" class="btn no" value="아니오"
 					onclick="document.getElementsByName('selectOne')[0].value='0';this.form.submit();">
 			</form>
-			
 		</div>
-		
 	</section>
-
 </body>
 </html>

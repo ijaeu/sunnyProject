@@ -17,8 +17,8 @@
 <body>
 	    <section id="qna" class="mx-auto my-5 py-5 px-3">
       <progress value="120" max="200" id="my_skill"></progress>
-      <a href="http://127.0.0.1:5500/html/FindMyPlant/main/index.html">
-      <img src="../../assets/img/algorithm/index/home.png" 
+      <a href="http://localhost:8085/algorithm/start.ag">
+      <img src="../../assets/img/algorithm/start/home.png" 
         class = "img"></a>
       <div class="questionContainer">
         <h1>3. 식물의 관리를 위해 매일 시간을 내실 수 있나요?  </h1>
