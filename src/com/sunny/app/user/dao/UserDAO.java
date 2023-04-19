@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.find.password.dto.FindPasswordDTO;
+import com.sunny.app.my.page.dto.MyPageDTO;
 import com.sunny.app.story.file.vo.StoryFileVO;
 import com.sunny.app.user.dto.UserDTO;
 import com.sunny.app.user.vo.UserVO;
@@ -79,5 +80,10 @@ public class UserDAO {
 //	회원정보수정에서 닉네임 중복확인
 	public boolean checkNick(String userNickname) {
 		return (Integer)sqlSession.selectOne("user.checkNick", userNickname)<1;
+	}
+	
+//	마이페이지 로딩시 한번에 정보가져오기
+	public MyPageDTO myPageLoading(int userNumber) {
+		return sqlSession.selectOne("user.myPageLoading", userNumber);
 	}
 }

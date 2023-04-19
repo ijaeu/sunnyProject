@@ -73,5 +73,31 @@
 		where user_nickname = #{userNickname}
 	</select>
 	
+	<!-- 마이페이지 로딩시 정보 한번에 가져오기 -->
+	<select id="myPageLoading" parameterType = "_int" resultType = "MyPageDTO">
+		select tu.user_number, tu.user_nickname, tu.user_comment, tu.grade_number, 
+tuf.file_system_name, followingCnt, followerCnt, storyCnt
+from tbl_user tu 
+left join tbl_user_file tuf on tu.user_number = tuf.user_number 
+left join 
+  (select user_from, count(distinct follow_number) as followingCnt 
+   from tbl_follow 
+   where user_from = #{userNumber} 
+   group by user_from) f1 
+on f1.user_from = tu.user_number 
+left join  
+  (select user_to, count(follow_number) as followerCnt 
+   from tbl_follow 
+   where user_to = #{userNumber} 
+   group by user_to) f2 
+on f2.user_to = tu.user_number 
+left join 
+	(select user_number, count(story_number)as storyCnt 
+	from tbl_story ts2 
+	where user_number =#{userNumber}
+	group by user_number) s1
+on s1.user_number = tu.user_number 
+where tu.user_number = #{userNumber}
+	</select>
 	
 </mapper>

@@ -22,19 +22,17 @@ public class MyPageOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		long startTime = System.currentTimeMillis();
 		System.out.println("myPageOk컨트롤러진입");
 		
 		HttpSession session = req.getSession();
 		UserDAO userDAO = new UserDAO();
 		FollowDAO followDAO = new FollowDAO();
-		UserFileDAO userFileDAO = new UserFileDAO();
 		GosuDAO gosuDAO = new GosuDAO();
 		QuestionDAO questionDAO = new QuestionDAO();
 		
 		StoryFileVO storyFileVO = new StoryFileVO();
 		MyPageDTO myPageDTO = new MyPageDTO();
-		UserVO userVO = new UserVO();
 		FollowDTO followDTO = new FollowDTO();
 		Integer userNumber = 0;
 		Integer checkFollow =0;
@@ -56,42 +54,35 @@ public class MyPageOkController implements Execute {
 		}
 		req.setAttribute("checkFollow", checkFollow);
 		System.out.println(userNumber);
-		
-		myPageDTO.setUserNumber(userNumber);
-		
-		userVO=userDAO.getUserInfo(userNumber);
 
-		myPageDTO.setUserComment(userVO.getUserComment());
-		myPageDTO.setGradeNumber(userVO.getGradeNumber());
-		myPageDTO.setUserNickname(userVO.getUserNickname());
+		myPageDTO =userDAO.myPageLoading(userNumber);
 		
-		System.out.println(userVO.getGradeNumber());
+		System.out.println(myPageDTO);
 		
 //		프로필사진이 없으면 userFile에 기본로고를 넣어준다. > c:choose로 처리
-		myPageDTO.setUserFile(userFileDAO.selectFile(userNumber));
-		myPageDTO.setFollowerCnt(followDAO.selectFollowerCnt(userNumber));
-		myPageDTO.setFollowingCnt(followDAO.selectFollowingCnt(userNumber));
 		
-		System.out.println(followDAO.selectFollowingCnt(userNumber));
 		
 //		내가 쓴 스토리 리스트 받아오기
 		System.out.println(userDAO.myStoryList(userNumber));
 		
 		try {
-			myPageDTO.setStoryCnt(userDAO.myStoryCnt(userNumber));
 			myPageDTO.setStoryFiles(userDAO.myStoryList(userNumber));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 //		이 밑으로는 myPageQuestionListController 에서 처리하는걸로 한다.
-		if(userVO.getGradeNumber()==500) {
+		if(myPageDTO.getGradeNumber()==500) {
 			int gosuNumber = gosuDAO.getGosuNumber(userNumber);
 			myPageDTO.setGosuNumber(gosuNumber);
 		}
 		
+		System.out.println(myPageDTO);
+		
 		req.setAttribute("myPage", myPageDTO);
 		
+		long endTime = System.currentTimeMillis();
+		System.out.println("최종 시간 : " + (endTime - startTime)/1000.0 + "s");
 		req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
 		
 	}
