@@ -1,3 +1,10 @@
+//헤더부분에 초록동그라미띄우기
+let $headerList = $('.header2-menu-list>a');
+$headerList.removeClass('header-active');
+
+let $headerMypage = $('#header-mypage');
+$headerMypage.addClass('header-active');
+
 // 팔로워 팔로잉 리스트 top버튼
 console.log("=================")
 //=============================
