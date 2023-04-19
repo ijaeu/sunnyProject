@@ -31,3 +31,35 @@ $pwInput.on('blur', function(){
       $checkPwMsg.html("사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!");
    }
 });
+
+
+
+/*비밀번호 일치 확인검사와 정규표현식을 통과하지 못했을 때 폼 제출 막기*/
+
+$(document).ready(function() {
+  $('form').submit(function(event) {
+    event.preventDefault(); // 기본 동작인 폼 제출을 막음
+
+    var passwordInput = $('input[name=password]');
+    var confirmPasswordInput = $('input[name=confirmPassword]');
+    var errorSpan = $('input[name=confirmPassword]').siblings('.password-error');
+
+    var password = passwordInput.val();
+    var confirmPassword = confirmPasswordInput.val();
+
+    var passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
+
+    if (!passwordPattern.test(password)) {
+      alert('비밀번호 입력값이 올바르지 않습니다.'); // 비밀번호 패턴 검사 실패 시 경고창 출력
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('비밀번호 입력값이 올바르지 않습니다.'); // 비밀번호 확인이 일치하지 않을 때 경고창 출력
+      return;
+    }
+
+    // 모든 검증을 통과한 경우 폼을 제출
+    this.submit();
+  });
+});

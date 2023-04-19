@@ -1,6 +1,7 @@
 package com.sunny.app.find.password;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -31,9 +32,12 @@ public class ResetPasswordOkController implements Execute {
 	    FindPasswordDAO findPasswordDAO = new FindPasswordDAO();
 	    findPasswordDAO.updatePassword(userDTO);
 
-	    // 비밀번호 업데이트 성공 시 로그인 페이지로 이동
-	    resp.sendRedirect(req.getContextPath() + "/user/login.us"); 
+//	    // 비밀번호 업데이트 성공 시 로그인 페이지로 이동
+//	    resp.sendRedirect(req.getContextPath() + "/user/login.us"); 
 
+	 // 비밀번호 업데이트 성공 시 로그인 페이지로 이동
+        resp.sendRedirect(req.getContextPath() + "/user/login.us?passwordReset=true");
+	    
 	}
 }
 
