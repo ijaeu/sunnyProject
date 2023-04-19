@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sunny.app.Execute;
 import com.sunny.app.admin.dao.AdminDAO;
 import com.sunny.app.admin.dao.GosuManageDAO;
+import com.sunny.app.admin.dto.AdminDTO;
 import com.sunny.app.admin.vo.GosuManageVO;
 import com.sunny.app.admin.vo.HeaderInfoVO;
 import com.sunny.app.util.AdminUtils;
@@ -20,19 +21,24 @@ public class GosuManageController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String searchWord = req.getParameter("searchWord");
-		System.out.println("=====================");
-		System.out.println(searchWord);
-		System.out.println("=====================");
+		// 세션체크
+		int adminNumber = 0;
+		if (AdminUtils.sessionCheck(req)==0) {
+			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+		} else {
+			adminNumber = AdminUtils.sessionCheck(req);
+		}
 		
+		System.out.println("adminNumber = " + adminNumber);
 		AdminDAO adminDAO = new AdminDAO();
+		AdminDTO adminDTO = adminDAO.adminSelect(adminNumber);
+		
+		
+		String searchWord = req.getParameter("searchWord");
+		
 		GosuManageDAO gosuManageDAO = new GosuManageDAO();
 		HeaderInfoVO headerinfoVO = adminDAO.headerInfo();
 		
-		// 세션체크
-		if (!AdminUtils.sessionCheck(req)) {
-			resp.sendRedirect("app/admin/login.ad?login=noInfo");
-		}
 
 		// 고수 회원 정보 불러오기
 		Map<String, Object> pageMap = new HashMap<>();
@@ -40,13 +46,14 @@ public class GosuManageController implements Execute {
 		pageMap.put("searchWord", searchWord); 
 		List<GosuManageVO> gosu = gosuManageDAO.gosuInfo(pageMap);
 
+		// 데이터 세팅
+		req.setAttribute("adminInfo", adminDTO);
 		req.setAttribute("headerInfo", headerinfoVO);
 		req.setAttribute("gosuList", gosu);
+		
+		// 페이지 이동
 		req.getRequestDispatcher("/app/admin/gosuManage.jsp").forward(req, resp);
 		
-//		// 전체 회원 정보 가져오기
-//
-//		// 페이지 이동
 
 	}
 }

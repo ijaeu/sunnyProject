@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
 * {
@@ -39,7 +40,7 @@ body {
   padding-bottom: 10px;
 }
 .admin-info2 {
-  height: 200px;
+  height: 210px;
   background-color: #393939;
   margin-bottom: 30px;
   border-bottom-left-radius: 10px;
@@ -296,6 +297,32 @@ body {
   border-radius: 10px;
   background-color: #393939;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+/* 첨부파일 */
+.file-box{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #393939;
+  min-height: 280px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+}
+
+.file-view{
+  height: 250px;
+  width: 250px;
+  border-radius: 15px;
+  margin-left: 10px
+}
+
+.file-view img{
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 /* 버튼 스타일 */

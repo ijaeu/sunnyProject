@@ -26,13 +26,13 @@
 					<div class="admin-img-name-date">
 						<div class="admin-imgbox">
 							<div class="admin-img">
-								<a href=""><img src="../../assets/img/admin/sogum.jpg"
-									alt="" /></a>
+								<img src="../../assets/img/admin/${adminInfo.getAdminId() }.gif"
+									alt="" />
 							</div>
 						</div>
 						<div class="admin-name-date">
-							<div class="admin-name">소금</div>
-							<div class="admin-date">가입일 2023.03.21</div>
+							<div class="admin-name">${adminInfo.getAdminName() }</div>
+							<div class="admin-date">가입일 ${adminInfo.getAdminDate() }</div>
 						</div>
 					</div>
 				</div>
@@ -85,8 +85,20 @@
 							<div class="gosu-department-text">${applydata.getGosuFieldNames() }</div>
 						</div>
 					</div>
-					<!-- 임시 내용 -->
+					<!-- 내용 -->
 					<div class="view-content">${applydata.getApplyContent() }</div>
+					<!-- 첨부파일 -->
+					<c:choose>
+						<c:when test="${not empty applydata.getFiles() }">
+							<div class="file-box">
+								<c:forEach var="file" items="${applydata.getFiles() }">
+              						<div class="file-view">
+                  						<img src="${pageContext.request.contextPath}/upload/applyUpload/${file.getFileSystemName()}" alt="">
+              						</div>
+              					</c:forEach>
+	            			</div>
+              			</c:when>
+					</c:choose>
 				</div>
 				<div class="btn-group">
 					<button type="button" class="ok-btn">수락</button>
@@ -99,7 +111,7 @@
 		</div>
 	</div>
 	<jsp:include
-		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
+		page="${pageContext.request.contextPath}/app/admin/adminFooter.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="../../assets/js/gosuApplicationBoardRead.js"></script>
 </body>

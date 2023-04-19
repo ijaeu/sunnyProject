@@ -4,13 +4,18 @@
 
 <mapper namespace="admin">
 	<!-- 로그인 처리 -->
-	<select id="select" resultType="AdminDTO"
+	<select id="login" resultType="_int"
 		parameterType="AdminDTO">
-		select admin_number , admin_id, admin_password,
-		admin_name, admin_team from
-		tbl_admin
+		select admin_number 
+		from tbl_admin
 		where admin_id = #{adminId} and
 		admin_password = #{adminPassword}
+	</select>
+	
+	<select id="adminSelect" parameterType="_int" resultType="AdminDTO">
+		select admin_number,admin_id, admin_name, admin_date 
+		from tbl_admin
+		where admin_number = #{adminNumber};
 	</select>
 
 	<select id="getTotal" resultType="_int">
@@ -189,14 +194,13 @@
 		apply_title, tu.user_nickname
 		from tbl_gosu_apply tga
 		join tbl_user tu
-		on tga.user_number =
-		tu.user_number
+		on tga.user_number = tu.user_number
 		where tu.grade_number = 200
+		order by  apply_number desc
 	</select>
 
 	<!-- applicationBoardRead page -->
-	<select id="applicationRead" resultType="GosuApplicationReadVo"
-		parameterType="_int">
+	<select id="applicationRead" resultType="GosuApplicationReadVo"	parameterType="_int">
 		with field_stats as(
 		select u.user_number ,
 		g.gosu_number,
@@ -221,8 +225,7 @@
 		tga.user_number ,
 		tga.apply_title
 		from tbl_gosu_apply tga
-		join tbl_user tu on tga.user_number =
-		tu.user_number
+		join tbl_user tu on tga.user_number = tu.user_number
 		)
 		select
 		apply_stats.user_number,
@@ -237,7 +240,12 @@
 		join apply_stats on
 		field_stats.user_number = apply_stats.user_number
 		where
-		apply_stats.apply_number = #{applyNumber}
+		apply_stats.apply_number = #{applyNumber};
+	</select>
+	
+	<select id="readApplyFile" resultType="GosuApplyFileDTO"	parameterType="_int">
+	select apply_number, file_system_name, file_original_name from tbl_gosu_apply_file tgaf 
+	where apply_number = ${applyNumber};
 	</select>
 
 	<!-- 식고수 신청 승인 쿼리 -->
