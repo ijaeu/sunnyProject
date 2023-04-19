@@ -179,7 +179,7 @@ if (algorithmResult.equals("00000")) {
         </ul>
       </h6>
       <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/algorithm/index.ag';">다시하기</button>
-      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/mainOk/main.ma';">홈페이지</button>
+      <button type="btn" class="btn1"onclick="location.href= 'http://localhost:8085/main/mainOk.ma';">홈페이지</button>
     </div>
     </div>
   </section>
