@@ -17,21 +17,35 @@ public class AdminDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<AdminDTO> select(AdminDTO adminDTO){
-		System.out.println("amdin.select 메서드");
-		return sqlSession.selectList("admin.select", adminDTO);
+//	admin 회원정보 가져오기
+	public void adminSelect(int adminNumber) {
+		System.out.println("amdin.adminSelect 메서드");
+	}
+	
+//	admin login 
+	public int login(AdminDTO adminDTO){
+		System.out.println("amdin.login 메서드");
+		Integer adminNumber = 0;
+		adminNumber = sqlSession.selectOne("admin.login", adminDTO);
+		if(adminNumber == null) {
+			adminNumber = 0;
+		}
+		return adminNumber;
 	 }
 	
+//	회원 탈퇴
 	public void kill(int userNumber) {
 		System.out.println("amdin.kill 메서드");
 		sqlSession.delete("admin.kill", userNumber);
 	}
 	
+//	식고수 -> 식집사 강등
 	public void down(int userNumber) {
 		System.out.println("amdin.down 메서드");
 		sqlSession.update("admin.down", userNumber);
 	}
 	
+//	식집사 -> 식고수 등업
 	public void up(int userNumber) {
 		System.out.println("amdin.up 메서드");
 		sqlSession.update("admin.up", userNumber);

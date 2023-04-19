@@ -4,13 +4,18 @@
 
 <mapper namespace="admin">
 	<!-- 로그인 처리 -->
-	<select id="select" resultType="AdminDTO"
+	<select id="login" resultType="_int"
 		parameterType="AdminDTO">
-		select admin_number , admin_id, admin_password,
-		admin_name, admin_team from
-		tbl_admin
+		select admin_number 
+		from tbl_admin
 		where admin_id = #{adminId} and
 		admin_password = #{adminPassword}
+	</select>
+	
+	<select id="adminSelect">
+		select * from tbl_admin_file taf 
+		right join tbl_admin ta on taf.admin_number = ta.admin_number 
+		where ta.admin_number = 1;
 	</select>
 
 	<select id="getTotal" resultType="_int">

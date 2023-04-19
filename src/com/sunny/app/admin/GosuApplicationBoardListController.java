@@ -18,14 +18,17 @@ public class GosuApplicationBoardListController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
 		GosuApplicationListDAO gosuApplicationDAO = new GosuApplicationListDAO();
+		int adminNumber = 0;
 		
 		// 세션체크
-		if (!AdminUtils.sessionCheck(req)) {
+		if (AdminUtils.sessionCheck(req)==0) {
 			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+		} else {
+			adminNumber = AdminUtils.sessionCheck(req);
 		}
 		
+		System.out.println("adminNumber = " + adminNumber);
 		
 		Map<String, Integer> pageMap = new HashMap<>();
 		

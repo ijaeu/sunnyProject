@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #0f0f0f;
+  color: #bbb;
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+}
+footer a:visited {
+  text-decoration: none;
+  color: #bbb;
+}
+
+footer a:link {
+  text-decoration: none;
+  color: #bbb;
+}
+
+footer a:hover {
+  color: #44d62c;
+  text-decoration-line: underline;
+}
+
+.footer-all {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+}
+.footer-container1 {
+  width: 60%;
+}
+
+.parrot-and-teamname {
+  display: flex;
+}
+
+.team-name {
+  display: flex;
+  align-items: center;
+}
+
+.team-name {
+  font-size: 30px;
+}
+
+.footer-service {
+  margin: 10px 0px 30px 0px;
+}
+
+.team-explain {
+  margin-bottom: 30px;
+}
+
+.team-explanation-li {
+  list-style: none;
+}
+
+.team-logo {
+  height: 300px;
+  width: 300px;
+}
+
+.footer-container2 {
+  width: 40%;
+}
+.team-logo-box {
+  display: flex;
+  justify-content: right;
+}
+
+.icon-link {
+  margin-top: 10px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon-ul li {
+  float: left;
+  margin-left: 20px;
+}

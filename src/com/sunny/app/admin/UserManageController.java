@@ -22,18 +22,21 @@ public class UserManageController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String searchWord = req.getParameter("searchWord");
-		System.out.println("=====================");
-		System.out.println(searchWord);
 		
 		AdminDAO adminDAO = new AdminDAO();
 		UserManageDAO userManageDAO = new UserManageDAO();
 		HeaderInfoVO headerinfoVO = adminDAO.headerInfo();
 		
+		int adminNumber = 0;
+		
 		// 세션체크
-		if (!AdminUtils.sessionCheck(req)) {
-			resp.sendRedirect("/admin/login.ad?login=noInfo");
-			return;
+		if (AdminUtils.sessionCheck(req)==0) {
+			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+		} else {
+			adminNumber = AdminUtils.sessionCheck(req);
 		}
+		
+		System.out.println("adminNumber = " + adminNumber);
 		
 		Map<String, Object> pageMap = new HashMap<>();
 		pageMap.put("searchWord", searchWord); 

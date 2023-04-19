@@ -207,12 +207,8 @@ a:visited {
   margin: 50px auto;
 }
 
-div {
-  /* border: 1px solid white; */
-}
-
 .view-wrap {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .user-manage-table {
@@ -287,7 +283,7 @@ td {
 /* search */
 
 .search {
-  margin-top: 20px;
+  margin-bottom: 20px; 
   margin-left: 700px;
   position: relative;
   height: 50px;

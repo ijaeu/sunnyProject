@@ -141,7 +141,7 @@
 		</div>
 	</div>
 	    <jsp:include
-		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
+		page="${pageContext.request.contextPath}/app/admin/adminFooter.jsp" />
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="../../assets/js/userDetail.js"></script>
 </body>

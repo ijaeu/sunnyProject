@@ -23,7 +23,7 @@ public class AdminLoginController implements Execute{
 
 		AdminDTO adminDTO = new AdminDTO();
 		AdminDAO adminDAO = new AdminDAO();
-		final String path;
+		String path = "";
 		
 		
 		String adminId = (String)req.getParameter("adminId");
@@ -32,22 +32,26 @@ public class AdminLoginController implements Execute{
 		// sha256 비밀번호 암호화 처리 
 		adminPW = AdminUtils.pwSha256(adminPW);
 		
+		// adminDTO 에 입력한 값 담기
 		adminDTO.setAdminId(adminId);
 		adminDTO.setAdminPassword(adminPW);
         
-		List<AdminDTO> adminList = adminDAO.select(adminDTO);
-		System.out.println("adminList size = " + adminList.size());
+		//	login 메서드 + 쿼리 실행 후 adminNumber 반환
+		Integer adminNumber = adminDAO.login(adminDTO);
 		
-		if(adminList.size() > 0) {
+		//	반환되는 값으로 입력한 정보가 맞는지 확인 후 경로 설정
+		if(adminNumber > 0) {
 			System.out.println("맞음");
 			path = "/admin/select.ad";
-			req.getSession().setAttribute("adminNumber", adminList.get(0).getAdminNumber());
-		}else {
+			req.getSession().setAttribute("adminNumber", adminNumber);
+		}else if(adminNumber == 0) {
 			System.out.println("아이디 or 비밀번호 틀림");
 			path = "/admin/login.ad?login=fail";
-			
 		}
+		
+		//	경로 확인
 		System.out.println("path = " + path);
+		//	경로로 페이지 이동
 		resp.sendRedirect(path);
 	}
 }
