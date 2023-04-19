@@ -1,3 +1,10 @@
+let $headerList = $('.header2-menu-list>a');
+$headerList.removeClass('header-active');
+
+let $headerStory = $('#header-story');
+$headerStory.addClass('header-active');
+
+
 
 let $fileInput = $('#file');
 let $fileList = $(".file-list");

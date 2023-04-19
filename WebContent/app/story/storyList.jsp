@@ -16,8 +16,8 @@
 	rel="stylesheet" />
 </head>
 <body>
-<jsp:include
-   page="${pageContext.request.contextPath}/app/header/header.jsp"/>
+	<jsp:include
+		page="${pageContext.request.contextPath}/app/header/header.jsp" />
 	<div class="container">
 		<article class="bntslide">
 			<div class="holder">
@@ -37,78 +37,95 @@
 		</article>
 		<h3 class="subtit">볕 들 스토리들</h3>
 
+
 		<article class="holder2">
 			<div class="storyList sl">
-    <ul class="listUl">
-        <c:choose>
-            <c:when test="${not empty storyList}">
-                <c:forEach var="story" items="${storyList}">
-                    <li class="listLi">
-                        <div class="top tBox">
-                            <a href="${pageContext.request.contextPath}/app/user/myPage.jsp  <%-- /user/myPageOk.us?=userNumber=${story.getUserNumber()} --%>">
-                                <div class="p1 proimg">
-                                    <img src="${story.getUserProfileImage()}" alt="">
-                                </div>
-                                <p class="p1 profile">${story.getUserNickname()}</p>
-                            </a>
-                            <button type="button" id="follow-button" onclick="toggleFollow(this)" class="p1 follow dir">팔로우</button>
-                        </div>
-                        <a href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${story.getStoryNumber()}">
-                            <div class="img-container">
-                                <div class="coverimg">
-                                    <img src="${pageContext.request.contextPath}/storyUpload/${story.getFileSystemName()}" alt="">
-                                </div>
-                            </div>
-                            <p class="imgtilte">${story.getStoryTitle()}</p>
-                        </a>
-                    </li>
-                </c:forEach>
-            </c:when>
-            <c:otherwise>
-                <tr>
-                    <td colspan="5" align="center">등록된 스토리가 없습니다.</td>
-                </tr>
-            </c:otherwise>
-        </c:choose>
-    </ul>
-</div>
-</article>
-</div>
-
-			<div class="pagination">
-				<ul>
-					<c:if test="${prev}">
-						<li><a
-							href="${pageContext.request.contextPath}/story/storyListOk.st?page=${startPage -1}"
-							class="prev">&lt;</a></li>
-					</c:if>
-
-					<c:forEach var="i" begin="${startPage}" end="${endPage}">
-						<c:choose>
-							<c:when test="${!(i==page)}">
-								<li><a
-									href="${pageContext.request.contextPath}/story/storyListOk.st?page=${i}">
-										<c:out value="${i}" />
-								</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="#" class="active"> <c:out value="${i}" />
-								</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-
-					<c:if test="${next}">
-						<li><a
-							href="${pageContext.request.contextPath}/story/storyListOk.st?page=${endPage +1}"
-							class="next">&gt;</a></li>
-					</c:if>
+				<ul class="listUl">
+					<c:choose>
+						<c:when test="${not empty storyList}">
+							<c:forEach var="story" items="${storyList}">
+								<li class="listLi">
+									<div class="top tBox">
+										<a
+											href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${story.getUserNumber()}">
+											<div class="p1 proimg">
+												<img
+													src="${pageContext.request.contextPath}/upload/uploadProfile/${story.getUserProfileImage()}"
+													alt="">
+											</div>
+											<p class="p1 profile">${story.getUserNickname()}</p>
+										</a>
+										<c:choose>
+										<c:when test="${story.getFollowingStatus() == 0 }">
+											<button type="button"
+												class="p1 follow dir"
+												data-userNumber="${story.getUserNumber()}">팔로우</button>
+										</c:when>
+										<c:otherwise>
+											<button type="button"
+												class="p1 follow dir following"
+												data-userNumber="${story.getUserNumber()}">팔로잉</button>
+										</c:otherwise>
+										</c:choose>
+									</div> <a
+									href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${story.getStoryNumber()}">
+										<div class="img-container">
+											<div class="coverimg">
+												<img
+													src="${pageContext.request.contextPath}/upload/storyUpload/${story.getFileSystemName()}"
+													alt="">
+											</div>
+										</div>
+										<p class="imgtilte">${story.getStoryTitle()}</p>
+								</a>
+								</li>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<tr>
+								<td colspan="5" align="center">등록된 스토리가 없습니다.</td>
+							</tr>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 			</div>
 		</article>
-		<script
-			src="${pageContext.request.contextPath}/assets/js/storyList.js"></script>
-		<jsp:include
-   page="${pageContext.request.contextPath}/app/admin/footer.jsp"/>
+	</div>
+
+	<div class="pagination">
+		<ul>
+			<c:if test="${prev}">
+				<li><a
+					href="${pageContext.request.contextPath}/story/storyListOk.st?page=${startPage -1}"
+					class="prev">&lt;</a></li>
+			</c:if>
+
+			<c:forEach var="i" begin="${startPage}" end="${endPage}">
+				<c:choose>
+					<c:when test="${!(i==page)}">
+						<li><a
+							href="${pageContext.request.contextPath}/story/storyListOk.st?page=${i}">
+								<c:out value="${i}" />
+						</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="#" class="active"> <c:out value="${i}" />
+						</a></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>
+
+			<c:if test="${next}">
+				<li><a
+					href="${pageContext.request.contextPath}/story/storyListOk.st?page=${endPage +1}"
+					class="next">&gt;</a></li>
+			</c:if>
+		</ul>
+	</div>
+	</article>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/storyList.js"></script>
+	<jsp:include
+		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
 </body>
 </html>

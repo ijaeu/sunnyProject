@@ -22,15 +22,24 @@
 		<article class="view-top">
 			<div class="infomation">
 				<div class="txt-area">
-					<a href="${pageContext.request.contextPath}">
+					<a
+						href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${story.getUserNumber()}">
 						<div class="profile-img">
-							<img alt="" src="${story.getUserProfileImage()}">
+							<img alt=""
+								src="${pageContext.request.contextPath}/upload/uploadProfile/${story.getUserProfileImage()}">
 						</div>
 						<p class="profile">${story.getUserNickname()}</p>
 					</a>
-					<button type="button" id="follow-button"
-						onclick="toggleFollow(this)" class="p1 follow dir">
-						팔로우</button>
+					<c:choose>
+						<c:when test="${story.getFollowingStatus() == 0 }">
+							<button type="button" class="p1 follow dir"
+								data-userNumber="${story.getUserNumber()}">팔로우</button>
+						</c:when>
+						<c:otherwise>
+							<button type="button" class="p1 follow dir following"
+								data-userNumber="${story.getUserNumber()}">팔로잉</button>
+						</c:otherwise>
+					</c:choose>
 				</div>
 			</div>
 
@@ -49,26 +58,32 @@
 				<c:out value="${story.getStoryContent()}" escapeXml="false"></c:out>
 				<c:forEach var="storyFile" items="${story.getStoryFiles()}">
 					<div class="story-imgBox1">
-						<img src="${pageContext.request.contextPath}/storyUpload/${storyFile.getFileSystemName1()}">
+						<img
+							src="${pageContext.request.contextPath}/upload/storyUpload/${storyFile.getFileSystemName1()}">
 					</div>
 				</c:forEach>
 				<c:out value="${story.getStoryContent2()}" escapeXml="false"></c:out>
 				<c:forEach var="storyFile" items="${story.getStoryFiles()}">
-					<div class="story-imgBox2" style="${empty storyFile.getFileSystemName2() ? 'display:none;' : ''}">
-						<img src="${pageContext.request.contextPath}/storyUpload/${storyFile.getFileSystemName2()}">
+					<div class="story-imgBox2"
+						style="${empty storyFile.getFileSystemName2() ? 'display:none;' : ''}">
+						<img
+							src="${pageContext.request.contextPath}/upload/storyUpload/${storyFile.getFileSystemName2()}">
 					</div>
 				</c:forEach>
 				<c:out value="${story.getStoryContent3()}" escapeXml="false"></c:out>
 				<c:forEach var="storyFile" items="${story.getStoryFiles()}">
-					<div class="story-imgBox3" style="${empty storyFile.getFileSystemName3() ? 'display:none;' : ''}">
-						<img src="${pageContext.request.contextPath}/storyUpload/${storyFile.getFileSystemName3()}">
+					<div class="story-imgBox3"
+						style="${empty storyFile.getFileSystemName3() ? 'display:none;' : ''}">
+						<img
+							src="${pageContext.request.contextPath}/upload/storyUpload/${storyFile.getFileSystemName3()}">
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 
 		<div class="btn-groups">
-				<button type="button" class="list-btn" data-storyNumber="${story.getStoryNumber()}">목록</button>
+			<button type="button" class="list-btn"
+				data-storyNumber="${story.getStoryNumber()}">목록</button>
 
 			<c:if test="${sessionScope.userNumber == story.getUserNumber()}">
 				<button type="button" class="modify-btn">수정</button>

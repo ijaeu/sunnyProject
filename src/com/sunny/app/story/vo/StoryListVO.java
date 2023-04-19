@@ -19,6 +19,7 @@ public class StoryListVO {
 	private String userProfileImage;
 	private String fileSystemName;
 	private List<StoryFileDTO> storyFiles;
+	private int followingStatus;
 	
 	
 	public StoryListVO() {}
@@ -154,14 +155,23 @@ public class StoryListVO {
 	}
 
 
+	public int getFollowingStatus() {
+		return followingStatus;
+	}
+
+
+	public void setFollowingStatus(int followingStatus) {
+		this.followingStatus = followingStatus;
+	}
+
+
 	@Override
 	public String toString() {
 		return "StoryListVO [storyNumber=" + storyNumber + ", storyTitle=" + storyTitle + ", storyContent="
 				+ storyContent + ", storyContent2=" + storyContent2 + ", storyContent3=" + storyContent3
 				+ ", storyViewcnt=" + storyViewcnt + ", storyDate=" + storyDate + ", lastUpdate=" + lastUpdate
 				+ ", userNumber=" + userNumber + ", userNickname=" + userNickname + ", userProfileImage="
-				+ userProfileImage + ", fileSystemName=" + fileSystemName + ", storyFiles=" + storyFiles + "]";
+				+ userProfileImage + ", fileSystemName=" + fileSystemName + ", storyFiles=" + storyFiles
+				+ ", followingStatus=" + followingStatus + "]";
 	}
-
-
 }
