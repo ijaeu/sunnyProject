@@ -22,7 +22,7 @@ public class MyPageOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		long startTime = System.currentTimeMillis();
 		System.out.println("myPageOk컨트롤러진입");
 		
 		HttpSession session = req.getSession();
@@ -92,6 +92,8 @@ public class MyPageOkController implements Execute {
 		
 		req.setAttribute("myPage", myPageDTO);
 		
+		long endTime = System.currentTimeMillis();
+		System.out.println("최종 시간 : " + (endTime - startTime)/1000.0 + "s");
 		req.getRequestDispatcher("/app/user/myPage.jsp").forward(req, resp);
 		
 	}
