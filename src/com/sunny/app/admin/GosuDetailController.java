@@ -22,11 +22,16 @@ public class GosuDetailController implements Execute{
 		GosuDetailDAO gosuDetailDAO = new GosuDetailDAO();
 		GosuDetailVO gosuDetailVO = gosuDetailDAO.gosuDetail(userNumber);
 		
+		int adminNumber = 0;
+		
 		// 세션체크
-		if (!AdminUtils.sessionCheck(req)) {
-			resp.sendRedirect("/admin/login.ad?login=noInfo");
-			return;
+		if (AdminUtils.sessionCheck(req)==0) {
+			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+		} else {
+			adminNumber = AdminUtils.sessionCheck(req);
 		}
+		
+		System.out.println("adminNumber = " + adminNumber);
 		
 		// 회원정보
 		req.setAttribute("gosuDetail", gosuDetailVO);

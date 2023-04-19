@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="../../assets/css/footer.css" />
+<link rel="stylesheet" href="../../assets/css/adminFooter.css" />
 <footer>
   <div class="footer-all">
     <div class="footer-container1">
@@ -40,7 +40,7 @@
         </ul>
       </div>
       <span class="last-say">식물친화 소금. 소금이귀여워.</span>
-      <span class="plant-img"><a href="/admin/login.ad"><img src="../../assets/img/footer/cuteplant.png" alt="" /></a></span>
+      <span class="plant-img"><a href="/main/mainOk.ma"><img src="../../assets/img/footer/cuteplant.png" alt="" /></a></span>
     </div>
     <div class="footer-container2">
       <div class="team-logo-box">
