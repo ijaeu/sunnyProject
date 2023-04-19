@@ -127,18 +127,33 @@
 				</div>
 			</div>
 		</section>
-		<c:if
-			test="${sessionScope.userNumber eq myPage.getUserNumber() && myPage.getGradeNumber()==100}">
-			<section class="main2">
-				<div class="apply-expert">
+		
+				<c:if
+					test="${sessionScope.userNumber == myPage.getUserNumber()}">
+					<section class="main2">
+						<div class="apply-expert">
 					<!-- 식고수 신청 페이지로 이동 -->
 					<!-- 식고수인 경우 버튼없앰 -->
-					<a
-						href="${pageContext.request.contextPath}/gosuApply/gosuApply.ga?userNumber=${myPage.getUserNumber()}">식고수
-						신청하기</a>
-				</div>
-			</section>
-		</c:if>
+					<c:choose>
+						<c:when test="${myPage.getGradeNumber()==400}">
+							<p></p>
+						</c:when>
+						<c:when test="${myPage.getGradeNumber()==300}">
+							<p></p>
+						</c:when>
+						<c:when test="${myPage.getGradeNumber()==200}">
+							<p>식고수 신청이 완료되었습니다.</p>
+						</c:when>
+						<c:when test="${myPage.getGradeNumber()==100}">
+							<a
+								href="${pageContext.request.contextPath}/gosuApply/gosuApply.ga?userNumber=${myPage.getUserNumber()}">식고수
+								신청하기</a>
+						</c:when>
+					</c:choose>
+						</div>
+					</section>
+				</c:if>
+			
 		<!-- 마이스토리 목록 -->
 		<section class="main3">
 			<div class="main3--top" id="storySection">
