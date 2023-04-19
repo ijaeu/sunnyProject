@@ -44,13 +44,13 @@
 						<div class="profile-photo-regist">
 							<div class="profile-photo">
 								<c:choose>
-									<c:when test="${empty myPage.getUserFile()}">
+									<c:when test="${empty myPage.getFileSystemName()}">
 										<img
 											src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
 									</c:when>
 									<c:otherwise>
 										<img
-											src="${pageContext.request.contextPath}/upload/profileUpload/${myPage.getUserFile().getFileSystemName()}"
+											src="${pageContext.request.contextPath}/upload/profileUpload/${myPage.getFileSystemName()}"
 											alt="" />
 									</c:otherwise>
 								</c:choose>

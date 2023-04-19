@@ -51,6 +51,7 @@ public class UserFileOkController implements Execute {
 	         userFileDTO.setFileSystemName(fileSystemName);
 	         userFileDTO.setFileOriginalName(fileOriginalName);
 	         
+	         System.out.println(fileSystemName);
 //	         업데이트 하는경우 실제 파일경로에서 원래있던 사진 지움
 	         if(userFileDAO.select(userNumber)>0) {
 	        	 

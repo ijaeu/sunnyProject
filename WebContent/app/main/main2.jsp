@@ -64,19 +64,41 @@
 								<li class="main2-story-list">
 									<div class="main2-story-list-user">
 										<!-- 프로필을 누르면 이사람의 마이페이지로 이동 -->
-										<a href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${mainStory.getUserNumber()}">
+										<a
+											href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${mainStory.getUserNumber()}">
 											<div class="story-user-photo">
-												<img src="${pageContext.request.contextPath}/upload/profileUpload/${mainStory.getUserProfileImage()}" alt="">
+												<c:choose>
+													<c:when test="${empty mainStory.getUserProfileImage()}">
+														<img
+															src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+													</c:when>
+													<c:otherwise>
+														<img
+															src="${pageContext.request.contextPath}/upload/profileUpload/${mainStory.getUserProfileImage()}"
+															alt="">
+													</c:otherwise>
+												</c:choose>
 											</div>
 											<p>${mainStory.getUserNickname()}</p>
 										</a>
 									</div>
 									<div class="main2-story-list-content">
 										<!-- 게시물을 누르면 해당 스토리읽기 페이지로 이동 -->
-										<a href="${pageContext.request.contextPath}/story/storyListOk.st?storyNumber=${mainStory.getStoryNumber()}">
-										<!-- 스토리커버사진, 제목 -->
+										<a
+											href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${mainStory.getStoryNumber()}">
+											<!-- 스토리커버사진, 제목 -->
 											<div class="story-cover-photo">
-												<img src="${pageContext.request.contextPath}/upload/storyUpload/${mainStory.getFileSystemName()}" alt="">
+												<c:choose>
+													<c:when test="${empty mainStory.getFileSystemName()}">
+														<img
+															src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+													</c:when>
+													<c:otherwise>
+														<img
+															src="${pageContext.request.contextPath}/upload/storyUpload/${mainStory.getFileSystemName()}"
+															alt="">
+													</c:otherwise>
+												</c:choose>
 											</div>
 											<p>${mainStory.getStoryTitle()}</p>
 										</a>
@@ -99,19 +121,32 @@
 				<div class="main3-left">
 					<ul class="main3-gosu-list-ul">
 						<li class="main3-gosu-li">
-							<!-- 선택한 식고수의 질문페이지로 이동--> <a href="${pageContext.request.contextPath}/question/questionListOk.qs?gosuNumber=${main.getGosu().getGosuNumber()}">
+							<!-- 선택한 식고수의 질문페이지로 이동--> <a
+							href="${pageContext.request.contextPath}/question/questionListOk.qs?gosuNumber=${main.getGosu().getGosuNumber()}">
 								<div class="main3-gosu-name">
 									<!-- 식고수이름 span에 꽂아준다 -->
 									<h3>
-										식고수 <span><c:out value="${main.getGosu().getUserNickname()}" /></span>님에게
+										식고수 <span><c:out
+												value="${main.getGosu().getUserNickname()}" /></span>님에게
 									</h3>
 									<h3>물어보세요</h3>
 								</div> <!-- 식고수프로필사진 꽂아준다 -->
 								<div class="main3-gosu-photo">
-									<img src="${pageContext.request.contextPath}/upload/profileUpload/${main.getGosu().getFileSystemName()}" alt="">
+									<c:choose>
+										<c:when test="${empty main.getGosu().getFileSystemName()}">
+											<img
+												src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+										</c:when>
+										<c:otherwise>
+											<img
+												src="${pageContext.request.contextPath}/upload/profileUpload/${main.getGosu().getFileSystemName()}"
+												alt="">
+										</c:otherwise>
+									</c:choose>
 								</div> <!-- 식물분야 span에 꽂아준다 -->
 								<p>
-									<span><c:out value="${main.getGosu().getGosuFields()}" /></span> 키우는 꿀팁!
+									<span><c:out value="${main.getGosu().getGosuFields()}" /></span>
+									키우는 꿀팁!
 								</p>
 						</a>
 						</li>

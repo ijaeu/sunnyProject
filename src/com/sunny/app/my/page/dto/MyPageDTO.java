@@ -12,7 +12,7 @@ public class MyPageDTO {
 	private String userNickname;
 	private String userComment;
 	private int gradeNumber;
-	private UserFileVO userFile;
+	private String fileSystemName;
 	private int followerCnt;
 	private int followingCnt;
 	private int storyCnt;
@@ -63,13 +63,13 @@ public class MyPageDTO {
 	}
 
 
-	public UserFileVO getUserFile() {
-		return userFile;
+	public String getFileSystemName() {
+		return fileSystemName;
 	}
 
 
-	public void setUserFile(UserFileVO userFile) {
-		this.userFile = userFile;
+	public void setFileSystemName(String fileSystemName) {
+		this.fileSystemName = fileSystemName;
 	}
 
 
@@ -126,10 +126,12 @@ public class MyPageDTO {
 	@Override
 	public String toString() {
 		return "MyPageDTO [userNumber=" + userNumber + ", userNickname=" + userNickname + ", userComment=" + userComment
-				+ ", gradeNumber=" + gradeNumber + ", userFile=" + userFile + ", followerCnt=" + followerCnt
+				+ ", gradeNumber=" + gradeNumber + ", fileSystemName=" + fileSystemName + ", followerCnt=" + followerCnt
 				+ ", followingCnt=" + followingCnt + ", storyCnt=" + storyCnt + ", gosuNumber=" + gosuNumber
 				+ ", storyFiles=" + storyFiles + "]";
 	}
+
+
 
 	
 	
