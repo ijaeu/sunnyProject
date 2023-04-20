@@ -1,7 +1,5 @@
 package com.sunny.app.admin.dao;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
@@ -18,8 +16,9 @@ public class AdminDAO {
 	}
 	
 //	admin 회원정보 가져오기
-	public void adminSelect(int adminNumber) {
+	public AdminDTO adminSelect(int adminNumber) {
 		System.out.println("amdin.adminSelect 메서드");
+		return sqlSession.selectOne("admin.adminSelect", adminNumber);
 	}
 	
 //	admin login 
