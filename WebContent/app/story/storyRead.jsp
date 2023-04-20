@@ -17,7 +17,7 @@
 </head>
 <body>
 	<jsp:include
-		page="${pageContext.request.contextPath}/app/header/header.jsp" />
+		page="${pageContext.request.contextPath}/main/mainOk.ma" />
 	<div class="container">
 		<article class="view-top">
 			<div class="infomation">
