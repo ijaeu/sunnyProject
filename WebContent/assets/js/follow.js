@@ -22,41 +22,61 @@ if (urlParams.get('tab') == 'following') {
 //=============================
 
 // 팔로우하기 버튼 눌렀을 때 색 변환
-$(".follow-list").on("click",'.user-follow', function() {
-	/*내가 누른 사람의 userNumber*/
+$(".follow-list").on("click", '.user-follow', function() {
 	let userNumber = $(this).data('usernumber');
+	let target = this;
 	console.log(userNumber);
-	
-	// console.log(this);
-	if ($(this).hasClass("following") === true) {
-		$(this).text("팔로잉");
-		// 비동기로 내 팔로잉테이블에 추가
-		$.ajax({
-			url: "/follow/follow.fo",
-			type: "get",
-			data: { userNumber: userNumber },
-			success: function() {
-				console.log("팔로우성공");
-			},
-			error: function(a, b, c) {
-				console.log(c);
+	$.ajax({
+		url: "/follow/follow.fo",
+		type: "get",
+		success: function(result) {
+			console.log(result);
+			if (result == "fail") {
+				window.location.href = "/user/login.us";
+			} else {
+				/*내가 누른 사람의 userNumber*/
+				console.log(userNumber);
+				console.log(target);
+				$(target).toggleClass("following");
+				// console.log(this);
+				if ($(target).hasClass("following") === true) {
+					$(target).text("팔로잉");
+					// 비동기로 내 팔로잉테이블에 추가
+					followInsertAjax(userNumber);
+				} else {
+					$(target).text("팔로우");
+					// 비동기로 내 팔로잉테이블에서 삭제
+					followDeleteAjax(userNumber);
+				}
 			}
-		});
-	} else {
-		$(this).text("팔로우");
-		// 비동기로 내 팔로잉테이블에서 삭제
-		$.ajax({
-			url: "/follow/followDelete.fo",
-			type: "get",
-			data: { userNumber: userNumber },
-			success: function() {
-				console.log("팔로우취소");
-			},
-			error: function(a, b, c) {
-				console.log(c);
-			}
-		});
-	}
-	$(this).toggleClass("following");
+		}
+	});
 });
 
+function followInsertAjax(userNumber) {
+	$.ajax({
+		url: "/follow/followInsert.fo",
+		type: "get",
+		data: { userNumber: userNumber },
+		success: function() {
+			console.log("팔로우성공");
+		},
+		error: function(a, b, c) {
+			console.log(c);
+		}
+	});
+}
+
+function followDeleteAjax(userNumber) {
+	$.ajax({
+		url: "/follow/followDelete.fo",
+		type: "get",
+		data: { userNumber: userNumber },
+		success: function() {
+			console.log("팔로우취소");
+		},
+		error: function(a, b, c) {
+			console.log(c);
+		}
+	});
+}

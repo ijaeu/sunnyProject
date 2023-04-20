@@ -1,6 +1,7 @@
 package com.sunny.app.follow;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +19,16 @@ public class FollowController implements Execute {
 	      Integer userNumber = (Integer)session.getAttribute("userNumber");
 	      String path = null;
 	      
+	      resp.setContentType("text/html; charset=utf-8");
+	      PrintWriter out = resp.getWriter();
 	      if(userNumber == null) {
-	         path = "/user/login.us";
+	        out.print("fail");
+	        out.close();
 	      }else {
-	    	  path ="/follow/followInsert.fo";
+	    	  out.print("success");
+	    	  out.close();
 	      }
 	      
-	      resp.sendRedirect(path);
-
 	}
 
 }
