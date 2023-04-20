@@ -165,7 +165,7 @@ if (algorithmResult.equals("00000")) {
     <div class="result-name"><%=plantName%> </div>
 <img src="<%=plantImg%>" alt="Image" class="img1"/>
     <div class="result-desc">
-      <ul class="content">
+      <ul class="content" style="font-family: 'Poor Story', cursive; font-size : 20px;">
         <li><%=plantContent%></li>
       </ul>
     </div>
