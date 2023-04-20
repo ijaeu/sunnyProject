@@ -30,13 +30,12 @@
 					<div class="admin-img-name-date">
 						<div class="admin-imgbox">
 							<div class="admin-img">
-								<a href=""><img src="../../assets/img/admin/sogum.jpg"
-									alt="" /></a>
+								<img src="../../assets/img/admin/${adminInfo.getAdminId() }.gif" alt="" />
 							</div>
 						</div>
 						<div class="admin-name-date">
-							<div class="admin-name">소금</div>
-							<div class="admin-date">가입일 2023.03.21</div>
+							<div class="admin-name">${adminInfo.getAdminName() }</div>
+							<div class="admin-date">가입일 ${adminInfo.getAdminDate() }</div>
 						</div>
 					</div>
 				</div>
