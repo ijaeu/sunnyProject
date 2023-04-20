@@ -31,7 +31,7 @@
 							alt="">
 					</a></li>
 					<li class="banner"><a
-						href="${pageContext.request.contextPath}/app/algorithm/index.jsp">
+						href="${pageContext.request.contextPath}/algorithm/start.ag">
 							<p class="banner3">나에게 꼭 맞는 반려식물찾기</p> <img
 							src="${pageContext.request.contextPath}/assets/img/main/mainBanner3.jpg"
 							alt="">
@@ -173,7 +173,7 @@
 			<!-- 식물찾기 알고리즘 페이지로 이동 -->
 			<div class="main4-box"
 				style="background-image:url('${pageContext.request.contextPath}/assets/img/main/mainBanner3.jpg')">
-				<a href="${pageContext.request.contextPath}/algorithm/index.ag">
+				<a href="${pageContext.request.contextPath}/algorithm/start.ag">
 					<p>나에게 꼭 맞는 반려식물을 찾아보세요</p>
 				</a>
 			</div>

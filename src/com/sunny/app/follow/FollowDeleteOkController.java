@@ -1,6 +1,7 @@
 package com.sunny.app.follow;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -15,16 +16,16 @@ public class FollowDeleteOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		FollowDAO followDAO = new FollowDAO();
-		FollowDTO followDTO = new FollowDTO();
-		
 		HttpSession session = req.getSession();
 		Integer userNumber = (Integer) session.getAttribute("userNumber");
 
-		followDTO.setUserFrom(userNumber);
-		followDTO.setUserTo(Integer.parseInt(req.getParameter("userNumber")));
-		
-		followDAO.delete(followDTO);
-	}
+			FollowDAO followDAO = new FollowDAO();
+			FollowDTO followDTO = new FollowDTO();
 
+			followDTO.setUserFrom(userNumber);
+			followDTO.setUserTo(Integer.parseInt(req.getParameter("userNumber")));
+
+			followDAO.delete(followDTO);
+		
+	}
 }
