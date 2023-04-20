@@ -26,7 +26,7 @@
 						href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${story.getUserNumber()}">
 						<div class="profile-img">
 							<img alt=""
-								src="${pageContext.request.contextPath}/upload/uploadProfile/${story.getUserProfileImage()}">
+								src="${pageContext.request.contextPath}/upload/profileUpload/${story.getUserProfileImage()}">
 						</div>
 						<p class="profile">${story.getUserNickname()}</p>
 					</a>
