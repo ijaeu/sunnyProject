@@ -26,14 +26,13 @@ $(".follow-list").on("click",'.user-follow', function() {
 	/*내가 누른 사람의 userNumber*/
 	let userNumber = $(this).data('usernumber');
 	console.log(userNumber);
-
-	$(this).toggleClass("following");
+	
 	// console.log(this);
 	if ($(this).hasClass("following") === true) {
 		$(this).text("팔로잉");
 		// 비동기로 내 팔로잉테이블에 추가
 		$.ajax({
-			url: "/follow/followInsert.fo",
+			url: "/follow/follow.fo",
 			type: "get",
 			data: { userNumber: userNumber },
 			success: function() {
@@ -58,5 +57,6 @@ $(".follow-list").on("click",'.user-follow', function() {
 			}
 		});
 	}
+	$(this).toggleClass("following");
 });
 

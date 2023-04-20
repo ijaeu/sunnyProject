@@ -1,4 +1,4 @@
-package com.sunny.app.user;
+package com.sunny.app.follow;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.sunny.app.Execute;
 import com.sunny.app.user.dao.UserDAO;
 
-public class MyPageController implements Execute {
+public class FollowController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,12 +21,11 @@ public class MyPageController implements Execute {
 	      if(userNumber == null) {
 	         path = "/user/login.us";
 	      }else {
-	    	  path ="/user/myPageOk.us";
+	    	  path ="/follow/followInsert.fo";
 	      }
 	      
 	      resp.sendRedirect(path);
 
-	     
 	}
 
 }
