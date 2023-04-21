@@ -62,5 +62,30 @@
 		and tq.question_status=#{questionStatus}
 		order by tq.last_update
 	</select>
+	
+	<!-- gosu question list page gosu info -->
+	<select id="gosuInfo" parameterType="_int" resultType="GosuInfoVO">
+		select tu.user_nickname, tg.gosu_number 
+		from tbl_user tu join tbl_gosu tg 
+		on tu.user_number = tg.user_number 
+		where tg.gosu_number = #{gosuNumber} 
+	</select>
+	
+	<!-- gosu question list 질문목록 -->
+	<select id="questionList" parameterType="map" resultType="QuestionListVO">
+		select tq.question_number, tq.question_title, date_format(tq.question_date, '%Y-%m-%d') as question_date, tu.user_nickname, tuf.file_system_name 
+		from tbl_gosu tg 
+		left join tbl_question tq on tg.gosu_number = tq.gosu_number
+		left join tbl_user tu on tq.user_number = tu.user_number
+		left join tbl_user_file tuf on tu.user_number = tuf.user_number 
+		where tg.gosu_number = ${gosuNumber}
+		<if test="questionStatus == 0">
+			and tq.question_status = 0
+		</if>
+		<if test="questionStatus == 1">
+			and tq.question_status = 1
+		</if>
+		order by tq.last_update
+	</select>
 </mapper>
 

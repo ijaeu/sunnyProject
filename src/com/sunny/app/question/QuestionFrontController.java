@@ -36,6 +36,9 @@ public class QuestionFrontController extends HttpServlet{
 		      case "/question/questionWriteOk.qs":
 		    	  new QuestionWriteOkController().execute(req, resp);
 		         break;
+		      case "/question/questionListChange.qs":
+		    	  new QuestionListChangeController().execute(req, resp);
+		    	  break;
 		}
 	}
 }
