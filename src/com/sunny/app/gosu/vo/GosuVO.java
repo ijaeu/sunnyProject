@@ -8,8 +8,23 @@ public class GosuVO {
 	private String gosuFields;
 	private int gosuNumber;
 	private String fileSystemName;
+	private int followingStatus;
 	
 	public GosuVO() {	}
+
+	
+	
+	public int getFollowingStatus() {
+		return followingStatus;
+	}
+
+
+
+	public void setFollowingStatus(int followingStatus) {
+		this.followingStatus = followingStatus;
+	}
+
+
 
 	public int getUserNumber() {
 		return userNumber;
@@ -59,12 +74,15 @@ public class GosuVO {
 		this.fileSystemName = fileSystemName;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "GosuVO [userNumber=" + userNumber + ", userNickname=" + userNickname + ", userComment=" + userComment
 				+ ", gosuFields=" + gosuFields + ", gosuNumber=" + gosuNumber + ", fileSystemName=" + fileSystemName
-				+ "]";
+				+ ", followingStatus=" + followingStatus + "]";
 	}
+
 
 
 }

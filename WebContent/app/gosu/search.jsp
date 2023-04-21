@@ -4,63 +4,94 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>식고수찾기</title>
+<title>식고수에게 물어보기 | 볕 들 무렵</title>
 <link rel="stylesheet"
-	href="${pageContent.request.contextPath}/assets/css/search.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	href="${pageContext.request.contextPath}/assets/css/search.css" />
 </head>
+
 <body>
-	<jsp:include page="${pageContext.request.contextPath}/app/header/header.jsp" />
-	<div class="ex-search">
-		<h3>식고수 찾기</h3>
-<!-- 검색 -->
-		<div class="headsearch">
-			<form action="" class="expertsearch">
-				<input type="text" placeholder="분야를 입력해 식고수 찾기" class="searchtext" name="keyword" id="keyword" />
-				<button class="s-btn" id="s-btn">검색</button>
-			</form>
+	<jsp:include
+		page="${pageContext.request.contextPath}/app/header/header.jsp" />
+	<section class="pcontainer">
+		<div class="ex-search">
+			<h3>우리집 반려식물을 도와줄 식고수를 찾아보세요!</h3>
+			<!-- 검색 -->
+			<div class="headsearch">
+				<form
+					action="${pageContext.request.contextPath}/gosu/searchByKeywordOk.gu"
+					method="GET" class="expertsearch">
+					<input type="text" placeholder="분야를 입력해 식고수 찾기" class="search-text"
+						name="keyword" id="keyword" />
+					<button class="s-btn" id="s-btn">검색</button>
+				</form>
+			</div>
 		</div>
-	</div>
-<!-- 식고수들 -->
-	<c:forEach var="search" items="${gosus}">
-		<div class="search">
-			<div class="mypage">
+		<!-- 하단 -->
+		<!-- 식고수들 -->
+		<c:forEach var="search" items="${gosus}">
+			<div class="search">
+				<!-- 고수 프로필사진 + 닉네임 + 팔로우 -->
 				<div class="profile">
-					<a href="#"> <svg xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 384 512">
-							<!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-							<path
-								d="M384 312.7c-55.1 136.7-187.1 54-187.1 54-40.5 81.8-107.4 134.4-184.6 134.7-16.1 0-16.6-24.4 0-24.4 64.4-.3 120.5-42.7 157.2-110.1-41.1 15.9-118.6 27.9-161.6-82.2 109-44.9 159.1 11.2 178.3 45.5 9.9-24.4 17-50.9 21.6-79.7 0 0-139.7 21.9-149.5-98.1 119.1-47.9 152.6 76.7 152.6 76.7 1.6-16.7 3.3-52.6 3.3-53.4 0 0-106.3-73.7-38.1-165.2 124.6 43 61.4 162.4 61.4 162.4.5 1.6.5 23.8 0 33.4 0 0 45.2-89 136.4-57.5-4.2 134-141.9 106.4-141.9 106.4-4.4 27.4-11.2 53.4-20 77.5 0 0 83-91.8 172-20z" /></svg>
+					<a
+						href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${search.getUserNumber()}">
+						<div class="profile-photo">
+							<c:choose>
+								<c:when test="${empty search.getFileSystemName()}">
+									<img
+										src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+								</c:when>
+								<c:otherwise>
+									<img
+										src="${pageContext.request.contextPath}/upload/profileUpload/${search.getFileSystemName()}"
+										alt="" />
+								</c:otherwise>
+							</c:choose>
+						</div>
+						<div class="expertname">
+							식고수
+							<c:out value="${search.getUserNickname()}" />
+						</div>
 					</a>
-<!-- 고수 닉네임 + 팔로우 -->
-					<div class="expertname">
-						<c:out value="${search.getUserNickname()}" />
-					</div>
+
 					<div class="follow-btn">
-						<button type="submit" class="f-btn" id="ff-btn" onclick="colorChange()">팔로우</button>
+						<!-- 내가 팔로우하고 있으면 팔로잉으로 띄움 -->
+				<c:if test="${sessionScope.userNumber !=  search.getUserNumber()}">
+						<c:if test="${search.getFollowingStatus() == 0 }">
+							<button class="user-follow"
+								data-userNumber="${search.getUserNumber()}">팔로우</button>
+						</c:if>
+						<c:if test="${search.getFollowingStatus() == 1}">
+							<button class="user-follow following"
+								data-userNumber="${search.getUserNumber()}">팔로잉</button>
+						</c:if>
+				</c:if>
 					</div>
 				</div>
-<!-- 소개랑 분야 -->
+				<!-- 소개랑 분야 -->
 				<div class="container">
 					<div class="info">
-						<div class="inffo">소개</div>
-						<p class="txt" id="introduction">
-							<c:out value="${search.getUserComment()}" />
+
+						<p class="gosu-introduction">
+							"<span><c:out value="${search.getUserComment()}" /></span>"
+
 						</p>
-						<div class="major">
-							<div class="inffo">분야</div>
-							<p class="majorname">
-								<c:out value="${search.getGosuFields()}" />
-							</p>
-						</div>
+						<p class="info-gosu gosu-majorname">
+							식고수 <span class="gosu-name"><c:out
+									value="${search.getUserNickname()}" /></span>님에게
+						</p>
+						<p class="info-gosu">
+							<span class="gosu-field"><c:out
+									value="${search.getGosuFields()}" /></span> 키우는 법을 질문하세요!
+						</p>
+
 					</div>
 					<div class="write-btn-wrap">
-<!-- 더보기 페이지 -->
+						<!-- 더보기 페이지 -->
 						<a
 							href="${pageContext.request.contextPath}/question/questionListOk.qs?gosuNumber=${search.getGosuNumber()}"
 							class="plus-btn" onclick="questionList()">더보기</a>
@@ -68,10 +99,12 @@
 				</div>
 
 			</div>
-		</div>
-	</c:forEach>
-
-		<jsp:include page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
-		<script src="${pageContent.request.contextPath}/assets/js/search.js"></script>
+		</c:forEach>
+	</section>
+	<jsp:include
+		page="${pageContext.request.contextPath}/app/admin/footer.jsp" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/search.js"></script>
 </body>
+
 </html>
