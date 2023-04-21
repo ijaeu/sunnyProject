@@ -145,9 +145,39 @@ confirm_password.addEventListener("blur", function () {
 
 	nickname.addEventListener("blur", validateNickname);
 
+/*중복닉네임 메세지*/
+
+// 닉네임 중복검사 결과를 받아와서 출력하는 함수
+function showNicknameCheckResult(message, isValid) {
+  nickname_error.textContent = message;
+  nickname_error.style.display = isValid ? "none" : "inline";
+  nickname_check.textContent = message;
+  nickname_check.style.display = isValid ? "inline" : "none";
+}
+
+// 사용자가 입력한 닉네임이 변경될 때마다 호출되는 함수
+function onNicknameInput() {
+  const userNickname = nickname.value.trim();
+  if (userNickname.length === 0) {
+    showNicknameCheckResult("", false);
+    return;
+  }
+  fetch("/user/checkNickOk.us?userNickname=" + userNickname)
+    .then(response => response.text())
+    .then(result => {
+      showNicknameCheckResult(result, result.includes("사용 가능한"));
+    })
+    .catch(error => {
+      console.error(error);
+      showNicknameCheckResult("서버 에러가 발생했습니다.", false);
+    });
+}
+
+nickname.addEventListener("input", onNicknameInput);
 
 
-/**/
+
+/*아이디*/
 
 
 
@@ -166,9 +196,9 @@ $idInput.on('blur', function(){
       let id = $idInput.val();
    
    $.ajax({
-      url : '/user/checkIdOk.us',
+      url : '/member/checkIdOk.me',
       type : 'get',
-      data : {userId : id},
+      data : {memberId : id},
       success : function(result) {
          $checkMsg.text(result);
          test = result;
@@ -288,9 +318,4 @@ function validateEmail() {
     emailMsg.style.display = 'none';
   }
 }
-
-
-/*중복아이디,정규표현식 안맞는 id 회원가입 막기*/
-
-
 

@@ -143,7 +143,9 @@
               <!-- <div class="input-text2">(변경 불가)</div> -->
             </div> <br>
             <input type="text" placeholder="닉네임(2~10자)" name="userNickname" minlength="2" maxlength="10" required>
+            <br>
             <span id="nickname-error" class="error"></span>
+            <span id="nickname-check" class="check"></span>
             <br><br><br>
             <div class="input-text">
               연락처</div> <br>
