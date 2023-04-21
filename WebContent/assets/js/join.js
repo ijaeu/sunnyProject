@@ -166,9 +166,9 @@ $idInput.on('blur', function(){
       let id = $idInput.val();
    
    $.ajax({
-      url : '/member/checkIdOk.me',
+      url : '/user/checkIdOk.us',
       type : 'get',
-      data : {memberId : id},
+      data : {userId : id},
       success : function(result) {
          $checkMsg.text(result);
          test = result;
@@ -290,6 +290,7 @@ function validateEmail() {
 }
 
 
+/*중복아이디,정규표현식 안맞는 id 회원가입 막기*/
 
 
 
