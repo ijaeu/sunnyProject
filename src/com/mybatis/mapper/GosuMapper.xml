@@ -17,7 +17,7 @@
 		then 1 else 0 end as following_status
 		from
 		tbl_user tu
-		join tbl_gosu tg on tu.user_number = tg.user_number
+		join tbl_gosu tg on tu.user_number = tg.user_number and tu.grade_number =500
 		join (
 		select g.gosu_number, group_concat(f.field_name separator ', ') as
 		gosu_fields
@@ -55,8 +55,7 @@
 		then 1 else
 		0 end as following_status
 		from tbl_user tu
-		join tbl_gosu tg on
-		tu.user_number = tg.user_number
+		join tbl_gosu tg on tu.user_number = tg.user_number and tu.grade_number =500
 		join (
 		select g.gosu_number,
 		group_concat(f.field_name separator ', ') as
