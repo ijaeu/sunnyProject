@@ -56,7 +56,7 @@
   }
 
   // 일정 주기마다 이미지 변경
-  setInterval(changeImage, 130); // 0.1초마다 이미지 변경
+  setInterval(changeImage, 125); // 1.25초마다 이미지 변경
 
   // 페이지 로드 시 이미지 로딩
   window.onload = loadImages;
@@ -66,7 +66,7 @@
     function moveToResult() {
         setTimeout(function () {
             location.href = "/algorithm/result.ag";
-        }, 5000); // 1.5초 후에 result.ag로 이동
+        }, 5000); // 5초 후에 result.ag로 이동
     }
 
 

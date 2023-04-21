@@ -22,7 +22,7 @@
 		<section class="loading">
 			<h1 class="loading-title">당신에게 어울리는 식물은......</h1>
 				<div id="loadingPage">
- 		 <img id="plantImage" src="loading_image_1.jpg">
+ 		 <img id="plantImage">
 			<div class="progress-bar" aria-hidden="true">
 				<span class="progress-bar-gauge"></span>
 			</div>

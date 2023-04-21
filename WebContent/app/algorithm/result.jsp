@@ -30,7 +30,7 @@ String plantImg = "";
 
 if (algorithmResult.equals("00000")) {
     plantName = "극락조";
-    plantContents[0] = "이국적 분위기를 연상케 하는 극락조는 인테리어 식물로 인기가 많아요.";
+    plantContents[0] = "이국적 분위기를 연상케 하는 극락조는 인테리어 식물로 인기가 많아요.👍";
     plantContents[1] = "병충해도 적어서 초보자들도 키우기 쉽답니다. 극락조 중 잎이 큰 친구는 여인초 라고 불려요. ";
     plantContents[2] = "직사광선을 받으면 잎 끝이 탈 수 있어요. 밝은 곳이나 반음지에서 키우는걸 추천합니다. 👍";
     plantContents[3] = "극락조는 뿌리가 굵은 식물이에요. 뿌리가 물을 많이 저장할 수 있어서 화분의 흙이 빠삭하게 말랐을 때 물 주는게 좋아요.";
@@ -65,7 +65,7 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/00100.jpg";
 } else if (algorithmResult.equals("00101")) {
     plantName = "문샤인 산세베리아";
-    plantContents[0] = "문샤인은 산세베리아 종류 중 하나에요. 은빛의 토끼 귀를 닮은 잎 때문에 선물용으로 인기있답니다. ";
+    plantContents[0] = "문샤인은 산세베리아 종류 중 하나에요. 은빛의 토끼 귀를 닮은 잎 때문에 선물용으로 인기있답니다. ❤️";
    	plantContents[1] ="빛을 좋아해서 양지나 반음지에 키우는 것을 추천해요. 그늘에서 오래 키울 경우 잎이 얇아져요!";
    	plantContents[2] ="문샤인은 남아메리카에서 온 친구에요. 추위에 약하답니다. 겨울엔 따뜻한 곳으로 옮겨주세요. ";
    	plantContents[3] ="과습에 취약해서 화분의 흙이 빠삭하게 말랐을 때 물 주는게 좋아요! 🙌";
@@ -93,7 +93,7 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/01000.jpg";
 }else if (algorithmResult.equals("01001")) {
     plantName = "필레아 페페로미아";
-    plantContents[0] = "필레아 페페로미아는 페페종류중 하나에요. 물과 빛을 좋아하는 식물이랍니다.";
+    plantContents[0] = "필레아 페페로미아는 페페종류중 하나에요. 물과 빛을 좋아하는 식물이랍니다.😝";
     plantContents[1] = "필레아는 해를 많이 받을수록 잎이 작고 촘촘하게 자라요. 그렇지 않으면 잎줄기는 길어자고 잎이 커지면서 미워진답니다.";
     plantContents[2] = "직사광선은 잎이 화상을 입을 수 있으니 해가 걸러들어오는 곳에 두는게 좋아요👍 ";
     plantContents[3] = "물은 겉 흙이 빠삭하게 말랐을 때 주는게 좋아요.";
@@ -128,7 +128,7 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/01101.jpg";
 }else if (algorithmResult.equals("01110")) {
     plantName = "뱅갈고무나무";
-    plantContents[0] = "뱅갈고무나무는 인테리어용 화분 선물로 가장 인기 많은 식물이에요. 레몬빛 잎이 매력적인 식물이랍니다.";
+    plantContents[0] = "뱅갈고무나무는 인테리어용 화분 선물로 가장 인기 많은 식물이에요. 레몬빛 잎이 매력적인 식물이랍니다.😁";
     plantContents[1] = "만약 잎이 점점 초록빛으로 변한다면 빛이 부족한지 살펴봐야 해요.";
     plantContents[2] = "뱅갈고무나무는 목 마를 때 잎이 쳐지는 친구에요. ";
     plantContents[3] = "잎이 쳐져있을 때 물을 주는게 좋아요! 🙌";
@@ -177,7 +177,7 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/10100.jpg";
 }else if (algorithmResult.equals("10101")) {
     plantName = "아이스톤";
-    plantContents[0] = "아이스톤은 크로톤 종류 중 하나로, 화려한 핑크빛 잎을 자랑하는 식물이에요. ";
+    plantContents[0] = "아이스톤은 크로톤 종류 중 하나로, 화려한 핑크빛 잎을 자랑하는 식물이에요.👍  ";
     plantContents[1] = "충분한 햇빛을 받아야만 잎이 빨갛게 물들어요.";
     plantContents[2] = "만약 잎이 초록빛으로 변한다면 빛이 부족한지 살펴봐야 해요.";
     plantContents[3] = "아이스톤은 목 마르면 잎을 추욱 늘어뜨리는 친구에요. 잎이 쳐져있을 때 물을 주는게 좋아요! 🙌";
@@ -191,7 +191,7 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/10110.jpg";
 }else if (algorithmResult.equals("10111")) {
     plantName = "립살리스 트리고나";
-    plantContents[0] = "립살리스 트리고나는 잎 단면이 세모 모양인 특이한 식물이에요.";
+    plantContents[0] = "립살리스 트리고나는 잎 단면이 세모 모양인 특이한 식물이에요.😁";
     plantContents[1] ="삐죽삐죽 세모모양의 기둥이 아래로 흘러 내리면서 자라는 모습이 특이해 많은 사랑을 받고 있어요.";
     plantContents[2] = "립살리스는 물을 자주 주지 않아도 되고 키우기 까다롭지 않은 순둥이 식물이랍니다.";
     plantContents[3] ="독성이 없어 반려동물이 있는 집에서도 안심하고 키울 수 있어요. 🙌";
@@ -227,20 +227,20 @@ if (algorithmResult.equals("00000")) {
 }else if (algorithmResult.equals("11100")) {
     plantName = "피토니아";
     plantContents[0] = "피토니아는 남미와 페루의 열대우림에 서식하는 식물이에요. ";
-    plantContents[1] = "빛이 적은 실내에서도 잘 자라고, 공기 중의 톨루엔을 제거하는 능력이 뛰어난 공기정화식물이랍니다.";
+    plantContents[1] = "빛이 적은 실내에서도 잘 자라고, 공기 중의 톨루엔을 제거하는 능력이 뛰어난 공기정화식물이랍니다.😁";
     plantContents[2] = "음이온 방출량이 많고 상대습도 증가량도 높아 공부방에 놓으면 집중력을 높여주고, 침실에 놓으면 습도를 조절해주는 팔방미인 식물이에요.";
     plantContents[3] = "식물체에 독성이 없어 반려동물에게도 안전하고, 실내 온도만 따뜻하게 유지해주시면 초보가드너도 건강하게 잘 키울 수 있는 식물입니다.🙌";
     plantImg = "../../assets/img/algorithm/11100.jpg";
 }else if (algorithmResult.equals("11101")) {
     plantName = "아글라오네마 스노우 사파이어";
     plantContents[0] = "아글라오네마는 따뜻한 온도와 촉촉한 습도를 좋아해요. ";
-    plantContents[1] ="주변 공기를 촉촉하게 관리해주고, 직접적인 강한 빛은 피해주면 누구나 쉽게 키울 수 있답니다.";
+    plantContents[1] ="주변 공기를 촉촉하게 관리해주고, 직접적인 강한 빛은 피해주면 누구나 쉽게 키울 수 있답니다.😝";
     plantContents[2] ="동남아시아에서 온 스노우 사파이어는 따뜻한 온도를 좋아하고 촉촉한 습도를 좋아하는 공기정화 식물이에요. ";
     plantContents[3] ="공기중의 포름알데히드와 자일렌을 제거하고, 실내 습도를 높여주는 능력을 가지고 있어요.  부귀, 행운, 행복을 뜻해 선물로도 아주 좋은 식물이랍니다.🙌";
     plantImg = "../../assets/img/algorithm/11101.jpg";
 }else if (algorithmResult.equals("11110")) {
     plantName = "후마타 고사리";
-    plantContents[0]= "후마타 고사리는 털이 있는 근경 부분이 독특한 고사리에요. ";
+    plantContents[0]= "후마타 고사리는 털이 있는 근경 부분이 독특한 고사리에요.😝 ";
     plantContents[1] ="성장하면서 점점 근경이 퍼져 나가는데, 거미발을 닮았어요. ";
     plantContents[2] = "습한 곳을 좋아하지만 다소 건조한 곳에서도 적응을 잘 하는 편이에요.  ";
     plantContents[3] ="물만 말리지 않는다면 사계절 푸르고 하늘하늘한 후마타 고사리를 볼 수 있을거에요.";
@@ -249,7 +249,7 @@ if (algorithmResult.equals("00000")) {
     plantName = "마오리 코로키아";
     plantContents[0] = "마오리 코로키아는 원산지인 뉴질랜드에서는 야생에서 자라는 식물이에요.";
     plantContents[1] ="가지의 독특한 형태에서 나오는 분위기 덕에 사랑받는 식물이랍니다.";
-    plantContents[2] ="지그재그로 얽혀있는 검은색 줄기와 은빛을 띄는 반질반질한 작은 잎이 매력적이에요. ";
+    plantContents[2] ="지그재그로 얽혀있는 검은색 줄기와 은빛을 띄는 반질반질한 작은 잎이 매력적이에요.😝 ";
     plantContents[3] ="햇빛을 많이 받을 수 있고, 바람이 잘 부는 환경을 좋아하는 마오리 코로키아는 작은 화분 하나만으로도 공간에 은은하고 깔끔한 매력을 더해 줄 수 있는 식물이에요.";
     plantImg = "../../assets/img/algorithm/11111.jpg";
 } 
@@ -258,10 +258,10 @@ if (algorithmResult.equals("00000")) {
 
 <section id="result">
   <div>
-    <div class="result-name" style="font-family: 'Poor Story', cursive; font-weight:bold;"><%=plantName%> </div>
+    <div class="result-name"><%=plantName%> </div>
 <img src="<%=plantImg%>" alt="Image" class="img1"/>
     <div class="result-desc">
-      <ul class="content" style="font-family: 'Poor Story', cursive; font-size : 18px; font-weight:bold; line-height:30px;">
+      <ul class="content">
         <li><%=plantContents[0]%></li>
         <li><%=plantContents[1]%></li>
         <li><%=plantContents[2]%></li>
@@ -270,7 +270,7 @@ if (algorithmResult.equals("00000")) {
     </div>
     <div class="result-tip" >
       <h6>💖 알아두면 좋은 TIP!
-        <ul class="sub-content" style="font-family: 'Poor Story', cursive; font-size : 18px; font-weight:bold;">
+        <ul class="sub-content">
           <li>물을 조금씩 자주 주면 과습의 원인이 될 수 있어요</br>
           흙이 말랐을 때 밑에 물이 빠질 정도로 흠뻑 주세요! </li>           
           <li>갑자기 잎이 노래지거나 줄기만 보기 싫게 자랐나요?</br></li>

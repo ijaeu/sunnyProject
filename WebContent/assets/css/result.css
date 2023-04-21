@@ -18,10 +18,12 @@ body {
   text-align: center;
   border-radius: 20px;
   margin-top: 30px;
+  font-family: 'Poor Story', cursive; 
+  font-weight:bold;
 }
 
 .result-name {
-  font-family: 'Single Day', cursive;
+  font-family: 'Poor Story', cursive;
   font-size: 35px;
   margin-top: 15px;
   font-size:35px;
@@ -32,17 +34,20 @@ div {
 }
 
 .content{
-  font-size:14px;
-  line-height: 10px;
   text-align: left; 
   margin-top: 50px;
+  font-family: 'Poor Story', cursive; 
+  font-size : 18px; 
+  font-weight:bold;
+  line-height:30px;
 }
 
 .sub-content{
   text-align: left;
-  font-size:14px;
   line-height: 30px;
-  font-family: 'Gugi', cursive;;
+  font-family: 'Poor Story', cursive;
+   font-size : 18px; 
+   font-weight:bold;
   margin-top:10px;
   margin-left : -10px;
 }
