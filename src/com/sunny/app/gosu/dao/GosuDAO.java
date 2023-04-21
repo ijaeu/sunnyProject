@@ -20,14 +20,26 @@ public class GosuDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-//	고수목록
+//	전체고수목록
 	public List<GosuVO> selectAll(Map<String, Integer> pageMap) {
 		return sqlSession.selectList("gosu.selectAll", pageMap);
 	}
+	
+//	키워드로 고수목록뽑기(pageMap과 키워드를 넘겨줘야한다 뭘로..?)
+	public List<GosuVO> selectAllByKeyword(Map<String, Object> pageMap){
+		return sqlSession.selectList("gosu.selectAllByKeyword", pageMap);
+	}
+	
+	
 //	페이징처리
 	public int getTotal() {
 		return sqlSession.selectOne("gosu.getTotal");
 	}
+	
+	public int getTotalByKeyword(String keyword) {
+		return sqlSession.selectOne("gosu.getTotalByKeyword", keyword);
+	}
+	
 	
 	public void insert(GosuDTO gosuDTO) {
 		sqlSession.insert("gosu.insert", gosuDTO);
