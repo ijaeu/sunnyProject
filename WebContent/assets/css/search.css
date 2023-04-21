@@ -1,12 +1,10 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 * {
   margin: 0;
+  border: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 a {
@@ -64,6 +62,7 @@ li {
   background-color: #009a3e;
   color: white;
   height: 100%;
+  width: 20%;
   padding: 0 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -73,7 +72,7 @@ li {
 
 /* 검색입력하는 칸*/
 .search-text {
-  width: 200px;
+  width: 80%;
   height: 100%;
   line-height: 30px;
   padding-left: 10px;
@@ -114,13 +113,12 @@ li {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 1px solid #808080;
 }
 
 .profile-photo>img {
+  border: 1px solid #808080;
   width: 200px;
   height: 200px;
-  /* background-color: white; */
   border-radius: 50%;
   object-fit: cover;
 
@@ -139,6 +137,10 @@ li {
   color: #009a3e;
 }
 
+.following{
+	  color: #808080;
+}
+
 /* 고수프로필오른쪽 소개와분야 */
 .container {
   background-color: white;
@@ -151,6 +153,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
+    box-sizing: border-box;
 }
 
 
@@ -160,6 +163,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
 }
 
 .info-gosu{
@@ -168,7 +172,8 @@ li {
 }
 /* 고수한줄코멘트 */
 .gosu-introduction{
-  font-family: 'Dongle', sans-serif;
+/* 	font-family: 'Dongle', sans-serif; */
+  font-family: 'Stylish', sans-serif;
   margin-bottom: 25px;
   font-size: 40px;
   font-weight: 700;

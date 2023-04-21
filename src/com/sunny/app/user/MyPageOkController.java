@@ -46,7 +46,7 @@ public class MyPageOkController implements Execute {
 			int userTo = userNumber;
 			int userFrom =0;
 			if((Integer) session.getAttribute("userNumber") !=null) {
-				userFrom = (Integer) session.getAttribute("userNumber");				
+				userFrom = (Integer) session.getAttribute("userNumber");	
 			}
 			followDTO.setUserTo(userTo);
 			followDTO.setUserFrom(userFrom);

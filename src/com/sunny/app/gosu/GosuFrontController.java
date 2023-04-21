@@ -26,6 +26,9 @@ public class GosuFrontController extends HttpServlet{
 			case "/gosu/searchOk.gu" :
 				new SearchOkController().execute(req, resp);
 				break;
+			case "/gosu/searchByKeywordOk.gu" :
+				new SearchByKeywordOkController().execute(req, resp);
+				break;
 			
 		}
 	}
