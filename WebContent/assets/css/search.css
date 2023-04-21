@@ -1,196 +1,207 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
-  
-   .pcontainer {
-      width: 1200px;
-      height: 1300px;
-  }
-
-    .search {
-        width: 672px;
-        height: 280px;
-        margin: 28px 264px 10px 380px;
-        background-color: #f2f2f2;
-        display: flex;
-        border-radius: 4px;
-        padding: 47px 504px 32px 66px;
-        justify-content: center;
-    }
-
-    .ex-search > h3 {
-      font-size: 25px;
-      font-weight: 700;
-      color: #222624;
-      margin: 28px 320px 0 380px;
-    }
-
-    .ex-search {
-      display: flex;
-      width: 1200px;
-      height: 57px;
-    }
-
-    .searchText {
-      width: 164px;
-      height: 27px;
-      background-color: #f2f2f2;
-      border: none;
-      font-size: 13px;
-      border-radius: 4px;
-      margin-top: 28px;
-      padding: 0 0 0 5px;
-      position: relative;
-    }
-    
-  .headsearch>button {
-    position: absolute;
-    cursor : pointer;
- 	color: #fff;
-    background-color: #009a3e;
-    border-radius: 4px;
-   	top : 28px;
-   	width : 50px;
-   	line-height : 27px;
-  }
-	
-    
-    .expertsearch > input {
-      color:#4d4d4d;
-    }
-    
-    .headsearch {
-      position: relative;
-    }
-    
-    /* 프로필 */
-    .mypage {
-        position: relative;
-        width: 291px;
-        height: 179px;
-    }
-    
-    svg {
-        width: 55px;
-        height: 55px;
-    }
-
-    .profile {
-        position: absolute;
-        top: 20%;
-        left: 40%;
-        width: 65px;
-        height: 65px;
-        border: 1px solid black;
-        border-radius: 100%;
-        text-align: center;
-        background-color: #fff;
-    }
-
-   .expertname {
-        margin: 15px 0 0 0;
-        font-size: 14px;
-        color: #4d4d4d;
-    }
-
-    .f-btn {
-        color: #fff;
-        background-color: #009a3e;
-        width: 52px;
-        height: 23px;
-        border-radius: 4px;
-        border: none;
-        margin: 7px 0 0 0;
-        cursor: pointer;
-    }
-
-    .f-btn :hover{
-      background-color: black;
-    }
-
-    .container {
-        width: 372px;
-        height: 179px;
-        background-color: rgb(255, 255, 255);
-        position: relative;
-        left: 90%;
-        text-align: center;
-        padding-top: 30px;
-        margin-top: 7px;
-        border-radius: 6px;
-    }
-
-    img {
-        width: 11px;
-        height: 11px;
-        position: absolute;
-        top: 22px;
-        right: 85px;
-        cursor: pointer;
-    }
-
-    .container > .info {
-        position: relative;
-        top : 10px;
-        font-size: 13px;
-        color: #808080;
-    }
-
-    .inffo {
-        color:#009a3e;
-        font-weight: 700;
-        font-size: 13px;
-    }
-
-    .major > .inffo {
-      position: relative;
-    }
-
-    .majorname {
-      color:#808080 ; 
-    }
-
-    .s-btn {
-        background-color: #009a3e;
-        color: #fff;
-        width: 45px;
-        height: 23px;
-        border-radius: 4px;
-        border: none;
-        margin: 28px 0 0 0;
-        cursor: pointer;
-    }
-
-    .plus-btn:hover,
-  .question-btn:hover {
-    background-color: rgb(15, 15, 14);
-    color: #fff;
-  }
-
- .f-btn-active{
-  background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
- /* 더보기 */
- .write-btn-wrap {
-  margin-top: 20px ;
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
-.write-btn-wrap > a {
-  color: #fff;
-  font-size: 13px;
-}
 
-.plus-btn, .question-btn {
-  background-color: #009a3e;
-  border-radius: 4px;
+button {
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
   border: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* 전체컨테이너 */
+.pcontainer {
+  width: 1200px;
+  margin: 30px auto;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #4d4d4d;
+}
+
+/* 상단 */
+.ex-search {
+  display: flex;
+  width: 100%;
+  height: 57px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+/* 식고수찾기 제목 */
+.ex-search>h3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* 검색창감싸고있는부분 (form태그)*/
+.expertsearch {
+  width: 250px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 검색버튼 */
+.s-btn {
+  background-color: #009a3e;
+  color: white;
+  height: 100%;
+  padding: 0 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* 검색창 */
+
+/* 검색입력하는 칸*/
+.search-text {
+  width: 200px;
+  height: 100%;
+  line-height: 30px;
+  padding-left: 10px;
+  background-color: #f2f2f2;
+  font-size: 13px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+}
+
+.search-text:focus {
+  height: 28px;
+  outline: 1px solid #009a3e;
+  background-color: white;
+}
+
+/* 하단 */
+/* 식고수리스트 */
+.search {
+  margin-top: 30px;
+  background-color: #f2f2f2;
+  display: flex;
+  border-radius: 10px;
+  padding: 30px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* 고수프로필 왼쪽*/
+.profile {
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #808080;
+}
+
+.profile-photo>img {
+  width: 200px;
+  height: 200px;
+  /* background-color: white; */
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+
+/* 고수이름 */
+.expertname {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4d4d4d;
+  margin: 10px 0;
+}
+
+/* 팔로우버튼 */
+.user-follow {
+  color: #009a3e;
+}
+
+/* 고수프로필오른쪽 소개와분야 */
+.container {
+  background-color: white;
+  width: 60%;
+  height: 250px;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 30px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* 고수소개, 분야 */
+
+.container>.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info-gosu{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+/* 고수한줄코멘트 */
+.gosu-introduction{
+  font-family: 'Dongle', sans-serif;
+  margin-bottom: 25px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.gosu-name{
+  color: #009a3e;
+  font-weight: 700;
+}
+
+.gosu-field{
+  color: #de02b6;
+  font-weight: 700;
+}
+
+
+/* 더보기 버튼*/
+.write-btn-wrap{
+ width: 20%;
+ height: 250px;
+  position: relative;
+  right: -30px;
+  background-color: #02bf4e;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.plus-btn{
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 250px;
 }
 
