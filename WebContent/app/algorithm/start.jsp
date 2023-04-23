@@ -16,7 +16,6 @@
 	href="${pageContext.request.contextPath}/assets/css/start.css">
 </head>
 <body>
-<div class="back" style="background-color:black; background-image:url('../../assets/img/algorithm/돌아가기.png')"> </div>
 	<div class="container">
 		<section id="main" class="mx-auto my-5 py-5 px-3")>
 			<div class="col-lg-6"></div>

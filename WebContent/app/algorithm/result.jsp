@@ -37,7 +37,7 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/00000.jpg";
 }else if (algorithmResult.equals("00001")) {
     plantName = "자미오쿨카스";
-    plantContents[0] = "돈이 들어오는 나무 라는 뜻을 가진 금전수는 돈나무로도 불리고 있어요. 이름 덕분에 개업식, 집들이용으로 인기만점이랍니다! 👍";
+    plantContents[0] = "돈💰이 들어오는 나무 라는 뜻을 가진 금전수는 돈나무로도 불리고 있어요. 이름 덕분에 개업식, 집들이용으로 인기만점이랍니다! 👍";
     plantContents[1] = "선물용으로 인기 많은 이유는 키우기 쉽기 때문이기도 해요. 어느정도의 빛이 있으면 어디에서도 잘 자라요. ";
     plantContents[2] = "금전수는 알뿌리 식물로, 뿌리에 물을 저장하기 때문에 물을 자주 주면 안돼요! 🙅‍♀️ 속 흙까지 말랐을 때 흠뻑 주세요.";
     plantContents[3] = " 금전수는 작은 화분에 심으면 뿌리 때문에 화분이 깨질 수 있어요. 키운지 오래됐다면 꼭 분갈이 해주세요!";
@@ -143,7 +143,7 @@ if (algorithmResult.equals("00000")) {
 }else if (algorithmResult.equals("10000")) {
     plantName = "아레카야자";
     plantContents[0] = "아레카야자는 잘게 갈라진 잎 덕분에 이국적인 매력을 느낄 수 있는 식물이에요. 🌴";
-    plantContents[1] ="잎이 얇아서 햇빛을 바로 보게되면 끝이 탈 수 있어요. 반음지에서 키우는걸 추천합니다! ";
+    plantContents[1] ="잎이 얇아서 햇빛을 바로 보게되면 끝이 탈 수 있어요. 반음지에서 키우는걸 추천합니다!👍 ";
     plantContents[2] = "물이 부족하면 잎부터 줄기가 마르면서 쪼그라들어요. ";
     plantContents[3] = "겉 흙이 말랐을 때 충분히 주세요. 물을 너무 자주 준다면 잎이 노랗게 변할 수 있어요!";
     plantImg = "../../assets/img/algorithm/10000.jpg";
@@ -192,14 +192,14 @@ if (algorithmResult.equals("00000")) {
 }else if (algorithmResult.equals("10111")) {
     plantName = "립살리스 트리고나";
     plantContents[0] = "립살리스 트리고나는 잎 단면이 세모 모양인 특이한 식물이에요.😁";
-    plantContents[1] ="삐죽삐죽 세모모양의 기둥이 아래로 흘러 내리면서 자라는 모습이 특이해 많은 사랑을 받고 있어요.";
+    plantContents[1] ="삐죽삐죽 세모모양의 기둥이 아래로 흘러 내리면서 자라는 모습이 특이해 많은 사랑💕을 받고 있어요.";
     plantContents[2] = "립살리스는 물을 자주 주지 않아도 되고 키우기 까다롭지 않은 순둥이 식물이랍니다.";
     plantContents[3] ="독성이 없어 반려동물이 있는 집에서도 안심하고 키울 수 있어요. 🙌";
     plantImg = "../../assets/img/algorithm/10111.jpg";
 }else if (algorithmResult.equals("11000")) {
     plantName = "바로크 벤자민";
     plantContents[0] = "바로크 벤자민은 둥글게 말린 잎이 특징이에요";
-    plantContents[1] ="공기 정화 역할을 해주고 빛 조절이 까다롭지 않아 실내에서 키우기 매우 좋아요!";
+    plantContents[1] ="공기 정화 역할을 해주고 빛 조절이 까다롭지 않아 실내에서 키우기 매우 좋아요!👍";
     plantContents[2] = "단, 줄기를 잘랐을 때 독성을 가진 유액이 나오므로 유아, 반려동물을 키운다면 주의하셔야 해요🙌";
     plantContents[3] = "햇빛 조절이 까다롭지 않아 반양지에서도 잘 자란답니다.👍";
     plantImg = "../../assets/img/algorithm/11000.jpg";
@@ -233,10 +233,10 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/11100.jpg";
 }else if (algorithmResult.equals("11101")) {
     plantName = "아글라오네마 스노우 사파이어";
-    plantContents[0] = "아글라오네마는 따뜻한 온도와 촉촉한 습도를 좋아해요. ";
+    plantContents[0] = "아글라오네마는 따뜻한 온도와 촉촉한 습도를 좋아해요.👍 ";
     plantContents[1] ="주변 공기를 촉촉하게 관리해주고, 직접적인 강한 빛은 피해주면 누구나 쉽게 키울 수 있답니다.😝";
     plantContents[2] ="동남아시아에서 온 스노우 사파이어는 따뜻한 온도를 좋아하고 촉촉한 습도를 좋아하는 공기정화 식물이에요. ";
-    plantContents[3] ="공기중의 포름알데히드와 자일렌을 제거하고, 실내 습도를 높여주는 능력을 가지고 있어요.  부귀, 행운, 행복을 뜻해 선물로도 아주 좋은 식물이랍니다.🙌";
+    plantContents[3] ="공기중의 포름알데히드와 자일렌을 제거하고, 실내 습도를 높여주는 능력을 가지고 있어요.  부귀, 행운, 행복💕을 뜻해 선물로도 아주 좋은 식물이랍니다.🙌";
     plantImg = "../../assets/img/algorithm/11101.jpg";
 }else if (algorithmResult.equals("11110")) {
     plantName = "후마타 고사리";
@@ -247,9 +247,9 @@ if (algorithmResult.equals("00000")) {
     plantImg = "../../assets/img/algorithm/11110.jpg";
 }else if (algorithmResult.equals("11111")) {
     plantName = "마오리 코로키아";
-    plantContents[0] = "마오리 코로키아는 원산지인 뉴질랜드에서는 야생에서 자라는 식물이에요.";
-    plantContents[1] ="가지의 독특한 형태에서 나오는 분위기 덕에 사랑받는 식물이랍니다.";
-    plantContents[2] ="지그재그로 얽혀있는 검은색 줄기와 은빛을 띄는 반질반질한 작은 잎이 매력적이에요.😝 ";
+    plantContents[0] = "마오리 코로키아는 원산지인 뉴질랜드에서는 야생에서 자라는 식물이에요.😁";
+    plantContents[1] ="가지의 독특한 형태에서 나오는 분위기 덕에 사랑💕받는 식물이랍니다.😊";
+    plantContents[2] ="지그재그로 얽혀있는 검은색 줄기와 은빛을 띄는 반질반질한 작은 잎이 매력적이에요.";
     plantContents[3] ="햇빛을 많이 받을 수 있고, 바람이 잘 부는 환경을 좋아하는 마오리 코로키아는 작은 화분 하나만으로도 공간에 은은하고 깔끔한 매력을 더해 줄 수 있는 식물이에요.";
     plantImg = "../../assets/img/algorithm/11111.jpg";
 } 
