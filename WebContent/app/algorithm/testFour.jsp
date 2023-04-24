@@ -23,13 +23,13 @@
       <div class="questionContainer">
         <a href="http://127.0.0.1:5500/html/FindMyPlant/test3/test3.html">
         </a>
-        <h1>4. 실내공간에 충분한 크기의 화분이 있는 공간이 있나요?</h1>
+        <h1>4. 내가 원하는 식물 스타일은?</h1>
       </div>
       <div class="answerContainer">
         	<form action="${pageContext.request.contextPath}/algorithm/testFive.ag" method="get">
 		<input type="hidden" name="selectFour" value="0">
-		<input type="button" class="btn true"  value="네" onclick="document.getElementsByName('selectFour')[0].value='1';this.form.submit();">
-		<input type="button"  class="btn no" value="아니오" onclick="document.getElementsByName('selectFour')[0].value='0';this.form.submit();">
+		<input type="button" class="btn true"  value="무난하고 푸릇푸릇한게 좋아요" onclick="document.getElementsByName('selectFour')[0].value='0';this.form.submit();">
+		<input type="button"  class="btn no" value="이왕이면 화려한 무늬" onclick="document.getElementsByName('selectFour')[0].value='1';this.form.submit();">
 	</form>
       </div>
     </section>

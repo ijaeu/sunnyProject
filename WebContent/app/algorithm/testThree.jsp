@@ -21,13 +21,13 @@
       <img src="../../assets/img/algorithm/start/home.png" 
         class = "img"></a>
       <div class="questionContainer">
-        <h1>3. 식물의 관리를 위해 매일 시간을 내실 수 있나요?  </h1>
+        <h1>3. 식물이 햇빛을 많이 볼 수 있을까요?</h1>
       </div>
       <div class="answerContainer">
         <form action="${pageContext.request.contextPath}/algorithm/testFour.ag" method="get">
 		<input type="hidden"  name="selectThree" value="0">
-		<input type="button"class="btn true"  value="네" onclick="document.getElementsByName('selectThree')[0].value='1';this.form.submit();">
-		<input type="button" class="btn no"value="아니오" onclick="document.getElementsByName('selectThree')[0].value='0';this.form.submit();">
+		<input type="button"class="btn true"  value="집에 빛이 잘 안들어와요" onclick="document.getElementsByName('selectThree')[0].value='0';this.form.submit();">
+		<input type="button" class="btn no"value="해가 쨍쨍 들어와요" onclick="document.getElementsByName('selectThree')[0].value='1';this.form.submit();">
 		</form>
 		</div>
     </section>

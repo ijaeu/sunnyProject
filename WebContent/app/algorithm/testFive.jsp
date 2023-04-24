@@ -21,13 +21,13 @@
       <img src="../../assets/img/algorithm/start/home.png" 
         class = "img"></a>
       <div class="questionContainer">
-        <h1>5. 실내온도가 18도 이상인 공간이 있나요?</h1>
+        <h1>5. 사이즈는 얼마 정도가 적당할까요?</h1>
       </div>
       <div class="answerContainer">
         	<form action="${pageContext.request.contextPath}/algorithm/loading.ag" method="post">
 		<input type="hidden" name="selectFive" value="0">
-		<input type="button"class="btn true"  value="네" onclick="document.getElementsByName('selectFive')[0].value='1';this.form.submit();">
-		<input type="button"  class="btn no"value="아니오" onclick="document.getElementsByName('selectFive')[0].value='0';this.form.submit();">
+		<input type="button"class="btn true"  value="거실에 둘 만한 큰 사이즈" onclick="document.getElementsByName('selectFive')[0].value='0';this.form.submit();">
+		<input type="button"  class="btn no"value="책상에 둘 수 있는 작은 사이즈" onclick="document.getElementsByName('selectFive')[0].value='1';this.form.submit();">
 	</form>
       </div>
     </section>
