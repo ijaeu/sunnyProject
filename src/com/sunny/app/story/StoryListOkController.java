@@ -19,6 +19,9 @@ public class StoryListOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		StoryDAO storyDAO = new StoryDAO();
 		int total = storyDAO.getTotal();
+		Integer userNumber = (Integer)req.getSession().getAttribute("userNumber");
+		
+		System.out.println("userNumber = " + userNumber);
 		
 		String temp = req.getParameter("page");
 		int page = temp == null ? 1 : Integer.valueOf(temp);
@@ -42,6 +45,7 @@ public class StoryListOkController implements Execute {
 		
 
 		Map<String, Integer>pageMap = new HashMap<>();
+		pageMap.put("userNumber", userNumber);
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
 		

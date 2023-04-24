@@ -24,7 +24,7 @@
 				<div class="loopslider" data-pagertype="bullets">
 					<ul class="swiper-wrapper">
 						<li class="swiper-slide"><a
-							href="${pageContext.request.contextPath}/app/main/main.jsp">
+							href="${pageContext.request.contextPath}/main/mainOk.ma">
 								<div class="wraphover">
 									<img
 										src="https://www.shouse.garden/data/banner/220729_024730_734200p.jpg"
@@ -49,24 +49,28 @@
 										<a
 											href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${story.getUserNumber()}">
 											<div class="p1 proimg">
-												<img
-													src="${pageContext.request.contextPath}/upload/profileUpload/${story.getUserProfileImage()}"
-													alt="">
+												<c:choose>
+													<c:when test="${empty story.getUserProfileImage()}">
+														<img
+															src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+													</c:when>
+													<c:otherwise>
+														<img
+															src="${pageContext.request.contextPath}/upload/profileUpload/${story.getUserProfileImage()}"
+															alt="">
+													</c:otherwise>
+												</c:choose>
 											</div>
 											<p class="p1 profile">${story.getUserNickname()}</p>
 										</a>
-										<c:choose>
-										<c:when test="${story.getFollowingStatus() == 0 }">
-											<button type="button"
-												class="p1 follow dir"
+										<c:if test="${story.getFollowingStatus() == 0 }">
+											<button type="button" class="p1 follow dir"
 												data-userNumber="${story.getUserNumber()}">팔로우</button>
-										</c:when>
-										<c:otherwise>
-											<button type="button"
-												class="p1 follow dir following"
+										</c:if>
+										<c:if test="${story.getFollowingStatus() == 1 }">
+											<button type="button" class="p1 follow dir following"
 												data-userNumber="${story.getUserNumber()}">팔로잉</button>
-										</c:otherwise>
-										</c:choose>
+										</c:if>
 									</div> <a
 									href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${story.getStoryNumber()}">
 										<div class="img-container">

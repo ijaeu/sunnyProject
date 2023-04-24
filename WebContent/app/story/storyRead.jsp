@@ -16,8 +16,7 @@
 	rel="stylesheet" />
 </head>
 <body>
-	<jsp:include
-		page="${pageContext.request.contextPath}/main/mainOk.ma" />
+	<jsp:include page="${pageContext.request.contextPath}/main/mainOk.ma" />
 	<div class="container">
 		<article class="view-top">
 			<div class="infomation">
@@ -25,21 +24,28 @@
 					<a
 						href="${pageContext.request.contextPath}/user/myPageOk.us?userNumber=${story.getUserNumber()}">
 						<div class="profile-img">
-							<img alt=""
-								src="${pageContext.request.contextPath}/upload/profileUpload/${story.getUserProfileImage()}">
+							<c:choose>
+								<c:when test="${empty story.getUserProfileImage()}">
+									<img
+										src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+								</c:when>
+								<c:otherwise>
+									<img
+										src="${pageContext.request.contextPath}/upload/profileUpload/${story.getUserProfileImage()}"
+										alt="">
+								</c:otherwise>
+							</c:choose>
 						</div>
 						<p class="profile">${story.getUserNickname()}</p>
 					</a>
-					<c:choose>
-						<c:when test="${story.getFollowingStatus() == 0 }">
-							<button type="button" class="p1 follow dir"
-								data-userNumber="${story.getUserNumber()}">팔로우</button>
-						</c:when>
-						<c:otherwise>
-							<button type="button" class="p1 follow dir following"
-								data-userNumber="${story.getUserNumber()}">팔로잉</button>
-						</c:otherwise>
-					</c:choose>
+					<c:if test="${story.getFollowingStatus() == 0 }">
+						<button type="button" class="p1 follow dir"
+							data-userNumber="${story.getUserNumber()}">팔로우</button>
+					</c:if>
+					<c:if test="${story.getFollowingStatus() == 1 }">
+						<button type="button" class="p1 follow dir following"
+							data-userNumber="${story.getUserNumber()}">팔로잉</button>
+					</c:if>
 				</div>
 			</div>
 

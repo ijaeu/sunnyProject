@@ -34,8 +34,8 @@ public class StoryDAO {
 		return sqlSession.selectOne("story.getSequence");
 	}
 	
-	public StoryListVO select(int storyNumber) {
-	    return sqlSession.selectOne("story.select", storyNumber);
+	public StoryListVO select(Map<String, Integer> pageMap) {
+	    return sqlSession.selectOne("story.select", pageMap);
 	}
 	
 	public void updateReadCount(int storyNumber) {

@@ -15,7 +15,7 @@
 		CASE WHEN EXISTS
 		(SELECT 1
 		FROM tbl_follow f
-		WHERE f.user_to = u.user_number AND f.user_from = 1)
+		WHERE f.user_to = u.user_number AND f.user_from = #{userNumber})
 		THEN 1
 		ELSE 0
 		END AS following_status
@@ -55,20 +55,27 @@
 		select last_insert_id()
 	</select>
 
-	<select id="select" parameterType="_int"
+	<select id="select" parameterType="map"
 		resultType="StoryListVO">
 		select s.story_number, s.story_title, s.story_content,
 		s.story_content2, s.story_content3,s.story_viewcnt,
 		s.story_date,
 		last_update,u.user_number,
 		u.user_nickname, uf.file_system_name as
-		user_profile_image
+		user_profile_image,
+		CASE WHEN EXISTS
+		(SELECT 1
+		FROM tbl_follow f
+		WHERE f.user_to = u.user_number AND f.user_from = #{userNumber})
+		THEN 1
+		ELSE 0
+		END AS following_status
 		from tbl_story s
 		inner join tbl_user u ON
 		s.user_number = u.user_number
 		left outer join tbl_user_file uf ON
 		u.user_number = uf.user_number
-		where s.story_number = #{storyNumber};
+		where s.story_number = #{storyNumber}
 	</select>
 
 	<update id="updateReadCount" parameterType="_int">
