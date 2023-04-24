@@ -156,6 +156,7 @@ $('.submit-btn').on('click', function() {
 		},
 		success: function() {
 			storyReplyAjax();
+			$('#content').val('');
 		}
 	});
 });
