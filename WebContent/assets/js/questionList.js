@@ -46,7 +46,7 @@ $answerList.click(function() {
 										<img src="../../assets/img/admin/qeustionIcon.png" alt="">
 									</div>
 									<div class="question-title">
-										<a href="">${question.questionTitle }</a>
+										<a href="/question/questionReadOk.qs?questionNumber=${question.questionNumber}">${question.questionTitle }</a>
 									</div>
 									<div class="user-profile-box">
 									<div class="user-profile-img-box">
