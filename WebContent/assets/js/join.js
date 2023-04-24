@@ -344,7 +344,7 @@ let $confirmPwInput = $('#confirm-password'); /*비밀번호확인 인풋칸*/
 let $nameInput = $('#name');	/*이름 인풋칸*/
 let $phoneNumInput = $('#phoneNumber');		/*연락처 인풋칸*/
 let $emailsInput = $('#email');	/*이메일 인풋칸*/
-let $pwAnswerInput = $('passwordAnswer1');	/*비밀번호찾기답변 인풋칸*/
+let $pwAnswerInput = $('#passwordAnswer1');	/*비밀번호찾기답변 인풋칸*/
 
 
 $('.submit-button').on('click', function(){
@@ -359,30 +359,29 @@ $('.submit-button').on('click', function(){
 	
 	console.log(cuIdMsg.includes('불가능')); 
 	
-	if($idInput.val()==''){
-		alert('아이디를 입력하세요');
-	}else if($pwInput.val()==''){
-		alert('비밀번호를 입력하세요');
-	}else if($confirmPwInput.val()==''){
-		alert('비밀번호 확인칸을 입력하세요');
-	}else if($nameInput.val()==''){
-		alert('이름을 입력하세요');
-	}else if($nickNameInput.val()==''){
+	if($idInput.val()=='' || $pwInput.val()=='' || $confirmPwInput.val()=='' || $nameInput.val()=='' || $nickNameInput.val()=='' || $phoneNumInput.val()=='' || $emailsInput.val()=='' || $pwAnswerInput.val()==''){
+		alert('필수 입력 항목을 모두 입력하세요');
+	}else if(cuIdMsg.includes('불가능')){
+		alert('사용 불가능한 아이디입니다');
+	}else if(cuIdMsg.includes('중복')){
+		alert('이미 사용중인 아이디입니다');
+	}else if(rgPwMsg.includes('불가능')){
+		alert('사용 불가능한 비밀번호입니다');
+	}else if(mcPwMsg.includes('불일치')){
+		alert('두 비밀번호가 일치하지 않습니다');
+	}else if(nickMsg.includes('중복')){
+		alert('이미 사용중인 닉네임입니다');
+	}else if(nickMsg.includes('입력')){
 		alert('닉네임을 입력하세요');
-	}else if($phoneNumInput.val()==''){
-		alert('연락처를 입력하세요');
-	}else if($emailsInput.val()==''){
-		alert('이메일을 입력하세요');
-	}else if($pwAnswerInput.val()==''){
-		alert('비밀번호 찾기 답변을 입력하세요')
+	}else if(cuNameMsg.includes('입력')){
+		alert('이름을 입력하세요');
+	}else if(cuPhoneMsg.includes('올바른')){
+		alert('올바른 형식의 휴대폰 번호를 입력하세요');
+	}else if(cuEmailMsg.includes('올바른')){
+		alert('올바른 이메일을 입력해주세요');
 	}else{
-		if(!cuIdMsg.includes('불가능') || !cuIdMsg.includes('중복') || !rgPwMsg.includes('불가능') || !mcPwMsg.includes('일치') || !nickMsg.includes('중복') || !nickMsg.includes('입력')
-		|| !nameMsg.includes('입력') || !phoneMsg.includes('올바른') || !emailMsg.includes('올바른')){
-			console.log('저장할 수 있음');
-			$('form').submit();
-		}else{
-			alert('회원정보를 다시 확인해 주세요');
-		}
+		console.log('저장할 수 있음');
+		$('form').submit();
 	}
 });
 
