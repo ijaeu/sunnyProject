@@ -351,7 +351,7 @@ $('.submit-button').on('click', function(){
 	 
 	let cuIdMsg = $checkMsg.text();
 	let rgPwMsg = $checkPwMsg.text();
-	let mcPwMsg = $pwErrorMsg.text();
+	let mcPwMsg = $password_error.text();
 	let nickMsg = $checkMsg2.text();
 	let cuNameMsg = $nameMsg.text();
 	let cuPhoneMsg = $phoneMsg.text();
@@ -359,14 +359,25 @@ $('.submit-button').on('click', function(){
 	
 	console.log(cuIdMsg.includes('불가능')); 
 	
-	if($currentPwInput.val()==''){
-		alert('현재 비밀번호를 입력해주세요');
-	}else if($userPwInput.val()==''){
-		alert('변경할 비밀번호를 입력해주세요');
-	}else if($checkPwInput.val()==''){
-		alert('변경할 비밀번호 확인을 입력해주세요')
+	if($idInput.val()==''){
+		alert('아이디를 입력하세요');
+	}else if($pwInput.val()==''){
+		alert('비밀번호를 입력하세요');
+	}else if($confirmPwInput.val()==''){
+		alert('비밀번호 확인칸을 입력하세요');
+	}else if($nameInput.val()==''){
+		alert('이름을 입력하세요');
+	}else if($nickNameInput.val()==''){
+		alert('닉네임을 입력하세요');
+	}else if($phoneNumInput.val()==''){
+		alert('연락처를 입력하세요');
+	}else if($emailsInput.val()==''){
+		alert('이메일을 입력하세요');
+	}else if($pwAnswerInput.val()==''){
+		alert('비밀번호 찾기 답변을 입력하세요')
 	}else{
-		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복')){
+		if(!cuIdMsg.includes('불가능') || !cuIdMsg.includes('중복') || !rgPwMsg.includes('불가능') || !mcPwMsg.includes('일치') || !nickMsg.includes('중복') || !nickMsg.includes('입력')
+		|| !nameMsg.includes('입력') || !phoneMsg.includes('올바른') || !emailMsg.includes('올바른')){
 			console.log('저장할 수 있음');
 			$('form').submit();
 		}else{
