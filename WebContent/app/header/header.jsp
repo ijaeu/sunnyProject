@@ -51,7 +51,7 @@
 						<li class="header2-menu-list">
 							<a href="${pageContext.request.contextPath}/gosu/searchOk.gu" id="header-gosu">식고수에게 물어보기</a></li>
 						<li class="header2-menu-list">
-							<a href="${pageContext.request.contextPath}/app/algorithm/index.jsp" id="header-plant">반려식물 찾기</a></li>
+							<a href="${pageContext.request.contextPath}/algorithm/start.ag" id="header-plant">반려식물 찾기</a></li>
 						<li class="header2-menu-list">
 							<a href="${pageContext.request.contextPath}/user/myPage.us" id="header-mypage">마이페이지</a></li>
 					</ul>

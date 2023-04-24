@@ -66,6 +66,10 @@ li {
   padding: 0 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.s-btn:hover{
+	background-color :  #02bf4e;
 }
 
 /* 검색창 */
@@ -199,6 +203,7 @@ li {
   background-color: #02bf4e;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .plus-btn{
@@ -208,6 +213,9 @@ li {
   color: #fff;
   font-size: 20px;
   line-height: 250px;
+}
+.write-btn-wrap:hover{
+	background-color:#009a3e;
 }
 
 /* 페이징 스타일 */
@@ -234,12 +242,12 @@ li {
 }
 
 .pagination a:hover {
-  background-color: #009a3e;
+  background-color: #02bf4e;
   color: #fff;
 }
 
 .pagination .active {
-  background-color: rgb(255, 87, 87);
+  background-color: #009a3e;
   color: #fff;
 }
 
@@ -257,14 +265,15 @@ li {
 }
 .empty>a{
 	border-radius : 5px;
-	background-color : #009a3e;
+	background-color : #02bf4e ;
 	color : white;
 	padding : 10px 20px;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .empty>a:hover{
 	border-radius : 5px;
-	background-color :rgb(255, 87, 87) ;
+	background-color :#009a3e ;
 	color : white;
 	padding : 10px 20px;
 }
