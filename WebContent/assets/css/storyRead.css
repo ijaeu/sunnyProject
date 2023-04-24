@@ -105,8 +105,9 @@ button {
 }
 
 .ReadTitle {
-	font-size: 20px;
+	font-size: 30px;
 	margin-top: 15px;
+	margin-bottom: 30px;
 }
 
 .container {
@@ -169,7 +170,7 @@ button {
 }
 
 .list-btn:hover, .modify-btn:hover, .delete-btn:hover {
-	background-color: rgb(255, 87, 87);
+	background-color: #02bf4e;
 	color: #fff;
 }
 
@@ -240,7 +241,7 @@ button {
 }
 
 .comment-form button:hover {
-	background-color: rgb(255, 87, 87);
+	background-color: #02bf4e;
 }
 
 .story-date {
@@ -320,7 +321,7 @@ button {
 }
 
 .comment-btn-group button:hover {
-	background-color: rgb(255, 87, 87);
+	background-color: #02bf4e;
 }
 
 .none {
