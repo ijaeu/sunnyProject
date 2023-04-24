@@ -17,16 +17,16 @@
 <body>
 	<section id="qna" class="mx-auto my-5 py-5 px-3">
 		<progress value="40" max="200" id="my_skill"></progress>
-		<h1>1. 반려식물을 키워본 경험이 있나요?</h1>
+		<h1>1. 식물 물주기는 언제가 적당할까요?</h1>
 		<div class="answerContainer">
 			<form
 				action="${pageContext.request.contextPath}/algorithm/testTwo.ag"
 				method="get">
 				<input type="hidden" name="selectOne"> <input type="button"
-					class="btn true" value="네"
-					onclick="document.getElementsByName('selectOne')[0].value='1';this.form.submit();">
-				<input type="button" class="btn no" value="아니오"
+					class="btn true" value="최대한 띄엄띄엄"
 					onclick="document.getElementsByName('selectOne')[0].value='0';this.form.submit();">
+				<input type="button" class="btn no" value="자주자주 물 주는게 좋아"
+					onclick="document.getElementsByName('selectOne')[0].value='1';this.form.submit();">
 			</form>
 		</div>
 	</section>
