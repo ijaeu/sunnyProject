@@ -20,6 +20,11 @@
 		page="${pageContext.request.contextPath}/app/header/header.jsp" />
 	<jsp:include page="${pageContext.request.contextPath}/main/mainOk.ma" />
 	<div class="container">
+
+		<h1 class="ReadTitle">
+			<c:out value="${story.getStoryTitle()}" />
+		</h1>
+
 		<article class="view-top">
 			<div class="infomation">
 				<div class="txt-area">
@@ -57,9 +62,7 @@
 		</article>
 
 
-		<h1 class="ReadTitle">
-			<c:out value="${story.getStoryTitle()}" />
-		</h1>
+
 
 		<div class="story-read">
 			<div class="storyBox">

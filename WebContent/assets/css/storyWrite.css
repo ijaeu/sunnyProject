@@ -75,7 +75,7 @@
 }
 
 .cancel-btn:hover, .submit-btn:hover {
-	background-color: rgb(213, 45, 45);
+	background-color: #02bf4e;
 	color: #fff;
 }
 
@@ -193,7 +193,7 @@ input[type="file"] {
 }
 
 .delete-button:hover {
-	background-color: rgb(213, 45, 45);
+	background-color: #02bf4e;
 }
 
 .add-content {
@@ -410,7 +410,7 @@ input[type="file"] {
 }
 
 .delete-button2:hover {
-	background-color: rgb(213, 45, 45);
+	background-color: #02bf4e;
 }
 
 .story-wrap {
