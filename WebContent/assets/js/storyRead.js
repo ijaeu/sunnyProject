@@ -161,6 +161,7 @@ $('.submit-btn').on('click', function() {
 });
 
 
+
 //댓글삭제
 $('.comment-list').on('click', '.comment-delete', function() {
 	console.log("delete!! 댓글 삭제 레츠기릿");
