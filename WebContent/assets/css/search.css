@@ -210,3 +210,64 @@ li {
   line-height: 250px;
 }
 
+/* 페이징 스타일 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.pagination > ul {
+  display: flex;
+  list-style: none;
+}
+
+.pagination a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #009a3e;
+  border-color: #009a3e;
+  color: #fff;
+}
+
+.pagination .active {
+  background-color: rgb(255, 87, 87);
+  border-color: #333;
+  color: #fff;
+}
+
+/* 찾는고수가 없을 때 */
+.empty{
+	margin-top : 30px;
+	display : inline-block;
+	height : 300px;
+	width : 100% ;
+	line-height : 300px;
+	text-align : center;
+	background-color : #f2f2f2;
+	border-radius : 10px;
+	font-size :25px ;
+}
+.empty>a{
+	border-radius : 5px;
+	background-color : #009a3e;
+	color : white;
+	padding : 10px 20px;
+}
+
+.empty>a:hover{
+	border-radius : 5px;
+	background-color :rgb(255, 87, 87) ;
+	color : white;
+	padding : 10px 20px;
+}
