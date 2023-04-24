@@ -60,7 +60,7 @@
 										<img src="../../assets/img/admin/qeustionIcon.png" alt="">
 									</div>
 									<div class="question-title">
-										<a href="">${questions.getQuestionTitle() }</a>
+										<a href="/question/questionReadOk.qs?questionNumber=${questions.getQuestionNumber() }">${questions.getQuestionTitle() }</a>
 									</div>
 									<div class="user-profile-box">
 										<div class="user-profile-img-box">
