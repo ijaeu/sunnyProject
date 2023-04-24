@@ -210,6 +210,10 @@ li {
   color: #f2f2f2;
   border-radius: 5px;
   padding: 5px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.write-story>a:hover{
+	background-color: #02bf4e;
 }
 /* 스토리목록 */
 .story-list-ul {
@@ -259,8 +263,12 @@ li {
   cursor: pointer;
   height: 23px;
   line-height: 23px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.question-btn a:hover{
+		background-color: #02bf4e;
+}
 .answer-btn-ul {
   display: flex;
   padding: 5px 0;
