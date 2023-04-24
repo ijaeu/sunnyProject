@@ -30,7 +30,7 @@ public class QuestionListOkController implements Execute {
 		GosuInfoVO gosuInfoVO = questionDAO.gosuInfo(gosuNumber);
 
 
-//	    Integer qusetionStatus = Integer.parseInt(req.getParameter("questionStatuas"));
+//	    처음에는 0으로 설정(답변대기)
 		Integer qusetionStatus = 0;
 		
 	    Map<String, Integer> questionMap = new HashMap<>();
@@ -38,7 +38,6 @@ public class QuestionListOkController implements Execute {
 	    questionMap.put("questionStatus", qusetionStatus);
 	      
 	    List<QuestionListVO> questions = questionDAO.getQuestionList(questionMap);
-	    System.out.println("questions = " + questions);
 	     
 	    req.setAttribute("gosuInfo", gosuInfoVO);
 	  	req.setAttribute("questionList", questions);

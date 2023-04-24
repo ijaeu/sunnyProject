@@ -37,7 +37,7 @@ public class QuestionWriteOkController implements Execute {
 		int maxSize  = 1024*1024*30;
         String fsl = File.separator;
         String root = req.getSession().getServletContext().getRealPath(fsl);
-        String rootPath = root + fsl + "upload/questionupload";
+        String rootPath = root + fsl + "upload/questionUpload";
 		
 		System.out.println(rootPath);
 
@@ -81,6 +81,6 @@ public class QuestionWriteOkController implements Execute {
 		}
 		// 	경로처리
 		
-		resp.sendRedirect("/question/questionListOk.qs");
+		resp.sendRedirect("/question/questionListOk.qs?gosuNumber="+gosuNumber);
 	}
 }

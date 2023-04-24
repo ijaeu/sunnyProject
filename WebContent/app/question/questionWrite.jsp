@@ -23,21 +23,21 @@
     <div class="gosu-question">
       <div class="question-container">
         <!-- form action 작성 -->
-        <form action="${pageContext.request.contextPath }/gosuApply/gosuApplyWriteOk.ga" id="write-form" method="post" enctype="multipart/form-data">
+        <form action="${pageContext.request.contextPath }/question/questionWriteOk.qs?gosuNumber=${gosuNumber}" id="write-form" method="post" enctype="multipart/form-data">
           <h1 class="title">
             <span class="story-icon"></span> 식고수에게 질문
             <span class="story-txt">식고수...그는 모든걸 다 알고 있어...</span>
           </h1>
           <!-- 제목입력 -->
           <div class="question-title">
-            <input type="text" id="title" name="applyTitle" placeholder="* 질문 제목을 입력하세요. " required />
+            <input type="text" id="title" name="questionTitle" placeholder="* 질문 제목을 입력하세요. " required />
           </div>
           <!-- 질문 내용 -->
           <h1 class="mini-title">질문 내용 입력</h1>
           <div class="Content-box">
             <!-- 서머노트 -->
             <div class="summernote-box">
-              <textarea id="summernote" name="applyContent"></textarea>
+              <textarea id="summernote" name="questionContent"></textarea>
             </div>
             <!-- 첨부파일 -->
             <div class="upload-file-container">
