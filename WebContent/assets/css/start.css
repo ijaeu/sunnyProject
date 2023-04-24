@@ -30,18 +30,40 @@ p {
   background-color: #c6e6c6;
   color: #1a1919;
   border: 1px solid #bce4b5;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   letter-spacing: 0px;
   padding: 10px 10px;
   cursor: pointer;
   display: inline-block;
   position: relative;
-  bottom: 180px;
-  width: 180px;
+  bottom: 190px;
+  width: 160px;
+  
+}
+
+.btn2{
+  background-color: #c6e6c6;
+  color: #1a1919;
+  border: 1px solid #bce4b5;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  padding: 10px 10px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  bottom: 190px;
+  width: 160px;
+  margin-top : 10px;
 }
 
 .btn:hover{
+  background: rgba(44, 234, 95, 0.5);
+  color: white;
+  transition: all 0.5s;
+}
+.btn2:hover{
   background: rgba(44, 234, 95, 0.5);
   color: white;
   transition: all 0.5s;
