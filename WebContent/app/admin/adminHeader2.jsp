@@ -31,7 +31,7 @@
     </div>
   </section>
   <div class="user-count">
-    <div>
+    <div class="user-count-box-container">
       <div class="count-box-all">
         <div class="user-count-box">
           <span class="user-count-text">${headerInfo.getUserCount() }</span>

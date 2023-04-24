@@ -11,29 +11,27 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
-import com.sunny.app.follow.dao.FollowDAO;
-import com.sunny.app.follow.dto.FollowDTO;
 import com.sunny.app.gosu.dao.GosuDAO;
 import com.sunny.app.gosu.vo.GosuVO;
-import com.sunny.app.user.vo.UserVO;
 
-public class SearchOkController implements Execute {
+public class SearchByKeywordOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		  System.out.println("고수찾기 페이지에 들어왔다");
-		
-		  HttpSession session = req.getSession();
+		 System.out.println("고수찾기 페이지에 들어왔다");
+		  
+		 HttpSession session = req.getSession();
 		  int userNumber = 0;
 		  if(session.getAttribute("userNumber")!=null) {
 			  userNumber = (Integer) session.getAttribute("userNumber");
 		  }
-		  
+		 
 		  GosuDAO gosuDAO = new GosuDAO();
 	
-	      int total = gosuDAO.getTotal();
+//		  키워드로 total을 뽑는걸로 바꿔야한다
+		  String keyword = req.getParameter("keyword"); 
+		  
+	      int total = gosuDAO.getTotalByKeyword(keyword);
 	      String temp = req.getParameter("page");
 	      int page = temp == null ? 1 : Integer.valueOf(temp);
 	      
@@ -49,16 +47,14 @@ public class SearchOkController implements Execute {
 	      boolean prev = startPage > 1;
 	      boolean next = endPage != realEndPage;
 	      
-	      Map<String, Integer> pageMap = new HashMap<>();
+	      Map<String, Object> pageMap = new HashMap<>();
 	      pageMap.put("startRow", startRow);
 	      pageMap.put("rowCount", rowCount);
 	      pageMap.put("userNumber", userNumber);
+	      pageMap.put("keyword", keyword);
+	      System.out.println(pageMap);
 	      
-	      
-	      List<GosuVO> gosus = gosuDAO.selectAll(pageMap);
-	      
-	      System.out.println(gosus);
-	      
+	      List<GosuVO> gosus = gosuDAO.selectAllByKeyword(pageMap);
 		  req.setAttribute("gosus", gosus);
 	      req.setAttribute("page", page);
 	      req.setAttribute("startPage", startPage);
@@ -69,4 +65,5 @@ public class SearchOkController implements Execute {
 	      req.getRequestDispatcher("/app/gosu/search.jsp").forward(req, resp);
 	}
 
-}
+	}
+

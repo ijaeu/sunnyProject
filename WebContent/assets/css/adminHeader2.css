@@ -104,6 +104,8 @@ header {
   fill: #009a3e;
 }
 
+/* user count box */
+
 .user-count {
   width: 100%;
   height: 125.205px;
@@ -119,7 +121,12 @@ header {
   margin-bottom: 60px;
 }
 
-.user-count > div {
+.user-count-box-container{
+	margin: 0 auto;
+	width: 1200px;
+}
+
+.user-count-box-container > div {
   margin: auto;
   width: 80%;
   height: 100%;

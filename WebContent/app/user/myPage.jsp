@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Document</title>
+<title>마이페이지 | 볕 들 무렵</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/myPage.css" />
 </head>
@@ -135,14 +135,17 @@
 					<!-- 식고수 신청 페이지로 이동 -->
 					<!-- 식고수인 경우 버튼없앰 -->
 					<c:choose>
+					<c:when test="${myPage.getGradeNumber()==500}">
+						<p>식고수님에게 온 질문들을 확인해주세요!</p>
+					</c:when>
 						<c:when test="${myPage.getGradeNumber()==400}">
-							<p></p>
+							<p>죄송합니다, 식고수 신청이 거절되었습니다.</p>
 						</c:when>
 						<c:when test="${myPage.getGradeNumber()==300}">
-							<p></p>
+							<p>축하합니다! 식고수 신청이 승인되었습니다.</p>
 						</c:when>
 						<c:when test="${myPage.getGradeNumber()==200}">
-							<p>식고수 신청이 완료되었습니다.</p>
+							<p>식고수 신청이 완료되었습니다. 승인심사중이니 조금만 기다려주세요!</p>
 						</c:when>
 						<c:when test="${myPage.getGradeNumber()==100}">
 							<a
@@ -165,7 +168,7 @@
 					<!-- 스토리쓰기 페이지로 이동 -->
 					<c:if test="${sessionScope.userNumber ==  myPage.getUserNumber()}">
 						<a
-							href="${pageContext.request.contextPath}/question/questionWrite.qs">글쓰기</a>
+							href="${pageContext.request.contextPath}/story/storyWrite.st">글쓰기</a>
 					</c:if>
 				</div>
 			</div>
