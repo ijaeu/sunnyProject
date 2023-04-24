@@ -24,7 +24,12 @@
 			</p>
 			<div class="btngroup">
 				<a href="${pageContext.request.contextPath}/algorithm/testOne.ag">
-					<input type="submit" value="시작하기" class="btn">
+					<input type="submit" value="시작" class="btn">
+					</a>
+			</div>
+			<div class="btngroup">
+					<a href="${pageContext.request.contextPath}/main/mainOk.ma">
+					<input type="submit" value="취소" class="btn2">
 					</a>
 			</div>
 		</section>

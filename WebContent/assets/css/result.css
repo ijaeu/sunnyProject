@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle:wght@700&family=Gugi&family=Single+Day&display=swap');
-
-
+  @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
 body {
   background-color: rgb(202, 219, 202);
@@ -9,20 +7,23 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  font-family: 'Cute Font', cursive;
 }
 
 
 #result {
   background-color: whitesmoke;
   width: 500px;
-  height: 800px;
+  height: 950px;
   text-align: center;
   border-radius: 20px;
   margin-top: 30px;
+  font-family: 'Poor Story', cursive; 
+  font-weight:bold;
 }
 
 .result-name {
-  font-family: 'Single Day', cursive;
+  font-family: 'Poor Story', cursive;
   font-size: 35px;
   margin-top: 15px;
   font-size:35px;
@@ -33,27 +34,30 @@ div {
 }
 
 .content{
-  font-size:14px;
-  line-height: 25px;
   text-align: left; 
-  margin-left: 10px;
-  margin-top: 15px;
-  font-family: 'Gugi', cursive;
+  margin-top: 50px;
+  font-family: 'Poor Story', cursive; 
+  font-size : 18px; 
+  font-weight:bold;
+  line-height:30px;
 }
 
 .sub-content{
   text-align: left;
-  font-size:14px;
-  line-height: 25px;
-  font-family: 'Gugi', cursive;;
+  line-height: 30px;
+  font-family: 'Poor Story', cursive;
+   font-size : 18px; 
+   font-weight:bold;
   margin-top:10px;
+  margin-left : -10px;
 }
 
 h6{
   font-family: 'Single Day', cursive;
   font-size: 27px;
   text-align: left;
-  margin: 30px 0 0 10px;
+  margin: 20px 0 0 10px;
+  line-height:50px;
 }
 
 li::marker {
