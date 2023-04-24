@@ -325,3 +325,29 @@ function validateEmail() {
   }
 }
 
+/*조건에 맞지 않을 때 alert창 띄우고 회원가입 막기*/
+
+$('.submit-button').on('click', function(){
+	 
+	let cuPwMsg = $cuPwMsg.text();
+	let chPwMsg = $chPwMsg.text();
+	let nickMsg = $nicknameMsg.text();
+	
+	console.log(cuPwMsg.includes('않')); 
+	
+	if($currentPwInput.val()==''){
+		alert('현재 비밀번호를 입력해주세요');
+	}else if($userPwInput.val()==''){
+		alert('변경할 비밀번호를 입력해주세요');
+	}else if($checkPwInput.val()==''){
+		alert('변경할 비밀번호 확인을 입력해주세요')
+	}else{
+		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복')){
+			console.log('저장할 수 있음');
+			$('form').submit();
+		}else{
+			alert('회원정보를 다시 확인해 주세요');
+		}
+	}
+});
+
