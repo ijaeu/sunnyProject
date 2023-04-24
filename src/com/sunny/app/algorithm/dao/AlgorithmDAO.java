@@ -4,8 +4,11 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
+import com.sunny.app.plant.dto.PlantDTO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AlgorithmDAO {
 	private SqlSession sqlSession;
@@ -14,13 +17,9 @@ public class AlgorithmDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 
-	public List<AlgorithmDTO> algorithmResult(AlgorithmDTO algorithmDTO) {
-		System.out.println("algorithmResult 탐");
-		return sqlSession.selectList("algorithm.algorithmResult", algorithmDTO);
+	public PlantDTO algorithmResult(AlgorithmDTO algorithmDTO) {
+	    return sqlSession.selectOne("algorithmResult", algorithmDTO);
 	}
-
-	public List<AlgorithmDTO> selectPlant(AlgorithmDTO algorithmDTO) {
-		return sqlSession.selectList("algorithm.selectPlant", algorithmDTO);
-	}
-
+	
+	
 }

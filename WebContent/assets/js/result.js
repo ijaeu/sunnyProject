@@ -66,7 +66,7 @@
     function moveToResult() {
         setTimeout(function () {
             location.href = "/algorithm/result.ag";
-        }, 5000); // 5초 후에 result.ag로 이동
+        }, 3000); // 5초 후에 result.ag로 이동
     }
 
 

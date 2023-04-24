@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.sunny.app.Execute;
 import com.sunny.app.algorithm.dao.AlgorithmDAO;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
+import com.sunny.app.plant.dto.PlantDTO;
 
 public class TestTwoOkController implements Execute{
 
@@ -21,8 +22,7 @@ public class TestTwoOkController implements Execute{
 		AlgorithmDTO algorithmDTO = new AlgorithmDTO();
 		AlgorithmDAO algorithmDAO = new AlgorithmDAO();
 		HttpSession session = req.getSession();
-		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
-
+		PlantDTO result = algorithmDAO.algorithmResult(algorithmDTO);
 		
 		
 		//request.getParameter로 selectOne의 값 얻어오기

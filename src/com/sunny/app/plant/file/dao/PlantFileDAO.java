@@ -12,4 +12,8 @@ public class PlantFileDAO {
 	public PlantFileDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	public int selectPlantFile(int plantNumber) {
+		return sqlSession.selectOne("selectplantFile.select", plantNumber);
+	}
+	
 }
