@@ -142,6 +142,7 @@ var test = '';
 $nickNameInput.on('blur', function(){
    if($(this).val() == '') {
       $checkMsg2.text('닉네임을 입력하세요');
+	console.log($checkMsg2.text());
    } else {
       let nickName = $nickNameInput.val();
    
@@ -195,6 +196,7 @@ var test = '';
 $idInput.on('blur', function(){
    if($(this).val() == '') {
       $checkMsg.text('아이디를 입력하세요');
+		console.log($checkMsg.text());
    } else {
       let id = $idInput.val();
    
@@ -357,15 +359,17 @@ $('.submit-button').on('click', function(){
 	let cuPhoneMsg = $phoneMsg.text();
 	let cuEmailMsg = $emailMsg.text();
 	
+	console.log(cuIdMsg);
+	
 	console.log(cuIdMsg.includes('불가능')); 
 	console.log(cuIdMsg.includes('중복')); 
 	console.log(rgPwMsg.includes('불가능')); 
 	console.log(mcPwMsg.includes('일치')); 
 	console.log(nickMsg.includes('중복')); 
 	console.log(nickMsg.includes('입력')); 
-	console.log(nameMsg.includes('입력')); 
-	console.log(phoneMsg.includes('올바른')); 
-	console.log(emailMsg.includes('올바른')); 
+	console.log(cuNameMsg.includes('입력')); 
+	console.log(cuPhoneMsg.includes('올바른')); 
+	console.log(cuEmailMsg.includes('올바른')); 
 	
 if($idInput.val()=='' || $pwInput.val()=='' || $confirmPwInput.val()=='' || $nameInput.val()=='' || $nickNameInput.val()=='' 
 	|| $phoneNumInput.val()=='' || $emailsInput.val()=='' || $pwAnswerInput.val()=='')
