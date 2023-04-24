@@ -90,7 +90,7 @@
 									</tr>
 									<tr>
 										<th scope="row">닉네임</th>
-										<td>${userDetail.getUserNickname() }</td>
+										<td><a href="/user/myPageOk.us?userNumber=${userDetail.getUserNumber() }">${userDetail.getUserNickname() }</a></td>
 									</tr>
 									<tr>
 										<th scope="row">이름</th>

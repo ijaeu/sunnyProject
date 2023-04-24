@@ -265,6 +265,11 @@ table.user-detail-explain td {
   margin-left: 5px;
 }
 
+.user-detail-explain a:hover{
+  text-decoration: underline;
+  color: #009a3e;
+}
+
 .ben-btn:hover {
   background-color: rgb(213, 45, 45);
   color: #fff;

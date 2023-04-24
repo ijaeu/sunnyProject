@@ -67,7 +67,7 @@
 							</a></li>
 						<!-- 스토리 글쓰기 페이지로 -->
 						<li class="header2-btn-list">
-							<a href="${pageContext.request.contextPath}/app/story/storyWrite.jsp">
+							<a href="${pageContext.request.contextPath}/story/storyWrite.st">
 								<img src="${pageContext.request.contextPath}/assets/img/header/icon_pen.png" alt="" />
 							</a></li>
 					</ul>

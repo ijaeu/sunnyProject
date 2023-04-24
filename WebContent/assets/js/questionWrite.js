@@ -1,3 +1,10 @@
+// 헤더부분 초록색 동그라미 띄우기
+let $headerList = $('.header2-menu-list>a');
+$headerList.removeClass('header-active');
+
+let $headerGosu = $('#header-gosu');
+$headerGosu.addClass('header-active');
+
 let $fileInput = $('#file-input');
 let $fileList = $('.file-list');
 let $cnt = $('.cnt');
