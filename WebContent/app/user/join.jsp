@@ -135,7 +135,7 @@
             <span id="password-error"></span>
             <br><br><br>
             <div class="input-text">이름</div> <br>
-            <input type="text" placeholder="이름" name="userName" maxlength="10" required>
+            <input type="text" placeholder="이름" id="name" name="userName" maxlength="10" required>
             <span id="name-error"></span>
             <br><br><br>
             <div class="input-text3">
@@ -149,11 +149,11 @@
             <br><br><br>
             <div class="input-text">
               연락처</div> <br>
-            <input type="tel" placeholder="010-1234-5678" name="userPhone" maxlength="13" required>
+            <input type="tel" placeholder="010-1234-5678" id=phoneNumber name="userPhone" maxlength="13" required>
             <span class="check-msg" id="phone-msg"></span>
             <br><br><br>
             <div class="input-text">이메일</div> <br>
-            <input type="email" name="userEmail" placeholder="aa123@naver.com" required onblur="validateEmail()">
+            <input type="email" id="email" name="userEmail" placeholder="aa123@naver.com" required onblur="validateEmail()">
             <span class="check-msg" id="check-email-msg"></span>
             <br><br><br>
             <div class="input-text">
@@ -167,7 +167,7 @@
             </select>
             <br><br><br>
             <div class="input-text">비밀번호 찾기 답변</div> <br>
-            <input type="text" placeholder="선택한 비밀번호 질문의 답을 입력하세요" name="findPasswordAnswer" required>
+            <input type="text" placeholder="선택한 비밀번호 질문의 답을 입력하세요" id="passwordAnswer1" name="findPasswordAnswer" required>
             <br><br><br><br>
             <div class="input-text">약관동의</div><br>
             <div class="agree">

@@ -305,7 +305,7 @@ phoneInput.addEventListener('input', function() {
     phoneMsg.textContent = '';
   } else {
     phoneMsg.classList.add('error');
-    phoneMsg.innerHTML = " -를 포함한 올바른 형식의 '휴대폰번호'를 입력해주세요.<br> ex.  010-1234-5678";
+    phoneMsg.innerHTML = " -를 포함한 올바른 형식의 '휴대폰번호'를 입력하세요.<br> ex.  010-1234-5678";
   }
 });
 
@@ -327,11 +327,35 @@ function validateEmail() {
 
 /*조건에 맞지 않을 때 alert창 띄우고 회원가입 막기*/
 
+/*let $checkMsg = $("#check-id-msg"); 아이디를 입력하세요, 사용 불가능한 아이디입니다
+let $checkPwMsg = $("#check-pw-msg"); 사용 불가능한 비밀번호입니다
+const password_error = document.getElementById("password-error"); 두 비밀번호가 일치하지 않습니다.
+let $checkMsg2 = $("#nickname-error"); 닉네임을 입력하세요, 중복된 닉네임입니다.
+let $nameMsg = $("#name-error"); 이름을 입력하세요
+const phoneMsg = document.querySelector('#phone-msg'); 올바른 형식의 휴대폰 번호를 입력하세요
+var emailMsg = document.getElementById('check-email-msg'); 올바른 이메일을 입력해주세요
+
+let $nickNameInput = $('#nickName'); 닉네임 인풋칸
+let $idInput = $('#id');	아이디 인풋칸
+let $pwInput = $("#password");	비밀번호 인풋칸
+*/
+
+let $confirmPwInput = $('#confirm-password'); /*비밀번호확인 인풋칸*/
+let $nameInput = $('#name');	/*이름 인풋칸*/
+let $phoneNumInput = $('#phoneNumber');		/*연락처 인풋칸*/
+let $emailsInput = $('#email');	/*이메일 인풋칸*/
+let $pwAnswerInput = $('passwordAnswer1');	/*비밀번호찾기답변 인풋칸*/
+
+
 $('.submit-button').on('click', function(){
 	 
-	let cuPwMsg = $cuPwMsg.text();
-	let chPwMsg = $chPwMsg.text();
-	let nickMsg = $nicknameMsg.text();
+	let cuIdMsg = $checkMsg.text();
+	let rgPwMsg = $checkPwMsg.text();
+	let mcPwMsg = $pwErrorMsg.text();
+	let nickMsg = $checkMsg2.text();
+	let cuNameMsg = $nameMsg.text();
+	let cuPhoneMsg = $phoneMsg.text();
+	let cuEmailMsg = $emailMsg.text();
 	
 	console.log(cuPwMsg.includes('않')); 
 	
