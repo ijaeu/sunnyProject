@@ -357,7 +357,7 @@ $('.submit-button').on('click', function(){
 	let cuPhoneMsg = $phoneMsg.text();
 	let cuEmailMsg = $emailMsg.text();
 	
-	console.log(cuPwMsg.includes('않')); 
+	console.log(cuIdMsg.includes('불가능')); 
 	
 	if($currentPwInput.val()==''){
 		alert('현재 비밀번호를 입력해주세요');
