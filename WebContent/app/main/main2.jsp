@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>홈 | 볕 들 무렵</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/main2.css" />
 </head>

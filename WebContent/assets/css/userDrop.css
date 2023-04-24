@@ -65,9 +65,17 @@ form > button {
 .form button {
   background-color: #4d4d4d;
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.form button:hover{
+	background-color: #02bf4e;
 }
 
 .form a {
   background-color: #009a3e;
   color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.form a:hover{
+	background-color: #02bf4e;
 }
