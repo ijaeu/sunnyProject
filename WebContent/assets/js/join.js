@@ -131,55 +131,58 @@ confirm_password.addEventListener("blur", function () {
 	name.addEventListener("blur", validateName);
 
 
-/*닉네임 미입력시 메세지*/
-	const nickname = document.querySelector('input[name="userNickname"]');
-	const nickname_error = document.getElementById("nickname-error");
+/*닉네임 미입력 메세지*/
 
-	function validateNickname() {
- 	 if (nickname.validity.valueMissing) {
-    nickname_error.textContent = "닉네임을 입력하세요";
-  } else {
-    nickname_error.textContent = "";
-  }
-}
+let $checkMsg2 = $("#nickname-error");
 
-	nickname.addEventListener("blur", validateNickname);
+let $nickNameInput = $('#nickName');
 
-/*중복닉네임 메세지*/
+var test = '';
 
-// 닉네임 중복검사 결과를 받아와서 출력하는 함수
-function showNicknameCheckResult(message, isValid) {
-  nickname_error.textContent = message;
-  nickname_error.style.display = isValid ? "none" : "inline";
-  nickname_check.textContent = message;
-  nickname_check.style.display = isValid ? "inline" : "none";
-}
+$nickNameInput.on('blur', function(){
+   if($(this).val() == '') {
+      $checkMsg2.text('닉네임을 입력하세요');
+   } else {
+      let nickName = $nickNameInput.val();
+   
+   $.ajax({
+      url : '/user/checkNickOk.us',
+      type : 'get',
+      data : {userNickname : nickName},
+      success : function(result) {
+         $checkMsg2.text(result);
+         test = result;
+      },
+      error : function(a,b,c){
+         console.log(c);
+      }
+      
+   });
+   }
+});
 
-// 사용자가 입력한 닉네임이 변경될 때마다 호출되는 함수
-function onNicknameInput() {
-  const userNickname = nickname.value.trim();
-  if (userNickname.length === 0) {
-    showNicknameCheckResult("", false);
-    return;
-  }
-  fetch("/user/checkNickOk.us?userNickname=" + userNickname)
-    .then(response => response.text())
-    .then(result => {
-      showNicknameCheckResult(result, result.includes("사용 가능한"));
-    })
-    .catch(error => {
-      console.error(error);
-      showNicknameCheckResult("서버 에러가 발생했습니다.", false);
-    });
-}
-
-nickname.addEventListener("input", onNicknameInput);
-
+//닉네임 중복 검사를 위한 ajax
+	$nickNameInput.on('change', function() {
+   let nickName = $nickNameInput.val();
+   
+   $.ajax({
+      url : '/user/checkNickOk.us',
+      type : 'get',
+      data : {userNickname : nickName},
+      success : function(result) {
+         $checkMsg2.text(result);
+         test = result;
+      },
+      error : function(a,b,c){
+         console.log(c);
+      }
+      
+   });
+   
+});
 
 
 /*아이디*/
-
-
 
 let $checkMsg = $("#check-id-msg");
 let $checkPwMsg = $("#check-pw-msg");
@@ -191,14 +194,14 @@ var test = '';
 
 $idInput.on('blur', function(){
    if($(this).val() == '') {
-      $checkMsg.text('아이디를 입력하세요!');
+      $checkMsg.text('아이디를 입력하세요');
    } else {
       let id = $idInput.val();
    
    $.ajax({
-      url : '/member/checkIdOk.me',
+      url : '/user/checkIdOk.me',
       type : 'get',
-      data : {memberId : id},
+      data : {userId : id},
       success : function(result) {
          $checkMsg.text(result);
          test = result;
@@ -211,7 +214,7 @@ $idInput.on('blur', function(){
    }
 });
 
-//중복 검사를 위한 ajax
+//아이디 중복 검사를 위한 ajax
 	$idInput.on('change', function() {
    let id = $idInput.val();
    
@@ -234,6 +237,8 @@ $idInput.on('blur', function(){
    
 });
 
+/*아이디 정규표현식*/
+
 function checkIdValidity() {
    const regex1 = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z0-9]{5,10}$/;
    if(regex1.test( $idInput.val() )) {
@@ -244,6 +249,7 @@ function checkIdValidity() {
 }
 
 
+/*비밀번호 정규표현식*/
 // 대소문자 상관 없이 영어가 포함, 숫자 포함, 특수문자 포함, 8글자 이상
 const regex2 = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
 
