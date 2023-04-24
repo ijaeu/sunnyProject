@@ -26,13 +26,13 @@ public class StoryReadOkController implements Execute {
 		System.out.println("userNumber" + userNumber);
 		
 		
-		
 		Map<String, Integer>pageMap = new HashMap<>();
 		pageMap.put("userNumber", userNumber);
 		pageMap.put("storyNumber", storyNumber);
 		
 		StoryListVO storyListVO = storyDAO.select(pageMap);
 		List<StoryFileDTO> storyFiles = new StoryFileDAO().select(storyNumber);
+		System.out.println(storyFiles);
 		
 		storyDAO.updateReadCount(storyNumber);
 		storyListVO.setStoryFiles(storyFiles);

@@ -27,11 +27,13 @@ public class StoryUpdateOkController implements Execute {
 		
 		System.out.println("storyOkContoller");
 
-		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "storyUpload/";
-		int fileSize = 1024 * 1024 * 10;
+        int maxSize  = 1024*1024*30;
+        String fsl = File.separator;
+        String root = req.getSession().getServletContext().getRealPath(fsl);
+        String uploadPath = root + fsl + "upload/storyUpload";
 		System.out.println(uploadPath);
 
-		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8",
+		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, maxSize, "utf-8",
 				new DefaultFileRenamePolicy());
 
 		int storyNumber = Integer.parseInt(multipartRequest.getParameter("storyNumber"));

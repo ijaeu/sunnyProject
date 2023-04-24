@@ -29,8 +29,8 @@
 
 </head>
 <body>
-<%-- 	   <jsp:include
-   page="${pageContext.request.contextPath}/app/header/header.jsp"/>  --%>
+ 	   <jsp:include
+   page="${pageContext.request.contextPath}/app/header/header.jsp"/>  
 	<div class="container">
 		<form
 			action="${pageContext.request.contextPath}/story/storyUpdateOk.st"
