@@ -36,7 +36,7 @@ public class SearchByKeywordOkController implements Execute {
 	      int page = temp == null ? 1 : Integer.valueOf(temp);
 	      
 //	      한 페이지에 몇 개의 게시물? 10개
-	      int rowCount = 10;
+	      int rowCount = 1000;
 //	      페이지 버튼 세트는? 5개씩
 	      int pageCount = 5;
 	      int startRow = (page-1) * rowCount;
