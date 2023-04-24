@@ -21,8 +21,8 @@
 	
 <!-- 질문쓰기 -->
 	<insert id="insert" parameterType="QuestionDTO" >
-		insert into tbl_question(question_title, question_content, gosu_number, user_number)
-		values(#{questionTitle},#{questionContent}, #{gosuNumber}, #{userNumber})
+		insert into tbl_question(question_title, question_content, gosu_number, user_number, question_status, question_date, last_update, question_viewcnt)
+		values(#{questionTitle},#{questionContent}, #{gosuNumber}, #{userNumber}, 0, now(), now(), 0)
 	</insert>
 	
 	<select id="getSequence" resultType="_int">
@@ -60,7 +60,7 @@
 		on tq.question_number =tqf.question_number 
 		where tg.gosu_number = #{gosuNumber}
 		and tq.question_status=#{questionStatus}
-		order by tq.last_update
+		order by tq.last_update desc
 	</select>
 	
 	<!-- gosu question list page gosu info -->
@@ -85,7 +85,7 @@
 		<if test="questionStatus == 1">
 			and tq.question_status = 1
 		</if>
-		order by tq.last_update
+		order by question_number desc
 	</select>
 </mapper>
 

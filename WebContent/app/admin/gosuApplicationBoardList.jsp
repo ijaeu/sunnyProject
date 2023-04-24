@@ -90,7 +90,7 @@
 												<a
 													href="gosuApplicationBoardRead.ad?applyNumber=${applicationList.getApplyNumber() }">${applicationList.getApplyTitle() }</a>
 											</div>
-											<div class="writer">${applicationList.getUserNickname() }</div>
+											<div class="writer"><a href="/user/myPageOk.us?userNumber=${applicationList.getUserNumber() }">${applicationList.getUserNickname() }</a></div>
 											<div class="date">${applicationList.getApplyDate() }</div>
 										</div>
 									</c:forEach>

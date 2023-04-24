@@ -281,7 +281,7 @@
 		(select count(user_number) from tbl_user where grade_number = 500) as gosu_count,
 		(select count(story_number) from tbl_story) as story_count,
 		(select count(question_number) from tbl_question) as question_count,
-		(select count(reply_number) from tbl_question_reply) as question_reply_count
+		(select count(question_number) from tbl_question where question_status = 1) as question_reply_count;
 	</select>
 
 </mapper>

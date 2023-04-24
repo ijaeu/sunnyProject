@@ -2,16 +2,23 @@ package com.sunny.app.admin.vo;
 
 public class GosuApplicationVO {
 	
-	int applyNumber;
-	String userNickname;
-	String applyTitle;
-	String applyDate;
+	private int applyNumber;
+	private int userNumber;
+	private String userNickname;
+	private String applyTitle;
+	private String applyDate;
 	
 	public int getApplyNumber() {
 		return applyNumber;
 	}
 	public void setApplyNumber(int applyNumber) {
 		this.applyNumber = applyNumber;
+	}
+	public int getUserNumber() {
+		return userNumber;
+	}
+	public void setUserNumber(int userNumber) {
+		this.userNumber = userNumber;
 	}
 	public String getUserNickname() {
 		return userNickname;
@@ -33,9 +40,11 @@ public class GosuApplicationVO {
 	}
 	@Override
 	public String toString() {
-		return "GosuApplicationVO [applyNumber=" + applyNumber + ", userNickname=" + userNickname + ", applyTitle="
-				+ applyTitle + ", applyDate=" + applyDate + "]";
+		return "GosuApplicationVO [applyNumber=" + applyNumber + ", userNumber=" + userNumber + ", userNickname="
+				+ userNickname + ", applyTitle=" + applyTitle + ", applyDate=" + applyDate + "]";
 	}
+	
+	
 	
 	
 

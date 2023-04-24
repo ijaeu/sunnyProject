@@ -248,6 +248,11 @@ table.gosu-detail-explain td {
   border-bottom: 1px solid #ccc;
 }
 
+.gosu-detail-explain a:hover{
+  text-decoration: underline;
+  color: #009a3e;
+}
+
 .gosu-btn-groups {
   text-align: right;
   width: 100%;

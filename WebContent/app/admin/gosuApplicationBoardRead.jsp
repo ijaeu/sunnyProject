@@ -71,7 +71,7 @@
 					<div class="gosu-applicant">
 						<div class="applicant-info">
 							<div class="applicant-user-name">
-								<a href="">닉네임 : ${applydata.getUserNickname() }</a>
+								닉네임 :&nbsp;<a href="/user/myPageOk.us?userNumber=${applydata.getUserNumber() }"> ${applydata.getUserNickname() }</a>
 							</div>
 						</div>
 						<div class="application-date">

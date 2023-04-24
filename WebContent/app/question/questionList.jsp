@@ -22,7 +22,7 @@
 			<!-- 고수닉네임과 질문페이지 안내 -->
 			<div class="gosu-info">
 				<p>
-					<strong>식고수 <a href="">${gosuInfo.getUserNickname() }</a></strong>
+					식고수 <strong><a href="">${gosuInfo.getUserNickname() }</a></strong>
 					님의 질문페이지 입니다.
 				</p>
 			</div>
@@ -64,12 +64,12 @@
 									</div>
 									<div class="user-profile-box">
 										<div class="user-profile-img-box">
-											<a href=""><img
+											<a href="/user/myPageOk.us?userNumber=${questions.getUserNumber() }"><img
 												src="${pageContext.request.contextPath}/upload/profileUpload/${questions.getFileSystemName()}"
 												alt=""></a>
 										</div>
 										<div class="user-nickname-box">
-											<a href="">${questions.getUserNickname() }</a>
+											<a href="/user/myPageOk.us?userNumber=${questions.getUserNumber() }">${questions.getUserNickname() }</a>
 										</div>
 									</div>
 									<div class="question-date">

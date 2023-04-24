@@ -1,3 +1,10 @@
+// 헤더부분 초록색 동그라미 띄우기
+let $headerList = $('.header2-menu-list>a');
+$headerList.removeClass('header-active');
+
+let $headerGosu = $('#header-gosu');
+$headerGosu.addClass('header-active');
+
 let $noAnswerList = $('.no-answer');
 let $answerList = $('.ok-answer');
 
@@ -50,9 +57,9 @@ $answerList.click(function() {
 									</div>
 									<div class="user-profile-box">
 									<div class="user-profile-img-box">
-										<a href=""><img src="${contextPath}/upload/profileUpload/${question.fileSystemName}" alt=""></a>
+										<a href="/user/myPageOk.us?userNumber=question.userNumber"><img src="${contextPath}/upload/profileUpload/${question.fileSystemName}" alt=""></a>
 									</div>	
-									<div class="user-nickname-box"><a href="">${question.userNickname }</a>
+									<div class="user-nickname-box"><a href="/user/myPageOk.us?userNumber=question.userNumber">${question.userNickname }</a>
 									</div>
 									</div>
 									<div class="question-date"><p>작성시간<hr>${question.questionDate }</p></div>

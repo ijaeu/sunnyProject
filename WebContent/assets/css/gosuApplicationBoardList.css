@@ -113,6 +113,11 @@ a:visited {
   font-size: 12px;
 }
 
+.writer a:hover{
+  text-decoration: underline;
+  color: #009a3e;
+}
+
 .board-read-all {
   margin-left: 20px;
 }
