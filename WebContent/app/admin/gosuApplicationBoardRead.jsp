@@ -82,7 +82,7 @@
 					<div class="gosu-department-box">
 						<div class="gosu-department">
 							<div class="gosu-department-text">전문분야 :</div>
-							<div class="gosu-department-text">${applydata.getGosuFieldNames() }</div>
+							<div class="gosu-field-names">${applydata.getGosuFieldNames() }</div>
 						</div>
 					</div>
 					<!-- 내용 -->

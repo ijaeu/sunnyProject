@@ -24,7 +24,8 @@ public class GosuManageController implements Execute {
 		// 세션체크
 		int adminNumber = 0;
 		if (AdminUtils.sessionCheck(req)==0) {
-			resp.sendRedirect("app/admin/login.ad?login=noInfo");
+			resp.sendRedirect("/admin/login.ad?login=noInfo");
+			return;
 		} else {
 			adminNumber = AdminUtils.sessionCheck(req);
 		}

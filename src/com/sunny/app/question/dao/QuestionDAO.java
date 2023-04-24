@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.question.dto.QuestionDTO;
+import com.sunny.app.question.vo.GosuInfoVO;
+import com.sunny.app.question.vo.QuestionListVO;
 import com.sunny.app.question.vo.QuestionVO;
 
 public class QuestionDAO {
@@ -54,8 +56,20 @@ public class QuestionDAO {
 	}
 	
 //	나에게온 질문리스트 뽑기
-	public List<QuestionVO> getMypageList(Map<String, Integer>gosuQ) {
+	public List<QuestionVO> getMypageList(Map<String, Integer> gosuQ) {
 		return sqlSession.selectList("question.getMypageList", gosuQ);
+	}
+	
+//	질문리스트 페이지
+	public List<QuestionListVO> getQuestionList(Map<String, Integer> questionMap){
+		System.out.println("getQuestionList 메서드");
+		return sqlSession.selectList("question.questionList", questionMap);
+	}
+	
+//	고수 정보뽑기
+	public GosuInfoVO gosuInfo(int gosuNumber) {
+		System.out.println("gosuInfo 메서드");
+		return sqlSession.selectOne("question.gosuInfo", gosuNumber);
 	}
 }
 
