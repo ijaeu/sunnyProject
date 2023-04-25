@@ -356,7 +356,7 @@ $('.submit-button').on('click', function() {
 		if (!(cuIdMsg.includes('불') || cuIdMsg.includes('중복')) && !rgPwMsg.includes('불') && !pwErMsg.includes('일치') && !nickMsg.includes('중복')
 			&& !cuPhoneMsg.includes('올바른') && !cuEmailMsg.includes('올바른')) {
 			console.log('저장할 수 있음');
-	/*		$('form').submit();*/
+			$('form').submit();
 		} else {
 			alert('회원정보를 다시 확인해 주세요');
 		}
@@ -377,14 +377,4 @@ $('form').on('submit', function(e){
 });
 
 
-
-/*submitBtn.addEventListener('click', (event) => {
-   if (checkbox.value === '-1') {
-	event.preventDefault(); // 이벤트의 기본 동작(즉, submit)을 막음
-	 alert('필수약관을 체크하세요.');
-   } else {
-   const form = document.querySelector('form');
-   if (form.checkValidity()) {
-	 form.submit();
-   }*/
 
