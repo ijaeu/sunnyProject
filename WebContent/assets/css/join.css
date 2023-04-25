@@ -285,3 +285,16 @@
 	color: red;
 }
 
+#nickname-error {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  color: red;
+}
+
+#nickname-check {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  color: green;
+}
