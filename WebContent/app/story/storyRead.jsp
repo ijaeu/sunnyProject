@@ -45,14 +45,17 @@
 						</div>
 						<p class="profile">${story.getUserNickname()}</p>
 					</a>
-					<c:if test="${story.getFollowingStatus() == 0 }">
-						<button type="button" class="p1 follow dir"
-							data-userNumber="${story.getUserNumber()}">팔로우</button>
+					<c:if test="${story.getUserNumber() ne userNumber}">
+						<c:if test="${story.getFollowingStatus() == 0}">
+							<button type="button" class="p1 follow dir"
+								data-userNumber="${story.getUserNumber()}">팔로우</button>
+						</c:if>
+						<c:if test="${story.getFollowingStatus() == 1}">
+							<button type="button" class="p1 follow dir following"
+								data-userNumber="${story.getUserNumber()}">팔로잉</button>
+						</c:if>
 					</c:if>
-					<c:if test="${story.getFollowingStatus() == 1 }">
-						<button type="button" class="p1 follow dir following"
-							data-userNumber="${story.getUserNumber()}">팔로잉</button>
-					</c:if>
+
 				</div>
 			</div>
 
