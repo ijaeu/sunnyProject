@@ -167,20 +167,20 @@ $(document).ready(function() {
 		}
 	});
 
-deleteBtn.on("click", function() {
-    // 입력 내용 초기화
-    $("#content").val("");
+	deleteBtn.on("click", function() {
+		// 입력 내용 초기화
+		$("#content").val("");
 
-    // 부모 요소 숨기기
-    if (!storyContentBox2.is(":hidden")) {
-        storyContentBox2.hide();
-    } else if (!storyContentBox3.is(":hidden")) {
-        storyContentBox3.hide();
-    }
+		// 부모 요소 숨기기
+		if (!storyContentBox2.is(":hidden")) {
+			storyContentBox2.hide();
+		} else if (!storyContentBox3.is(":hidden")) {
+			storyContentBox3.hide();
+		}
 
-    // addBtn 보이기
-    addBtn.show();
-});
+		// addBtn 보이기
+		addBtn.show();
+	});
 
 
 });
@@ -188,57 +188,68 @@ deleteBtn.on("click", function() {
 
 
 $("#file3").on("change", function() {
-    var files = this.files;
-    if (files.length > 1) {
-        alert("내용사진은 1개씩만 첨부 가능합니다.");
-        return;
-    }
-    var file = files[0];
-    var src = URL.createObjectURL(file);
-    $(".file-list3").html(`
+	var files = this.files;
+	if (files.length > 1) {
+		alert("내용사진은 1개씩만 첨부 가능합니다.");
+		return;
+	}
+	var file = files[0];
+	var src = URL.createObjectURL(file);
+	$(".file-list3").html(`
         <li class="preview-img-box">
             <img src="${src}">
 <button type="button" class="delete-button" data-file-index="0">삭제</button>
         </li>
     `);
-    $(".cnt3").text(1);
+	$(".cnt3").text(1);
 });
 
 
 $("#file4").on("change", function() {
-    var files = this.files;
-    if (files.length > 1) {
-        alert("내용사진은 1개씩만 첨부 가능합니다.");
-        return;
-    }
-    var file = files[0];
-    var src = URL.createObjectURL(file);
-    $(".file-list4").html(`
+	var files = this.files;
+	if (files.length > 1) {
+		alert("내용사진은 1개씩만 첨부 가능합니다.");
+		return;
+	}
+	var file = files[0];
+	var src = URL.createObjectURL(file);
+	$(".file-list4").html(`
         <li class="preview-img-box">
             <img src="${src}">
 <button type="button" class="delete-button" data-file-index="0">삭제</button>
         </li>
     `);
-    $(".cnt4").text(1);
+	$(".cnt4").text(1);
 });
 
 
 $(".file-list3").on("click", ".delete-button", function() {
-    // 이미지 미리보기 삭제
-    $(".file-list3").html("");
-    // 첨부한 파일 초기화
-    $("#file3").val("");
-    // 첨부한 파일 개수 초기화
-    $(".cnt3").text("0");
+	// 이미지 미리보기 삭제
+	$(".file-list3").html("");
+	// 첨부한 파일 초기화
+	$("#file3").val("");
+	// 첨부한 파일 개수 초기화
+	$(".cnt3").text("0");
 });
 
 $(".file-list4").on("click", ".delete-button", function() {
-    // 이미지 미리보기 삭제
-    $(".file-list4").html("");
-    // 첨부한 파일 초기화
-    $("#file4").val("");
-    // 첨부한 파일 개수 초기화
-    $(".cnt4").text("0");
+	// 이미지 미리보기 삭제
+	$(".file-list4").html("");
+	// 첨부한 파일 초기화
+	$("#file4").val("");
+	// 첨부한 파일 개수 초기화
+	$(".cnt4").text("0");
+});
+
+
+$('form').on('submit', function(e) {
+    if ($('#file2')[0].files.length == 0) {
+        e.preventDefault();
+        alert("내용사진을 추가해주세요!");
+        return false;
+    }
+    // submit the form if there is at least one image file selected
+    return true;
 });
 
 
