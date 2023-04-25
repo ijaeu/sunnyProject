@@ -10,9 +10,9 @@
 	</insert>
 	
 	<select id="select" parameterType="_int" resultType="QuestionVO">
-		select file_system_name, file_original_name, user_number
+		select file_system_name, file_original_name, question_number
 		from tbl_question_file
-		where user_number = #{userNumber}
+		where question_number = #{questionNumber}
 	</select>
 	
 </mapper>

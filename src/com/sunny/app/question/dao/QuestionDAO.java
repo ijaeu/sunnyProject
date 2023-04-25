@@ -9,6 +9,7 @@ import com.mybatis.config.MyBatisConfig;
 import com.sunny.app.question.dto.QuestionDTO;
 import com.sunny.app.question.vo.GosuInfoVO;
 import com.sunny.app.question.vo.QuestionListVO;
+import com.sunny.app.question.vo.QuestionReadVO;
 import com.sunny.app.question.vo.QuestionVO;
 
 public class QuestionDAO {
@@ -70,6 +71,28 @@ public class QuestionDAO {
 	public GosuInfoVO gosuInfo(int gosuNumber) {
 		System.out.println("gosuInfo 메서드");
 		return sqlSession.selectOne("question.gosuInfo", gosuNumber);
+	}
+	
+//	Read페이지 게시글 데이터
+	public QuestionReadVO questionRead(Map<String, Integer> pageMap) {
+		System.out.println("questionRead 메서드 ");
+		return sqlSession.selectOne("question.questionRead", pageMap);
+	}
+	
+//	질문 삭제
+	public void delete(int questionNumber) {
+		System.out.println("question delete 메서드");
+		sqlSession.delete("question.delete", questionNumber);
+	}
+	
+//	수정 정보 가져오기
+	public QuestionDTO updateSelect(int questionNumber) {
+		return sqlSession.selectOne("question.updateSelect", questionNumber);
+	}
+	
+//	수정
+	public void update(Map<String, Object> pageMap) {
+		sqlSession.update("question.update", pageMap);
 	}
 }
 

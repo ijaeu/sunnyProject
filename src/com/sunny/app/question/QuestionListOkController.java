@@ -31,16 +31,18 @@ public class QuestionListOkController implements Execute {
 
 
 //	    처음에는 0으로 설정(답변대기)
-		Integer qusetionStatus = 0;
+		Integer questionStatus = 0;
 		
 	    Map<String, Integer> questionMap = new HashMap<>();
 	    questionMap.put("gosuNumber", gosuNumber);
-	    questionMap.put("questionStatus", qusetionStatus);
-	      
-	    List<QuestionListVO> questions = questionDAO.getQuestionList(questionMap);
+	    questionMap.put("questionStatus", questionStatus);
+	    System.out.println(questionStatus);
+	    
+	    List<QuestionListVO> questionList = questionDAO.getQuestionList(questionMap);
+	    System.out.println(questionList);
 	     
 	    req.setAttribute("gosuInfo", gosuInfoVO);
-	  	req.setAttribute("questionList", questions);
+	  	req.setAttribute("questionList", questionList);
 	  	  
 	    req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
 	   }

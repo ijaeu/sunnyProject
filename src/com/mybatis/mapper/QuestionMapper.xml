@@ -48,7 +48,7 @@
 	<update id="updateReadCount" parameterType="_int">
 		update tbl_question
 		set question_viewcnt = question_viewcnt + 1
-		where question_number=#{questionNumber}
+		where question_number = #{questionNumber}
 	</update>
 	
 	<!-- 마이페이지에서 나에게 온 질문리스트뽑기 -->
@@ -73,7 +73,7 @@
 	
 	<!-- gosu question list 질문목록 -->
 	<select id="questionList" parameterType="map" resultType="QuestionListVO">
-		select tq.question_number, tq.question_title, date_format(tq.question_date, '%Y-%m-%d') as question_date, tu.user_nickname, tuf.file_system_name 
+		select tq.question_number, tq.question_title, date_format(tq.question_date, '%Y-%m-%d') as question_date, tu.user_number, tu.user_nickname, tuf.file_system_name 
 		from tbl_gosu tg 
 		left join tbl_question tq on tg.gosu_number = tq.gosu_number
 		left join tbl_user tu on tq.user_number = tu.user_number
@@ -87,5 +87,47 @@
 		</if>
 		order by question_number desc
 	</select>
+	
+	<select id="questionRead" parameterType="map" resultType="QuestionReadVO">
+		select
+		tq.question_number ,
+		tq.gosu_number ,
+		tq.user_number ,
+		tu.user_nickname ,
+		tq.question_title ,
+		tq.question_content ,
+		tq.question_date ,
+		tq.last_update ,
+		tq.question_viewcnt ,
+		tq.question_status , 
+		tqf.file_system_name ,
+		tuf.file_system_name as profile_system_name,
+		CASE WHEN EXISTS
+		(SELECT 1
+		FROM tbl_follow f
+		WHERE f.user_to = tu.user_number AND f.user_from = #{userNumber})
+		THEN 1
+		ELSE 0
+		END AS following_status
+		from tbl_question_file tqf 
+		right join tbl_question tq on tqf.question_number = tq.question_number and tqf.gosu_number =tq.gosu_number 
+		left join tbl_user tu on tq.user_number = tu.user_number 
+		left join tbl_user_file tuf on tu.user_number = tuf.user_number 
+		where tq.question_number = ${questionNumber}
+	</select>
+	
+	<select id="updateSelect" parameterType="_int" resultType="QuestionDTO">
+			SELECT question_number, gosu_number, user_number, question_title, 
+			question_content, question_date, question_viewcnt, question_status, last_update
+			FROM tbl_question
+			where question_number = ${questionNumber}
+	</select>
+	
+	<!-- 수정 -->
+	<update id="update" parameterType="map" >
+		UPDATE tbl_question
+			set question_title = #{questionTitle}, question_content = #{questionContent}, last_update = now()
+		WHERE question_number = #{questionNumber}
+	</update>
 </mapper>
 

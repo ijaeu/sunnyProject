@@ -18,7 +18,8 @@ public class QuestionReplyVO {
 	private int userNumber;
 	private String replyContent;
 	private Date replyDate;
-	private String userNickName;
+	private String userNickname;
+	private String replyProfileSystemName;
 	
 	public QuestionReplyVO() {
 	}
@@ -70,22 +71,31 @@ public class QuestionReplyVO {
 	public void setReplyDate(Date replyDate) {
 		this.replyDate = replyDate;
 	}
-	
-	
 
-	public String getUserNickName() {
-		return userNickName;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
+
+	public String getReplyProfileSystemName() {
+		return replyProfileSystemName;
+	}
+
+	public void setReplyProfileSystemName(String replyProfileSystemName) {
+		this.replyProfileSystemName = replyProfileSystemName;
 	}
 
 	@Override
 	public String toString() {
 		return "QuestionReplyVO [replyNumber=" + replyNumber + ", gosuNumber=" + gosuNumber + ", questionNumber="
 				+ questionNumber + ", userNumber=" + userNumber + ", replyContent=" + replyContent + ", replyDate="
-				+ replyDate + ", userNickName=" + userNickName + "]";
+				+ replyDate + ", userNickname=" + userNickname + ", replyProfileSystemName=" + replyProfileSystemName
+				+ "]";
 	}
 
+
+	
 }
