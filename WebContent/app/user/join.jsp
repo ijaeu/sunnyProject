@@ -149,11 +149,11 @@
             <br><br><br>
             <div class="input-text">
               연락처</div> <br>
-            <input type="tel" placeholder="010-1234-5678" id=phoneNumber name="userPhone" maxlength="13" required>
+            <input type="tel" placeholder="010-1234-5678" id="phoneNumber" name="userPhone" maxlength="13" required>
             <span class="check-msg" id="phone-msg"></span>
             <br><br><br>
             <div class="input-text">이메일</div> <br>
-            <input type="email" id="email" name="userEmail" placeholder="aa123@naver.com" required onblur="validateEmail()">
+            <input type="email" id="email" name="userEmail" placeholder="aa123@naver.com" required>
             <span class="check-msg" id="check-email-msg"></span>
             <br><br><br>
             <div class="input-text">
@@ -200,7 +200,7 @@
               </div>
             </div>
             <br><br><br>
-            <button type="submit" id="submit-button" class="submit-button">회원가입 완료</button>
+            <button type="button" id="submit-button" class="submit-button">회원가입 완료</button>
           </div>
         </form>
       </div>
