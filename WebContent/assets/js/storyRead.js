@@ -146,19 +146,26 @@ function showStoryReply(replies) {
 
 //댓글작성
 $('.submit-btn').on('click', function() {
-	$.ajax({
-		url: '/storyReply/storyReplyWriteOk.sr',
-		type: 'post',
-		data: {
-			storyNumber: storyNumber,
-			userNumber: userNumber,
-			replyContent: $('#content').val()
-		},
-		success: function() {
-			storyReplyAjax();
-			$('#content').val('');
-		}
-	});
+    // userNumber 값이 없으면 로그인 페이지로 이동
+    if (!userNumber) {
+        window.location.href = '/user/login.us';
+        return;
+    }
+    
+    // userNumber 값이 있다면 Ajax 요청 실행
+    $.ajax({
+        url: '/storyReply/storyReplyWriteOk.sr',
+        type: 'post',
+        data: {
+            storyNumber: storyNumber,
+            userNumber: userNumber,
+            replyContent: $('#content').val()
+        },
+        success: function() {
+            storyReplyAjax();
+            $('#content').val('');
+        }
+    });
 });
 
 
