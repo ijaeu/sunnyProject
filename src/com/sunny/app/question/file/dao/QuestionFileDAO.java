@@ -20,7 +20,12 @@ public class QuestionFileDAO {
 		sqlSession.insert("questionFile.insert", questionFileDTO);
 	}
 	
-	public List<QuestionFileDTO> select(int questionNumber) {
-		return sqlSession.selectList("questionFile.select", questionNumber);
+	public QuestionFileDTO select(int questionNumber) {
+		return sqlSession.selectOne("questionFile.select", questionNumber);
+	}
+	
+	public void delete(int questionNumber) {
+		System.out.println("questionfile delete 메소드");
+		sqlSession.delete("questionFile.delete", questionNumber);
 	}
 }

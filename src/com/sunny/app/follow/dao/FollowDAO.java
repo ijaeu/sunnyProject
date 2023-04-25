@@ -38,6 +38,7 @@ public class FollowDAO {
 	
 //	팔로우하기
 	public void insert(FollowDTO followDTO) {
+		System.out.println("follow insert 메서드");
 		sqlSession.insert("follow.insert", followDTO);
 	}
 //	팔로우취소하기

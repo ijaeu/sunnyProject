@@ -220,13 +220,13 @@ button {
 }
 
 .pagination a:hover {
-  background-color: #009a3e;
+  background-color: #02bf4e;
   border-color: #009a3e;
   color: #fff;
 }
 
 .pagination .active {
-  background-color: #02bf4e;
+  background-color: #009a3e;
   border-color: #333;
   color: #fff;
 }

@@ -47,7 +47,9 @@
 					</div>
 					<div class="write-btn-box">
 						<!-- write 경로처리 -->
-						<a href="/question/questionWrite.qs?gosuNumber=${gosuInfo.getGosuNumber() }"><img src="/assets/img/header/icon_pen.png" alt=""></a>
+						<a
+							href="/question/questionWrite.qs?gosuNumber=${gosuInfo.getGosuNumber() }"><img
+							src="/assets/img/header/icon_pen.png" alt=""></a>
 					</div>
 				</div>
 				<div class="question-list">
@@ -60,16 +62,30 @@
 										<img src="../../assets/img/admin/qeustionIcon.png" alt="">
 									</div>
 									<div class="question-title">
-										<a href="/question/questionReadOk.qs?questionNumber=${questions.getQuestionNumber() }">${questions.getQuestionTitle() }</a>
+										<a
+											href="/question/questionReadOk.qs?questionNumber=${questions.getQuestionNumber() }">${questions.getQuestionTitle() }</a>
 									</div>
 									<div class="user-profile-box">
 										<div class="user-profile-img-box">
-											<a href="/user/myPageOk.us?userNumber=${questions.getUserNumber() }"><img
+											<a
+												href="/user/myPageOk.us?userNumber=${questions.getUserNumber() }">
+												<c:choose>
+													<c:when test="${empty questions.getFileSystemName() }">
+														<img
+															src="${pageContext.request.contextPath}/assets/img/myPage/logo.png"
+															alt="">
+													</c:when>
+													<c:otherwise>
+														<img
 												src="${pageContext.request.contextPath}/upload/profileUpload/${questions.getFileSystemName()}"
-												alt=""></a>
+															alt="">
+													</c:otherwise>
+												</c:choose>
+											</a>
 										</div>
 										<div class="user-nickname-box">
-											<a href="/user/myPageOk.us?userNumber=${questions.getUserNumber() }">${questions.getUserNickname() }</a>
+											<a
+												href="/user/myPageOk.us?userNumber=${questions.getUserNumber() }">${questions.getUserNickname() }</a>
 										</div>
 									</div>
 									<div class="question-date">

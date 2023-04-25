@@ -1,339 +1,321 @@
-@charset "UTF-8";
+@import	url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
+@import	url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
 
-.view-title{
-	font-size : 14px;
-	display:flex;
-	position : absolute;
-	margin : 100px;
-	left : -80px;
+body {
+	background-color: #fff;
 }
 
-.view-top {
-    position: relative;
-    display: table;
-    width: 100%;
-    min-height: 56px;
-  }
-  .infomation {
-    display: table-cell;
-    vertical-align: middle;
-    padding-top: 8px;
-  }
-  
-  .profile-img {
-    position: absolute;
-    top: 15px;
-    left: 0;
-    width: 54px;
-    height: 54px;
-    border: 1px solid #d9d9d9;
-    border-radius: 100%;
-    background-color: #333;
-    display: inline-block;
-  }
-  
-  .profile {
-    display: inline-block;
-    margin-left: 70px;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .follow {
-    display: inline-block;
-    margin-left: 16px;
-    height: 20px;
-    font-size: 15px;
-    color: #009a3e;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-  }
-  
-  .txt {
-    padding: 3px 0;
-    line-height: 20px;
-    font-size: 20px;
-    color: #808080;
-  }
-  
-  
-  .hit {
-    margin-left: 10px;
-    font-size: 14px;
-    color: #b3b3b3;
-    line-height: 56px;
-  }
-  
-  .hit-count {
-    font-size: 14px;
-    color: #b3b3b3;
-  }
-  
-  .container {
-    margin: 0 auto;
-    max-width: 1024px;
-    padding: 20px;
-  }
-  
-  /* 게시글 정보 스타일 */
-  .view-info {
-    margin-bottom: 20px;
-  }
-  
-  .title-wrap > span {
-    margin-right: 20px;
-    font-size: 0.8rem;
-    color: #999;
-    position : relative;
-  }
-  
-  .info-title {
-    display: flex;
-  }
-  
-  .title-wrap {
-    margin-right: 20px;
-  }
-  
-  .view-info .writer {
-    font-weight: bold;
-  }
-  
-  .date .hit {
-    position: absolute;
-    text-align: right;
-  	position : absolute;
-  }
-  
-  .content-hit {
-  	display:flex;
-  	color :  #009a3e;
-  }
-  
-  
-  /* 게시글 내용 스타일 */
-  .view-content {
-    margin-bottom: 30px;
-    line-height: 1.5;
-    font-size: 1rem;
-    white-space: pre-line;
-  }
-  
-  /* 버튼 스타일 */
-  .btn-group {
-    text-align: right;
-    margin-top: 30px;
-  }
-  
-  .list-btn,
-  .modify-btn,
-  .delete-btn {
-    color: #fff;
-    background-color: #009a3e;
-    padding: 8px 16px;
-    border-radius: 5px;
-    border: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  .list-btn:hover,
-  .modify-btn:hover,
-  .delete-btn:hover {
-    background-color:black;
-    color: #fff;
-  }
-  
-  .view-attach {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    width:200px;
-    height : 200px;
-  }
-  
-  .view-attach > a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  .view-attach > a:hover {
-    text-decoration: underline;
-  }
-  
-  /* 첨부파일 스타일 */
-  .view-attach {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .img-box {
-    width: 900px;
-    margin: 10px;
-    position: relative;
-    height: 700px;
-    background-color : black;
-  }
-  
-  .img-box > img {
-    width: 100%;
-    height: 100%;
-    background-color : black;
-  }
-  
-  /* 댓글 스타일 */
-  .holder {
-    position: relative;
-    margin: 0 auto;
-    max-width: 1200px;
-    box-sizing: border-box;
-  }
-  
-  .subtit {
-    font-size: 19px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-  }
-  
-  .fc1 {
-    color: #009a3e;
-    font-weight: 700;
-    line-height: 57px;
-  }
-  
-  .comment-wrap {
-    margin-top: 20px;
-  }
-  
-  .comment-form {
-    margin: 50px 0 70px 0;
-  }
-  
-  .comment-form textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-    margin: 0 0 0 150px;
-  }
-  
-  .comment-form button {
-    margin: 10px 0 0 150px;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #009a3e;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .comment-form button:hover {
-    background-color:black;
-  }
-  
-  .story-date {
-    padding-top: 10px;
-    text-align: right;
-  }
-  
-  .todate {
-    padding-right: 10px;
-  }
-  
-  .form-group > label {
-    margin-right: 10px;
-    font-size: 12px;
-  }
-  
-  #comment-list {
-    list-style: none;
-  }
-  
-  .comment-item {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .comment-writer {
-    font-weight: bold;
-  }
-  
-  .comment-date {
-    margin-left: 10px;
-    font-size: 12px;
-    color: #999;
-  }
-  
-  .comment-content {
-    margin: 5px 0 0 0;
-  }
-  
-  .comment-list li {
-    border-bottom: 1px solid #e0e0e0;
-    margin: 0 0 20px 150px;
-    padding-bottom: 20px;
-  }
-  
-  .comment-info {
-    font-size: 14px;
-    color: #999;
-  }
-  
-  .comment-info .writer {
-    margin-right: 10px;
-  }
-  
-  .comment-content p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 10px;
-  }
-  
-  .comment-content-wrap {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .comment-btn-group button {
-    margin-top: 10px;
-    padding: 3px 4px;
-    border: none;
-    border-radius: 5px;
-    background-color: #009a3e;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .comment-btn-group button:hover {
-    background-color: black;
-  }
-  
-  .none {
-    display: none;
-  }
-  
-  .comment-list textarea {
-    width: 900px;
-    height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-  }
-  
+.question-read-all{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* question-title */
+.question-title-box{
+	margin: 30px 0px 30px 10px;
+}
+
+.question-title {
+	font-size: 30px;
+}
+
+.title-info{
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+/* user-info */
+.user-info{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+
+/* user-profile */
+.user-profile-img-box{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.user-profile-img-box img{
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* user-nickname */
+.user-nickname{
+  margin-left: 5px;
+}
+
+
+/* follow & following */
+.follow {
+	display: inline-block;
+	margin-left: 16px;
+	height: 20px;
+	font-size: 15px;
+	color: #009a3e;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.following {
+	display: inline-block;
+	margin-left: 16px;
+	height: 20px;
+	font-size: 15px;
+	color: #4d4d4d;
+	border: 0;
+}
+
+/* check-count & question-date */
+.question-info{
+  margin-right: 20px;
+  font-size: 14px;
+  color: #464646;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.hit{
+}
+
+.question-date{
+  margin-left: 20px;
+}
+
+/* 첨부파일 */
+
+.question-img-box{
+  margin-top: 50px;
+  margin-left: 20px;
+  max-width: 1160px;
+  max-height: 1160px;
+}
+
+.question-img-box img{
+  max-height: 1160px;
+  max-width: 1160px;
+  object-fit: cover;
+}
+
+/* question-content */
+.question-content{
+  width: 1000px;
+	margin: 10px;
+	position: relative;
+	height: auto;
+	font-size: 1rem;
+	white-space: pre-line;
+}
+
+/* button */
+
+.btn-groups {
+	text-align: right;
+	margin-top: 30px;
+}
+
+.list-btn, .modify-btn, .delete-btn {
+	color: #fff;
+	background-color: #009a3e;
+	padding: 8px 16px;
+	border-radius: 5px;
+	border: none;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	cursor: pointer;
+	margin-right: 10px;
+}
+
+.list-btn:hover, .modify-btn:hover, .delete-btn:hover {
+	background-color: #02bf4e;
+	color: #fff;
+}
+
+/* 댓글 */
+.holder {
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+	box-sizing: border-box;
+}
+
+.subtit {
+	font-size: 19px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.fc1 {
+	color: #009a3e;
+	font-weight: 700;
+	line-height: 57px;
+}
+
+.comment-wrap {
+	margin-top: 20px;
+}
+
+.comment-form {
+	margin: 50px 0 70px 0;
+}
+
+.comment-form textarea {
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: none;
+}
+
+.comment-form button {
+	margin-top: 10px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #009a3e;
+	color: #fff;
+	cursor: pointer;
+}
+
+.comment-form button:hover {
+	background-color: #02bf4e;
+}
+
+.form-group>label {
+	margin-right: 10px;
+	font-size: 12px;
+}
+
+#comment-list {
+	list-style: none;
+}
+
+.comment-item {
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.comment-writer {
+	font-weight: bold;
+}
+
+.comment-date {
+	margin-left: 10px;
+	font-size: 12px;
+	color: #999;
+}
+
+.comment-content {
+	margin-top: 5px;
+}
+
+.comment-list li {
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.comment-info {
+  display: flex;
+  align-items: center;
+	font-size: 14px;
+	color: #999;
+}
+
+.comment-info .writer {
+	margin-right: 10px;
+}
+
+.comment-content p {
+	font-size: 16px;
+	line-height: 1.5;
+	margin-top: 10px;
+}
+
+.comment-content-wrap {
+	display: flex;
+	justify-content: space-between;
+}
+
+.comment-btn-group button {
+	margin-top: 10px;
+	padding: 3px 4px;
+	border: none;
+	border-radius: 5px;
+	background-color: #009a3e;
+	color: #fff;
+	text-align: right;
+	cursor: pointer;
+}
+
+.comment-btn-group button:hover {
+	background-color: #02bf4e;
+}
+
+.comment-list textarea {
+	width: 900px;
+	height: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: none;
+}
+
+.none {
+	display: none;
+}
+
+.comment-info a:visited,
+.user-nickname a:visited{
+  text-decoration: none;
+  color: #464646;
+}
+
+.comment-info a:link,
+.user-nickname a:link{
+  text-decoration: none;
+  color: #464646;
+}
+
+.comment-info a:hover,
+.user-nickname a:hover{
+  text-decoration: none;
+  color: #009a3e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

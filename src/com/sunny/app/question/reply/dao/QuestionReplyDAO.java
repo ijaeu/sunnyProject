@@ -25,4 +25,9 @@ public class QuestionReplyDAO {
 		sqlSession.insert("questionReply.insert", questionReplyDTO);
 	}
 	
+//	댓글 삭제하기
+	public void delete(int replyNumber) {
+		sqlSession.delete("questionReply.delete", replyNumber);
+	}
+	
 }
