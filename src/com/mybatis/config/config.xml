@@ -51,6 +51,7 @@
 		<typeAlias type="com.sunny.app.gosu.vo.GosuVO" alias ="GosuVO"/>
 		<typeAlias type="com.sunny.app.question.vo.QuestionVO" alias ="QuestionVO"/>
 		<typeAlias type="com.sunny.app.question.vo.QuestionListVO" alias ="QuestionListVO"/>
+		<typeAlias type="com.sunny.app.question.vo.QuestionReadVO" alias ="QuestionReadVO"/>
 		<typeAlias type="com.sunny.app.question.vo.GosuInfoVO" alias ="GosuInfoVO"/>
 
 

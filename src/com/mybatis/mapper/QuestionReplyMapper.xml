@@ -2,16 +2,33 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="questionReply">
+
 	<select id="selectAll" parameterType="_int" resultType="QuestionReplyVO">
-		select  reply_number, gosu_number, question_number, tu.user_number, reply_content, reply_date, tu.user_nickname 
-		FROM tbl_question_reply tqr  join tbl_user tu  
-		on question_number = #{questionNumber} and tqr.user_number = tu.user_number
+		select  
+			reply_number, 
+			gosu_number, 
+			question_number, 
+			tu.user_number, 
+			reply_content, 
+			reply_date, 
+			tu.user_nickname,
+			tuf.file_system_name as reply_profile_system_name
+		FROM tbl_question_reply tqr  
+		left join tbl_user tu  on tu.user_number = tqr.user_number 
+		left join tbl_user_file tuf on tuf.user_number = tu.user_number
+		where question_number = #{questionNumber}
+		order by reply_number desc
 	</select>
 	
 	<insert id="insert" parameterType="QuestionReplyDTO">
 		insert into tbl_question_reply
 		(gosu_number, question_number, user_number, reply_content, reply_date)
-		values(#{gosuNumber}, #{questionNumber}, #{userNumber}, #{replyContent}, #{replyDate})
+		values(#{gosuNumber}, #{questionNumber}, #{userNumber}, #{replyContent}, now())
 	</insert>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_question_reply
+		where reply_number = #{replyNumber}
+	</delete>
 	
 </mapper>

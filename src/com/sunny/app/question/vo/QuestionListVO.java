@@ -3,6 +3,7 @@ package com.sunny.app.question.vo;
 public class QuestionListVO {
 	
 	private int questionNumber;
+	private int userNumber;
 	private String questionTitle;
 	private String questionDate;
 	private String userNickname;
@@ -12,6 +13,12 @@ public class QuestionListVO {
 	}
 	public void setQuestionNumber(int questionNumber) {
 		this.questionNumber = questionNumber;
+	}
+	public int getUserNumber() {
+		return userNumber;
+	}
+	public void setUserNumber(int userNumber) {
+		this.userNumber = userNumber;
 	}
 	public String getQuestionTitle() {
 		return questionTitle;
@@ -39,10 +46,9 @@ public class QuestionListVO {
 	}
 	@Override
 	public String toString() {
-		return "QuestionListVO [questionNumber=" + questionNumber + ", questionTitle=" + questionTitle
-				+ ", questionDate=" + questionDate + ", userNickname=" + userNickname + ", fileSystemName="
-				+ fileSystemName + "]";
+		return "QuestionListVO [questionNumber=" + questionNumber + ", userNumber=" + userNumber + ", questionTitle="
+				+ questionTitle + ", questionDate=" + questionDate + ", userNickname=" + userNickname
+				+ ", fileSystemName=" + fileSystemName + "]";
 	}
-
 	
 }

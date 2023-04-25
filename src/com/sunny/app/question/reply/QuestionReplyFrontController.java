@@ -23,11 +23,17 @@ public class QuestionReplyFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 	
 			switch(target) {
-			case "/questionreply/questionreplyListOk.qr":
+			case "/questionReply/questionReplyListOk.qr":
 		         new QuestionReplyListOkController().execute(req, resp);
 		         break;
-			case "/questionreply/questionreplyWriteOk.qr":
+			case "/questionReply/questionReplyWriteOk.qr":
 				new QuestionReplyWriteOkController().execute(req, resp);
+				break;
+			case "/questionReply/questionReplyDeleteOk.qr":
+				new QuestionReplyDeleteOkController().execute(req, resp);
+				break;
+			case "/questionReply/storyquestionUpdateOk.sr":
+				new QuestionReplyUpdateOkController().execute(req, resp);
 				break;
 		}
 	}

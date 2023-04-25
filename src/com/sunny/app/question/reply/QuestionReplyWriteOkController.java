@@ -15,13 +15,22 @@ public class QuestionReplyWriteOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		System.out.println("QuestionReplyWriteOkController");
 		QuestionReplyDTO questionReplyDTO = new QuestionReplyDTO();
 		req.setCharacterEncoding("UTF-8");
 		
-		questionReplyDTO.setGosuNumber(Integer.valueOf(req.getParameter("gosuNumber")));
-		questionReplyDTO.setQuestionNumber(Integer.valueOf(req.getParameter("questionNumber")));
-		questionReplyDTO.setReplyContent(req.getParameter("replyContent"));
-		questionReplyDTO.setUserNumber(Integer.valueOf(req.getParameter("userNumber")));
+		int gosuNumber = Integer.valueOf(req.getParameter("gosuNumber"));
+		int questionNumber = Integer.valueOf(req.getParameter("questionNumber"));
+		String replyContent = req.getParameter("replyContent");
+		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
+		
+		System.out.println("gosuNumber = " + gosuNumber + "questionNumber = " + questionNumber + 
+				"replyContent = " + replyContent + "userNumber = " + userNumber);
+		
+		questionReplyDTO.setGosuNumber(gosuNumber);
+		questionReplyDTO.setQuestionNumber(questionNumber);
+		questionReplyDTO.setReplyContent(replyContent);
+		questionReplyDTO.setUserNumber(userNumber);
 		
 		new QuestionReplyDAO().insert(questionReplyDTO);
 	}
