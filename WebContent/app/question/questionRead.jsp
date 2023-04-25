@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>볕 들 질문 | 볕 들 무렵</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/assets/css/questionRead.css" />
 </head>
@@ -44,6 +44,7 @@
 							<a
 								href="/user/myPageOk.us?userNumber=${question.getUserNumber() }">${question.getUserNickname() }</a>
 						</div>
+						<c:if test="${question.getUserNumber() ne userNumber}">
 						<c:if test="${question.getFollowingStatus() == 0 }">
 							<button type="button" class="p1 follow dir"
 								data-userNumber="${question.getUserNumber()}">팔로우</button>
@@ -51,6 +52,7 @@
 						<c:if test="${question.getFollowingStatus() == 1 }">
 							<button type="button" class="p1 follow dir following"
 								data-userNumber="${question.getUserNumber()}">팔로잉</button>
+						</c:if>
 						</c:if>
 					</div>
 					<div class="question-info">
@@ -79,11 +81,14 @@
 			</div>
 			<div class="btn-groups">
 				<button type="button" class="list-btn"
-					data-questionNumber="${question.getQuestionNumber()}">목록</button>
+					data-questionNumber="${question.getQuestionNumber()}"
+					data-gosuNumber="${question.getGosuNumber() }"
+					>목록</button>
 				<c:if test="${sessionScope.userNumber == question.getUserNumber()}">
 					<button type="button" class="modify-btn">수정</button>
-					<button type="button" class="delete-btn">삭제</button>
+					<button type="button" class="delete-btn" id="delete-btn">삭제</button>
 				</c:if>
+				<c:if test="${sessionScope.userNumber == question.getGosuNumber()}"></c:if>
 			</div>
 		</div>
 		<!-- 댓글 -->
@@ -98,9 +103,11 @@
 					<input type="hidden" name="questionNumber"
 						value="${question.getQuestionNumber()}" />
 					<div class="form-group">
-						<textarea name="content" id="content" placeholder="댓글 내용을 입력하세요."></textarea>
+						<textarea name="content" id="content" placeholder="댓글 내용을 입력하세요." minlength="2"></textarea>
 					</div>
-					<button type="button" class="submit-btn">댓글 작성</button>
+					<div class="reply-submit">
+						<button type="button" class="submit-btn">작성</button>
+					</div>	
 				</form>
 			</div>
 			<div class="comment-list">

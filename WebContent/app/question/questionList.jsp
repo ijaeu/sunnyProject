@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>식고수페이지</title>
+<title>볕 들 고수 | 볕 들 무렵</title>
 <link rel="stylesheet"
 	href="${pageContent.request.contextPath}/assets/css/questionList.css">
 <!-- <link rel="stylesheet" href="../css/questionList.css" /> -->

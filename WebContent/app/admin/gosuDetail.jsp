@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>식고수상세정보</title>
+<title>식고수 정보| 볕 들 무렵</title>
 <link rel="stylesheet" href="../../assets/css/gosuDetail.css" />
 </head>
 <body>

@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>고수신청글</title>
+<title>고수 신청 읽기 | 볕 들 무렵</title>
 <link rel="stylesheet"
 	href="../../assets/css/gosuApplicationBoardRead.css" />
 </head>

@@ -21,40 +21,33 @@ public class QuestionListChangeController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("QuestionListChangeController");
-
 		QuestionDAO questionDAO = new QuestionDAO();
+
+		System.out.println("QuestionListChangeController 들어옴");
 		
-		// 받은 값 저장
-		Integer questionStatus = Integer.parseInt(req.getParameter("questionStatus"));
+		// 리스트 변경 버튼 클릭시 넘어온 데이터 저장
+		int questionStatus = Integer.parseInt(req.getParameter("questionStatus"));
 		int gosuNumber = Integer.parseInt(req.getParameter("gosuNumber"));
 		
-		// 값 확인
-		System.out.println("qusetionStatus : " + questionStatus);
-		System.out.println("gosuNumber : " + gosuNumber);
-		
-		// 저장
+		// map 에 담아서 DAO -> 쿼리 실행 후 질문게시글리스트 담아옴
 	    Map<String, Integer> questionMap = new HashMap<>();
 	    questionMap.put("gosuNumber", gosuNumber);
 	    questionMap.put("questionStatus", questionStatus);
-	      
 	    List<QuestionListVO> questionList = questionDAO.getQuestionList(questionMap);
-	    
+
+	    // gson 으로 다시 페이지로 보냄
 		Gson gson = new Gson();
 		JsonArray questions = new JsonArray();
 		
 		for(QuestionListVO question : questionList) {
 			String questionJson = gson.toJson(question);
-			System.out.println(questionJson);
-			
 			questions.add(JsonParser.parseString(questionJson));
 		}
 	    
 		resp.setContentType("application/json; charset=utf-8");
 		PrintWriter out = resp.getWriter(); 
 		out.print(questions.toString());
+		// 꼭 닫아야함
 		out.close();
-		
 	}
-
 }

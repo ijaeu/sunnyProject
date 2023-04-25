@@ -129,7 +129,7 @@ body {
 
 .btn-groups {
 	text-align: right;
-	margin-top: 30px;
+	margin-top: 50px;
 }
 
 .list-btn, .modify-btn, .delete-btn {
@@ -303,12 +303,29 @@ body {
   color: #009a3e;
 }
 
+/* css 수정 */
+#delete-btn{
+	background-color: #e44545
+}
 
+#delete-btn:hover{
+	background-color: rgb(255, 0, 0)
+}
 
+.reply-submit{
+	display: flex;
+	justify-content: right;
+}
 
+.reply-submit button{
+	width: 50px;
+	height: 30px;
+}
 
-
-
+.comment-btn-group{
+position: relative;
+top: 20px;
+}
 
 
 

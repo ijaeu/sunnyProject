@@ -9,10 +9,15 @@
 		values(#{fileSystemName}, #{fileOriginalName}, #{questionNumber}, #{gosuNumber})
 	</insert>
 	
-	<select id="select" parameterType="_int" resultType="QuestionVO">
+	<select id="select" parameterType="_int" resultType="QuestionFileDTO">
 		select file_system_name, file_original_name, question_number
 		from tbl_question_file
 		where question_number = #{questionNumber}
 	</select>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_question_file
+		where question_number = #{questionNumber}
+	</delete>
 	
 </mapper>
