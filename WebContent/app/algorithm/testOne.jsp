@@ -26,9 +26,9 @@
 				action="${pageContext.request.contextPath}/algorithm/testTwo.ag"
 				method="get">
 				<input type="hidden" name="selectOne"> <input type="button"
-					class="btn true" value="최대한 띄엄띄엄"
-					onclick="document.getElementsByName('selectOne')[0].value='0';this.form.submit();">
-				<input type="button" class="btn no" value="자주자주 물 주는게 좋아"
+					class="w-btn-outline w-btn-green2-outline" value="최대한 띄엄띄엄"
+					onclick="document.getElementsByName('selectOne')[0].value='0';this.form.submit();"></br>
+				<input type="button" class="w-btn-outline w-btn-green2-outline" value="자주자주 물 주는게 좋아"
 					onclick="document.getElementsByName('selectOne')[0].value='1';this.form.submit();">
 			</form>
 		</div>
