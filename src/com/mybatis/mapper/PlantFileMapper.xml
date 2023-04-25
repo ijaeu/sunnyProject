@@ -3,4 +3,9 @@
 
 <mapper namespace="plantFile">
 
+<select id="selectPlantFile" parameterType="_int" resultType="PlantFileDTO">
+	select plant_number from tbl_plant where plant_number = #{plant_number}
+</select>
+
+
 </mapper>

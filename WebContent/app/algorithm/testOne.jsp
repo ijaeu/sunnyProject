@@ -18,6 +18,9 @@
 	<section id="qna" class="mx-auto my-5 py-5 px-3">
 		<progress value="40" max="200" id="my_skill"></progress>
 		<h1>1. 식물 물주기는 언제가 적당할까요?</h1>
+		    <a href="http://localhost:8085/algorithm/start.ag">
+        <img src="../../assets/img/algorithm/start/home.png" class="img">
+    </a>
 		<div class="answerContainer">
 			<form
 				action="${pageContext.request.contextPath}/algorithm/testTwo.ag"

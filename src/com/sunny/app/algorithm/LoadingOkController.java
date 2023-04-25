@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.sunny.app.Execute;
 import com.sunny.app.algorithm.dao.AlgorithmDAO;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
+import com.sunny.app.plant.dto.PlantDTO;
 
 public class LoadingOkController implements Execute {
     @Override
@@ -20,8 +21,7 @@ public class LoadingOkController implements Execute {
 	 	AlgorithmDTO algorithmDTO = new AlgorithmDTO();
 		AlgorithmDAO algorithmDAO = new AlgorithmDAO();
 		HttpSession session = req.getSession();
-		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
-    	
+		PlantDTO result = algorithmDAO.algorithmResult(algorithmDTO);    	
 		//request.getParameter로 selectTwo의 값 얻어오기
 		algorithmDTO.setAlgorithmResult(req.getParameter("selectFive"));
 		
