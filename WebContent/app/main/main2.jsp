@@ -154,6 +154,8 @@
 				</div>
 				<div class="main3-right">
 					<!-- 식고수리스트페이지로이동 -->
+					<a href="${pageContext.request.contextPath}/gosu/searchOk.gu" class="moreGosu">더보기
+					></a>
 					<a href="${pageContext.request.contextPath}/gosu/searchOk.gu"
 						class="to-gosu-list-page">
 						<div class="main3-right-inner">
