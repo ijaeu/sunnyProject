@@ -13,6 +13,7 @@ public class PlantFileDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	public int selectPlantFile(int plantNumber) {
+		System.out.println("selectPlantFile 진입");
 		return sqlSession.selectOne("selectplantFile.select", plantNumber);
 	}
 	

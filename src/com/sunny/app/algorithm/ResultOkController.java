@@ -55,7 +55,7 @@ public class ResultOkController implements Execute {
 		System.out.println("당신에게 어울리는 식물은" + algorithmResult + "입니다");
 		System.out.println(result);
 		
-        
+		
 		// 결과 페이지로 이동
 		req.getRequestDispatcher("/app/algorithm/result.jsp").forward(req, resp);
 	

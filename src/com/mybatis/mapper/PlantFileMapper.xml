@@ -2,11 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="plantFile">
+
 <select id="selectPlantFile" parameterType="_int" resultType="PlantFileDTO">
-    select tp.plant_number, tp.plant_name, tp.plant_content, tp.algorithm_result,
-    tpf.file_system_name, tpf.file_original_name
-    from tbl_plant tp
-    join tbl_plant_file tpf on tp.plant_number = tpf.plant_number
-    where tp.plant_number = #{plantNumber}
+	select plant_number from tbl_plant where plant_number = #{plant_number}
 </select>
+
+
 </mapper>

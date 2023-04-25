@@ -17,7 +17,9 @@
 <body>
 <section id="result">
 <div class="result-name">${result.plantName}</div>
-<div class="result-profile">여기에 프로필 사진 넣어야함</div>
+<div class="result-profile" >
+<img src= "${pageContext.request.contextPath}/assets/img/algorithm/plant${result.getPlantNumber()}.jpg" > 
+</div>
   <ul class="content">
     <li>${result.plantContent}</li>
   </ul>

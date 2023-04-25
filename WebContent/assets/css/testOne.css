@@ -35,7 +35,7 @@ li{
 h1 {
   text-align: center;
   position: relative;
-  top: 80px;
+  top: 20px;
   font-size: 55px;
   font-family: 'Black Han Sans', sans-serif;
 }
@@ -66,5 +66,10 @@ button{ padding: 10px 20px; border-radius:5px; border: 1px solid #888;}
 
 .answerContainer{
   position: relative; 
-  top: 300px;
+  top: 175px;
+}
+
+.img{
+
+  width: 70px; position: relative; left:320px;
 }

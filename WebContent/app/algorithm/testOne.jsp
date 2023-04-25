@@ -17,6 +17,9 @@
 <body>
 	<section id="qna" class="mx-auto my-5 py-5 px-3">
 		<progress value="40" max="200" id="my_skill"></progress>
+		    <a href="http://localhost:8085/algorithm/start.ag">
+        <img src="../../assets/img/algorithm/start/home.png" class="img">
+    </a>
 		<h1>1. 반려식물을 키워본 경험이 있나요?</h1>
 		<div class="answerContainer">
 			<form
