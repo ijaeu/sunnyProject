@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.sunny.app.Execute;
 import com.sunny.app.algorithm.dao.AlgorithmDAO;
 import com.sunny.app.algorithm.dto.AlgorithmDTO;
+import com.sunny.app.plant.dto.PlantDTO;
 
 public class TestOneOkController implements Execute {
 
@@ -22,8 +23,7 @@ public class TestOneOkController implements Execute {
 		AlgorithmDTO algorithmDTO = new AlgorithmDTO();
 		AlgorithmDAO algorithmDAO = new AlgorithmDAO();
 		HttpSession session = req.getSession();
-		List<AlgorithmDTO> result = algorithmDAO.algorithmResult(algorithmDTO);
-
+		PlantDTO result = algorithmDAO.algorithmResult(algorithmDTO);
 		
 		
 		algorithmDTO.setSelectOne(req.getParameter("selectOne"));
