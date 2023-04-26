@@ -285,6 +285,11 @@ li {
   cursor: pointer;
   height: 23px;
   line-height: 23px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.answer-btn:hover{
+	background-color :  #02bf4e;
+	color: white;
 }
 
 .active {
