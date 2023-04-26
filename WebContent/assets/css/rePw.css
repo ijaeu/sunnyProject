@@ -38,6 +38,14 @@
   /* font-family: "SpoqaHanSans-Regular"; */
 }
 
+.logo-link{
+	text-decoration: none;
+}
+
+.logo1{
+	display: flex;
+}
+
 .logo{
   display: flex;
   justify-content: center;
@@ -46,7 +54,7 @@
   right: 10px;
 }
 
-.logo>svg{
+.logo1>svg{
   width: 50px;
   height: 50px;
   fill: #009a3e;

@@ -35,6 +35,8 @@
     <div class="main-container">
       <div class="mem-rePw">
         <div class="logo">
+        <a href="/main/mainOk.ma" class="logo-link">
+        <div class="logo1">
           <svg xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path
@@ -43,6 +45,8 @@
           <div class="text-logo">
             볕 들 무렵
           </div>
+          </div>
+          </a>
           <div class="rePw-logo"> 비밀번호 재설정</div>
         </div>
       </div>
