@@ -95,6 +95,7 @@ $nicknameInput.on('change', function(){
 	}
 })
 
+// 회원정보수정 막기
 $('.modify-submit-btn').on('click', function(){
 	 
 	let cuPwMsg = $cuPwMsg.text();
