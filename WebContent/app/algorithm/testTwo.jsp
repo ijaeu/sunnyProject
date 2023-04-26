@@ -15,6 +15,9 @@
 <body>
 <section id="qna" class="mx-auto my-5 py-5 px-3">
     <progress value="80" max="200" id="my_skill"></progress>
+    <a href="http://localhost:8085/algorithm/testOne.ag">
+    <img src="../../assets/img/algorithm/뒤로가기.png" class="back">
+    </a>
     <a href="http://localhost:8085/algorithm/start.ag">
         <img src="../../assets/img/algorithm/start/home.png" class="img">
     </a>
@@ -23,9 +26,9 @@
     </div>
     <div class="answerContainer">
         <form action="${pageContext.request.contextPath}/algorithm/testThree.ag" method="get">
-		<input type="hidden"  name="selectTwo">
-		<input type="button"class="btn true"  value="실내" onclick="document.getElementsByName('selectTwo')[0].value='0';this.form.submit();">
-		<input type="button" class="btn no"value="실외" onclick="document.getElementsByName('selectTwo')[0].value='1';this.form.submit();">
+		<input type="hidden"  name="selectTwo"> <input type="button"
+		class="w-btn-outline w-btn-green2-outline"   value="실내에 둘게요!" onclick="document.getElementsByName('selectTwo')[0].value='0';this.form.submit();"></br>
+		<input type="button" class="w-btn-outline w-btn-green2-outline" value="실외에서 키울래요" onclick="document.getElementsByName('selectTwo')[0].value='1';this.form.submit();">
 		</form>
     </div>
 </section>
