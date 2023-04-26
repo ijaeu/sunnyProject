@@ -47,7 +47,7 @@ public class UserFrontController extends HttpServlet{
 			break;
 		case "/user/userDropOk.us" : 
 			new UserDropController().execute(req, resp);
-			req.getRequestDispatcher("/app/main/main.jsp").forward(req, resp);
+			resp.sendRedirect("/main/mainOk.ma");
 			break;
 		case "/user/userModify.us":
 			new UserModifyController().execute(req, resp);
