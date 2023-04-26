@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gugi&family=Single+Day&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 body {
-  background-color: rgb(202, 219, 202);
+   background-color: #dfeada;
 }
 
 
@@ -12,50 +12,51 @@ body {
   height: 800px;
   text-align: center;
   border-radius: 20px;
-  background-image: url("../../assets/img/algorithm/main2.png");
+  background-image: url("../../assets/img/algorithm/start/main.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 p {
-  font-size: 70px;
+  font-size: 80px;
   position: relative;
   bottom: 200px;
-  color: rgb(38, 232, 54);
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: 'Stylish', sans-serif;
+  bottom:350px;
 }
 
 .btn{
-  background-color: #c6e6c6;
+  background-color: rgb(234, 255, 230);
   color: #1a1919;
-  border: 1px solid #bce4b5;
-  font-size: 22px;
+  border: 1px solid #a5e68a;
+  font-size: 30px;
   font-weight: bold;
   letter-spacing: 0px;
   padding: 10px 10px;
   cursor: pointer;
   display: inline-block;
   position: relative;
-  bottom: 190px;
-  width: 160px;
+  bottom: 320px;
+  width: 200px;
+  font-family: 'Stylish', sans-serif;
   
 }
-
 .btn2{
-  background-color: #c6e6c6;
+ background-color: rgb(234, 255, 230);
   color: #1a1919;
-  border: 1px solid #bce4b5;
-  font-size: 22px;
+  border: 1px solid #a5e68a;;
+ 	font-size: 30px;
   font-weight: bold;
   letter-spacing: 0px;
   padding: 10px 10px;
   cursor: pointer;
   display: inline-block;
   position: relative;
-  bottom: 190px;
-  width: 160px;
+  bottom: 300px;
+  width: 200px;
   margin-top : 10px;
+  font-family: 'Stylish', sans-serif;
 }
 
 .btn:hover{
