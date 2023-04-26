@@ -102,6 +102,40 @@ $nicknameInput.on('change', function(){
 	}
 })
 
+//연락처인풋칸
+$userPhoneInput = $('#user-phone');
+// 연락처 메세지칸
+$phoneMsg = $('#check-phone-msg');
+//연락처 정규식 추가
+$userPhoneInput.on('change', function(){
+	const regPhone = /^01([0|1|6|7|8|9])-([0-9]{3,4})-([0-9]{4})$/;
+	if($userPhoneInput.val()==''){
+		$phoneMsg.text('연락처를 입력하세요');
+	}else if(regPhone.test($userPhoneInput.val())){
+		$phoneMsg.text('');
+	}else{
+		$phoneMsg.html("-를 포함한 올바른 형식의 '휴대폰번호'를 입력하세요.<br> ex.  010-1234-5678");
+	}
+})
+
+
+// 이메일인풋칸
+$userEmailInput = $('#user-email');
+// 이메일메시지칸
+$emailMsg = $('#check-email-msg');
+
+//이메일 정규식 추가 , 입력하도록 확인
+$userEmailInput.on('change', function(){
+	const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+	if($userEmailInput.val()==''){
+		$emailMsg.text('이메일을 입력하세요');
+	}else if(regEmail.test($userEmailInput.val())){
+		$emailMsg.text('');
+	}else{
+		$emailMsg.text('올바른 이메일을 입력해주세요');
+	}
+});
+
 // 회원정보수정 막기
 $('.modify-submit-btn').on('click', function(){
 	 
@@ -109,6 +143,8 @@ $('.modify-submit-btn').on('click', function(){
 	let chPwMsg = $chPwMsg.text();
 	let nickMsg = $nicknameMsg.text();
 	let usPwMsg = $userPwMsg.text();
+	let usEmMsg = $emailMsg.text();
+	let usPhMsg = $phoneMsg.text();
 	console.log(cuPwMsg.includes('않')); 
 	console.log(usPwMsg.includes('불'));
 	
@@ -117,9 +153,14 @@ $('.modify-submit-btn').on('click', function(){
 	}else if($userPwInput.val()==''){
 		alert('변경할 비밀번호를 입력해주세요');
 	}else if($checkPwInput.val()==''){
-		alert('변경할 비밀번호 확인을 입력해주세요')
-	}else{
-		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복') && !usPwMsg.includes('불')){
+		alert('변경할 비밀번호 확인을 입력해주세요');
+	}else if($userEmailInput.val()==''){
+		alert('이메일을 입력해주세요');
+	}else if($userPhoneInput.val()==''){
+		alert('연락처를 입력해주세요');
+	}
+	else{
+		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복') && !usPwMsg.includes('불') && !usEmMsg.includes('올') &&!usPhMsg.includes('올')){
 			console.log('저장할 수 있음');
 			$('form').submit();
 		}else{
