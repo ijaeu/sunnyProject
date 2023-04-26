@@ -78,9 +78,17 @@
 									href="${pageContext.request.contextPath}/story/storyReadOk.st?storyNumber=${story.getStoryNumber()}">
 										<div class="img-container">
 											<div class="coverimg">
-												<img
-													src="${pageContext.request.contextPath}/upload/storyUpload/${story.getFileSystemName()}"
-													alt="">
+												<c:choose>
+													<c:when test="${empty story.getFileSystemName()}">
+														<img
+															src="${pageContext.request.contextPath}/assets/img/myPage/logo.png" />
+													</c:when>
+													<c:otherwise>
+														<img
+															src="${pageContext.request.contextPath}/upload/storyUpload/${story.getFileSystemName()}"
+															alt="">
+													</c:otherwise>
+												</c:choose>
 											</div>
 										</div>
 										<p class="imgtilte">${story.getStoryTitle()}</p>

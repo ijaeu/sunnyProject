@@ -338,16 +338,16 @@ button {
 }
 
 .story-imgBox1>img {
-	height: 500px;
-	width: 600px;
+	max-height: 1000px;
+	max-width: 1000px;
 }
 
 .story-imgBox2>img {
-	height: 500px;
-	width: 600px;
+	max-height: 1000px;
+	max-width: 1000px;
 }
 
 .story-imgBox3>img {
-	height: 500px;
-	width: 600px;
+	max-height: 1000px;
+	max-width: 1000px;
 }
