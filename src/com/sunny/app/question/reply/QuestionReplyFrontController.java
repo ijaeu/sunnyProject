@@ -21,6 +21,7 @@ public class QuestionReplyFrontController extends HttpServlet{
 
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
+		System.out.println(target);
 	
 			switch(target) {
 			case "/questionReply/questionReplyListOk.qr":
@@ -32,7 +33,7 @@ public class QuestionReplyFrontController extends HttpServlet{
 			case "/questionReply/questionReplyDeleteOk.qr":
 				new QuestionReplyDeleteOkController().execute(req, resp);
 				break;
-			case "/questionReply/storyquestionUpdateOk.sr":
+			case "/questionReply/questionUpdateOk.qr":
 				new QuestionReplyUpdateOkController().execute(req, resp);
 				break;
 		}

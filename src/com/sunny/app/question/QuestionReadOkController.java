@@ -17,27 +17,27 @@ public class QuestionReadOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		System.out.println("QuestionReadOkController 들어왔음");
 		QuestionDAO questionDAO = new QuestionDAO();
-		int questionNumber = Integer.valueOf(req.getParameter("questionNumber"));
-		Integer userNumber = (Integer)req.getSession().getAttribute("userNumber");
 
-		System.out.println("questionNumber = " + questionNumber);
-		System.out.println("userNumber = " + userNumber);
+		System.out.println("QuestionReadOkController 들어옴");
 		
-		Map<String, Integer>pageMap = new HashMap<>();
-		pageMap.put("userNumber", userNumber);
-		pageMap.put("questionNumber", questionNumber);
+		// 세션과 페이지에서 넘어온 값 변수에 저장
+		Integer userNumber = (Integer)req.getSession().getAttribute("userNumber");
+		int questionNumber = Integer.valueOf(req.getParameter("questionNumber"));
 		
-		
-		
-		QuestionReadVO questionReadVO = questionDAO.questionRead(pageMap);
-		
-		System.out.println("questionReadVO = " + questionReadVO);
+		// 조회수 +1
 		questionDAO.updateReadCount(questionNumber);
+
+		// 쿼리에 담을 값을 map에 넣어서 보내고 read페이지 데이터를 return 받아옴
+		Map<String, Integer>map = new HashMap<>();
+		map.put("userNumber", userNumber);
+		map.put("questionNumber", questionNumber);
+		QuestionReadVO questionReadVO = questionDAO.questionRead(map);
 		
+		// 데이터를  req에 세팅함
 		req.setAttribute("question", questionReadVO);
 		
+		// 페이지 이동
 		req.getRequestDispatcher("/app/question/questionRead.jsp").forward(req, resp);
 		
 	}

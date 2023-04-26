@@ -13,10 +13,8 @@ import com.sunny.app.question.vo.QuestionReadVO;
 import com.sunny.app.question.vo.QuestionVO;
 
 public class QuestionDAO {
-
 	
 	public SqlSession sqlSession;
-	
 	
 	public QuestionDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
@@ -37,7 +35,9 @@ public class QuestionDAO {
 		sqlSession.insert("question.insert", questionDTO);
 	}
 	
+//	questionNumber 가져오기
 	public int getSequence() {
+		System.out.println("questionNumber가져오기");
 		return sqlSession.selectOne("question.getSequence");
 	}
 	
@@ -46,13 +46,9 @@ public class QuestionDAO {
 		return sqlSession.selectOne("question.getNickName", gosuNumber2);
 	}
 	
-//	질문 읽기 
-	public QuestionVO select(int questionNumber) {
-		return sqlSession.selectOne("question.select", questionNumber);
-	}
-	
 //	질문 조회수
 	public void updateReadCount (int questionNumber) {
+		System.out.println("조회수 +1 메서드");
 		sqlSession.update("question.updateReadCount", questionNumber);
 	}
 	
@@ -61,38 +57,46 @@ public class QuestionDAO {
 		return sqlSession.selectList("question.getMypageList", gosuQ);
 	}
 	
-//	질문리스트 페이지
+//	질문 리스트 페이지 질문 목록
 	public List<QuestionListVO> getQuestionList(Map<String, Integer> questionMap){
-		System.out.println("getQuestionList 메서드");
+		System.out.println("질문 목록 selectList 메서드");
 		return sqlSession.selectList("question.questionList", questionMap);
 	}
 	
-//	고수 정보뽑기
+//	질문 리스트 페이지 고수 정보 
 	public GosuInfoVO gosuInfo(int gosuNumber) {
-		System.out.println("gosuInfo 메서드");
+		System.out.println("고수 정보 select 메서드");
 		return sqlSession.selectOne("question.gosuInfo", gosuNumber);
 	}
 	
 //	Read페이지 게시글 데이터
-	public QuestionReadVO questionRead(Map<String, Integer> pageMap) {
-		System.out.println("questionRead 메서드 ");
-		return sqlSession.selectOne("question.questionRead", pageMap);
+	public QuestionReadVO questionRead(Map<String, Integer> map) {
+		System.out.println("질문 select 메서드 ");
+		return sqlSession.selectOne("question.questionRead", map);
 	}
 	
 //	질문 삭제
 	public void delete(int questionNumber) {
-		System.out.println("question delete 메서드");
+		System.out.println("질문 삭제 메서드");
 		sqlSession.delete("question.delete", questionNumber);
 	}
 	
 //	수정 정보 가져오기
 	public QuestionDTO updateSelect(int questionNumber) {
+		System.out.println("수정할 질문데이터 select 메서드");
 		return sqlSession.selectOne("question.updateSelect", questionNumber);
 	}
 	
 //	수정
 	public void update(Map<String, Object> pageMap) {
+		System.out.println("질문 수정 update 메서드");
 		sqlSession.update("question.update", pageMap);
+	}
+	
+//  게시글 상태체크
+	public int updateQuestionStatus(Map<String, Integer> map) {
+		System.out.println("고수답변확인 + update 메서드");
+		return sqlSession.update("question.updateQuestionStatus", map);
 	}
 }
 

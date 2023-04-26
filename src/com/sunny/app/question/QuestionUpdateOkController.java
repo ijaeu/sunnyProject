@@ -14,27 +14,31 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sunny.app.Execute;
 import com.sunny.app.question.dao.QuestionDAO;
-import com.sunny.app.question.dto.QuestionDTO;
 import com.sunny.app.question.file.dao.QuestionFileDAO;
 import com.sunny.app.question.file.dto.QuestionFileDTO;
+import com.sunny.app.util.UserUtils;
 
 public class QuestionUpdateOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		QuestionDAO questionDAO = new QuestionDAO();
-		QuestionDTO questionDTO = new QuestionDTO();
 		QuestionFileDAO questionFileDAO = new QuestionFileDAO();
 		QuestionFileDTO questionFileDTO = new QuestionFileDTO();
 
-		// 세션체크
+		System.out.println("QuestionUpdateOkController 들어옴");
 
-		int userNumber = (Integer) req.getSession().getAttribute("userNumber");
-		System.out.println("Session : userNumber = " + userNumber);
+		// 세션체크
+		int userNumber = 0;
+		if (UserUtils.sessionCheck(req) == 0) {
+			resp.sendRedirect("/user/login.us?login=noInfo");
+			return;
+		} else {
+			userNumber = UserUtils.sessionCheck(req);
+		}
 
 		
 		// 파일 사이즈 , 업로드 경로 설정
-
 		int maxSize = 1024 * 1024 * 30;
 		String fsl = File.separator;
 		String root = req.getSession().getServletContext().getRealPath(fsl);
@@ -45,46 +49,42 @@ public class QuestionUpdateOkController implements Execute {
 		MultipartRequest mr = new MultipartRequest(req, rootPath, maxSize, "utf-8", new DefaultFileRenamePolicy());
 
 
-		// gosuNumber 확인
-
+		// gosuNumber, questionNumber 확인
+		// MultipartRequest 사용시 req에서 getParameter 사용 불가능
+		// 그러므로 MultipartRequest에서 값을 받아와야 한다
 		int gosuNumber = Integer.parseInt(mr.getParameter("gosuNumber"));
 		int questionNumber = Integer.parseInt(mr.getParameter("questionNumber"));
 		System.out.println("gosuNumber = " + gosuNumber);
 		System.out.println("questionNumber = " + questionNumber);
 
-		// question 게시글 DB 저장
-		
-		Map<String, Object>pageMap = new HashMap<>();
+		// 수정페이지에서 받아온 내용을 변수에 저장 
 		String questionTitle = mr.getParameter("questionTitle");
 		String questionContent = mr.getParameter("questionContent");
-		System.out.println(questionTitle + questionContent);
-				
+
+		// map에 저장해서 DAO -> 쿼리 실행
+		Map<String, Object>pageMap = new HashMap<>();
 		pageMap.put("questionTitle", questionTitle);
 		pageMap.put("questionContent", questionContent);
 		pageMap.put("questionNumber", questionNumber);
-		
-		
 		questionDAO.update(pageMap);
-		System.out.println("question content update 완료 !");
-		
-		// 파일 삭제
-		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "questionUpload";
 
+		// 수정전 첨부 파일이름을 DB에서 조회후 로컬에서 삭제
 		QuestionFileDTO questionFile = questionFileDAO.select(questionNumber);
 		String fileName = "";
 		if (questionFile != null) {
 			fileName = questionFile.getFileSystemName();
 			if (fileName != null) {
-				File temp1 = new File(uploadPath, fileName);
+				File temp1 = new File(rootPath, fileName);
 				if (temp1.exists()) {
 					temp1.delete();
 				}
 
 			}
 		}
+		// DB에서도 삭제
+		questionFileDAO.delete(questionNumber);
 
-		// 첨부파일 파일 이름 DB 저장
-
+		// 새 첨부파일 파일이름 DB 저장
 		Enumeration<String> fileNames = mr.getFileNames();
 
 		while (fileNames.hasMoreElements()) {
@@ -98,13 +98,10 @@ public class QuestionUpdateOkController implements Execute {
 			questionFileDTO.setFileOriginalName(fileOriginalName);
 			questionFileDTO.setQuestionNumber(questionNumber);
 			questionFileDTO.setGosuNumber(gosuNumber);
-
 			questionFileDAO.insert(questionFileDTO);
 		}
-
-		// 경로처리
-
+		
+		// 페이지 이동
 		resp.sendRedirect("/question/questionListOk.qs?gosuNumber=" + gosuNumber);
 	}
-
 }

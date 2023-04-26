@@ -19,9 +19,9 @@ public class FieldDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<FieldDTO> fieldList(Map<String, Integer> pageMap){
+	public List<FieldDTO> fieldList(){
 		System.out.println("field.select 메서드");
-		return sqlSession.selectList("field.list", pageMap);
+		return sqlSession.selectList("field.list");
 	 }
 	
 }

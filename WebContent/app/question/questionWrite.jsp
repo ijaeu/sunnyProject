@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>식고수 질문 | 볕 들 무렵</title>
+    <title>볕 들 질문 | 볕 들 무렵</title>
     <link rel="stylesheet" href="../../assets/css/questionWrite.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <!-- include libraries(jQuery, bootstrap) -->

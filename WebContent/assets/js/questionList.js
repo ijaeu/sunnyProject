@@ -57,14 +57,21 @@ $answerList.click(function() {
 									</div>
 									<div class="user-profile-box">
 									<div class="user-profile-img-box">
-										<a href="/user/myPageOk.us?userNumber=question.userNumber"><img src="${contextPath}/upload/profileUpload/${question.fileSystemName}" alt=""></a>
+										<a href="/user/myPageOk.us?userNumber=question.userNumber">`
+										
+							if(question.fileSystemName){
+								text +=	` <img src="${contextPath}/upload/profileUpload/${question.fileSystemName}" alt="">`
+										} else {
+								text += ` <img src="${contextPath}/assets/img/myPage/logo.png" alt="">`
+										}
+									
+								text +=	` </a>
 									</div>	
 									<div class="user-nickname-box"><a href="/user/myPageOk.us?userNumber=question.userNumber">${question.userNickname }</a>
 									</div>
 									</div>
 									<div class="question-date"><p>작성시간<hr>${question.questionDate }</p></div>
-								</div>			
-			`
+								</div> `
 		});
 		$(".question-list").html(text);
  };

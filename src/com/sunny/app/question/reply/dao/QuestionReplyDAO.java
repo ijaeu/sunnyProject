@@ -16,18 +16,28 @@ public class QuestionReplyDAO {
 		
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
-//	댓글더미가져오기
+	
+//	댓글리스트 가져오기
 	public List<QuestionReplyVO> selectAll(int questionNumber) {
+		System.out.println("댓글 리스트 select 메서드");
 		return sqlSession.selectList("questionReply.selectAll", questionNumber);
 	}
-//	댓글작성
+	
+//	댓글 입력
 	public void insert(QuestionReplyDTO questionReplyDTO) {
+		System.out.println("댓글 입력 메서드");
 		sqlSession.insert("questionReply.insert", questionReplyDTO);
 	}
 	
-//	댓글 삭제하기
+//	댓글 삭제
 	public void delete(int replyNumber) {
+		System.out.println("댓글 삭제 메서드");
 		sqlSession.delete("questionReply.delete", replyNumber);
 	}
 	
+//	댓글 수정
+	public void update(QuestionReplyDTO questionReplyDTO) {
+		System.out.println("댓글 수정 메서드");
+		sqlSession.update("questionReply.update", questionReplyDTO);
+	}
 }

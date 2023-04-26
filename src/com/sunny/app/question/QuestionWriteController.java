@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import com.sunny.app.Execute;
 import com.sunny.app.user.dao.UserDAO;
+import com.sunny.app.util.UserUtils;
 
 public class QuestionWriteController implements Execute {
 
@@ -17,22 +18,26 @@ public class QuestionWriteController implements Execute {
 		
 		UserDAO userDAO = new UserDAO();
 		
-		HttpSession session = req.getSession();
-		Integer userNumber = (Integer)session.getAttribute("userNumber");
-		Integer gosuNumber = Integer.parseInt(req.getParameter("gosuNumber"));
-		System.out.println("userNumber = " + userNumber + " / gosuNumber = " + gosuNumber);
+		System.out.println("QuestionWriteController 들어옴");
 		
-		String path = null;
-		
-		
-		if(userNumber == null) {
-			path = "/app/user/login.jsp";
+		// 세션체크
+		int userNumber = 0;
+		if (UserUtils.sessionCheck(req) == 0) {
+			resp.sendRedirect("/user/login.us?login=noInfo");
+			return;
 		} else {
-			path = "/app/question/questionWrite.jsp";
-			req.setAttribute("userNumber", userNumber);
-			req.setAttribute("gosuNumber", gosuNumber);
+			userNumber = UserUtils.sessionCheck(req);
 		}
-		req.getRequestDispatcher(path).forward(req,resp);
+		
+		// 페이지의 gosuNumber 값 가져오기
+		Integer gosuNumber = Integer.parseInt(req.getParameter("gosuNumber"));
+		
+		// req에 데이터 세팅
+		req.setAttribute("gosuNumber", gosuNumber);
+		req.setAttribute("userNumber", userNumber);
+		
+		// 페이지 이동
+		req.getRequestDispatcher("/app/question/questionWrite.jsp").forward(req,resp);
 	}
 
 }

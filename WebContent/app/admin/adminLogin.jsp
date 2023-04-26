@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
-    <title>로그인 페이지</title>
+    <title>관리자 로그인 | 볕 들 무렵</title>
     <link rel="stylesheet" href="../../assets/css/adminLogin.css" />
   </head>
   <body>
