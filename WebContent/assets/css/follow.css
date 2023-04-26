@@ -48,8 +48,12 @@ li {
   cursor: pointer;
   height: 23px;
   line-height: 23px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+.top-btn:hover{
+	  background-color :  #02bf4e;
+	  color : white;
+}
 /* bottom */
 .follow-list-ul {
   display: flex;
@@ -69,9 +73,11 @@ li {
 .follow-list a {
   display: flex;
   align-items: center;
+
 }
 .follow-list a:hover {
   text-decoration: underline;
+
 }
 
 /* .user-photo {

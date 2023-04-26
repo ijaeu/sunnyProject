@@ -51,10 +51,17 @@ $currentPwInput.on('blur', function(){
 });
 
 //변경비밀번호를 입력하지 않으면 메세지
+//정규표현식 추가
+const regex2 = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
 $userPwInput.on('blur', function(){
 	if($(this).val()==''){
 		$userPwMsg.text('변경할 비밀번호를 입력하세요');
+	}else if(regex2.test($(this).val())){
+		$userPwMsg.text('사용가능한 비밀번호입니다.');
+	}else{
+		$userPwMsg.html('사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!');
 	}
+	$chPwMsg.text('');
 });
 
 // 변경 비밀번호를 입력하고 그 다음칸에 같은걸 입력했는지 확인
@@ -95,13 +102,15 @@ $nicknameInput.on('change', function(){
 	}
 })
 
+// 회원정보수정 막기
 $('.modify-submit-btn').on('click', function(){
 	 
 	let cuPwMsg = $cuPwMsg.text();
 	let chPwMsg = $chPwMsg.text();
 	let nickMsg = $nicknameMsg.text();
-	
+	let usPwMsg = $userPwMsg.text();
 	console.log(cuPwMsg.includes('않')); 
+	console.log(usPwMsg.includes('불'));
 	
 	if($currentPwInput.val()==''){
 		alert('현재 비밀번호를 입력해주세요');
@@ -110,7 +119,7 @@ $('.modify-submit-btn').on('click', function(){
 	}else if($checkPwInput.val()==''){
 		alert('변경할 비밀번호 확인을 입력해주세요')
 	}else{
-		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복')){
+		if(!cuPwMsg.includes('않') && !chPwMsg.includes('않') && !nickMsg.includes('중복') && !usPwMsg.includes('불')){
 			console.log('저장할 수 있음');
 			$('form').submit();
 		}else{
