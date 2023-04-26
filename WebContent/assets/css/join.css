@@ -8,7 +8,7 @@
 
 .container{
   width: 1200px;
-  height: 2045px;
+  height: 2147px;
   position: relative;
   margin: 0 auto;
 }
@@ -39,6 +39,11 @@
   /* font-family: "SpoqaHanSans-Regular"; */
 }
 
+.logo-link{
+	text-decoration: none;
+	display: flex;
+}
+
 .logo{
   display: flex;
   justify-content: center;
@@ -47,7 +52,7 @@
   right: 10px;
 }
 
-.logo>svg{
+svg{
   width: 50px;
   height: 50px;
   fill: #009a3e;
