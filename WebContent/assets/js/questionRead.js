@@ -79,20 +79,23 @@ let questionNumber = $listBtn.data("questionnumber");
 console.log(questionNumber);
 
 $listBtn.on('click', () => {
-	window.location.href = '/question/questionListOk.qs';
+	window.location.href = '/question/questionListOk.qs?gosuNumber=' + gosuNumber;
 });
 
 $modifyBtn.on('click', () => {
+	alert('게시글을 수정합니다. ');
 	window.location.href = '/question/questionUpdate.qs?questionNumber=' + questionNumber + '&gosuNumber=' + gosuNumber;
 });
 
 $deleteBtn.on('click', () => {
-	window.location.href = '/question/questionDeleteOk.qs?questionNumber=' + questionNumber;
+	alert('게시글을 삭제합니다. ');
+	window.location.href = '/question/questionDeleteOk.qs?questionNumber=' + questionNumber + '&gosuNumber=' + gosuNumber;
 });
 
 
 // 한번 실행
 questionReplyAjax();
+
 
 // 댓글 리스트 가져오기
 function questionReplyAjax() {
@@ -115,9 +118,6 @@ function showQuestionReply(replies) {
 					<div class="comment-info">
 					<span class="user-profile-img-box"> 
 					`
-					console.log("dddddddddd");
-					console.log(questionReply.replyProfileSystemName);
-					console.log("dddddddddd");
 		if (questionReply.replyProfileSystemName) {
 			text += `													
 			<img src="${contextPath}/upload/profileUpload/${questionReply.replyProfileSystemName}" alt="">`
@@ -135,7 +135,7 @@ function showQuestionReply(replies) {
 		if (userNumber == questionReply.userNumber) {
 			text += `<div class="comment-btn-group">
 							<button type="button" class="comment-modify-ready">수정</button>
-							<button type="button" class="comment-delete" data-number="${questionReply.replyNumber}">삭제</button>
+							<button type="button" class="comment-delete" id="delete-btn" data-number="${questionReply.replyNumber}">삭제</button>
 						</div>
 						<div class="comment-btn-group none">
 							<button type="button" class="comment-modify" data-number="${questionReply.replyNumber}">수정 완료</button>
@@ -180,6 +180,7 @@ $('.comment-list').on('click', '.comment-delete', function() {
 		data: { replyNumber: replyNumber },
 		success: function() {
 			questionReplyAjax();
+		alert('댓글을 삭제합니다. ');
 		}
 	});
 });
@@ -204,9 +205,10 @@ $('.comment-list').on('click', '.comment-modify-ready', function() {
 
 $('.comment-list').on('click', '.comment-modify', function() {
 	let replyNumber = $(this).data('number');
+	console.log(replyNumber);
 
 	$.ajax({
-		url: "/questionReply/storyquestionUpdateOk.sr",
+		url: "/questionReply/questionUpdateOk.qr",
 		type: "get",
 		data: {
 			replyNumber: replyNumber,
@@ -214,6 +216,7 @@ $('.comment-list').on('click', '.comment-modify', function() {
 		},
 		success: function() {
 			questionReplyAjax();
+		alert('댓글을 수정합니다. ');
 		}
 	});
 });

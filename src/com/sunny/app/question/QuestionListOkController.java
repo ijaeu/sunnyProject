@@ -23,27 +23,25 @@ public class QuestionListOkController implements Execute {
 		QuestionDAO questionDAO = new QuestionDAO();
 		GosuDAO gosuDAO = new GosuDAO();
 		
-		System.out.println("QuestionListOkController");
-		int gosuNumber = Integer.parseInt(req.getParameter("gosuNumber"));
-		System.out.println("gosuNumber : " + gosuNumber);
+		System.out.println("QuestionListOkController 들어옴");
 
+		int gosuNumber = Integer.parseInt(req.getParameter("gosuNumber"));
 		GosuInfoVO gosuInfoVO = questionDAO.gosuInfo(gosuNumber);
 
 
-//	    처음에는 0으로 설정(답변대기)
+	    // 처음 페이지 들어왔을때 보여줄 답변대기 게시글리스트(0)으로 설정
 		Integer questionStatus = 0;
-		
+		// 쿼리에 담을 값 map에 넣어서 쿼리 실행 후 리스트 담아오기
 	    Map<String, Integer> questionMap = new HashMap<>();
 	    questionMap.put("gosuNumber", gosuNumber);
 	    questionMap.put("questionStatus", questionStatus);
-	    System.out.println(questionStatus);
-	    
 	    List<QuestionListVO> questionList = questionDAO.getQuestionList(questionMap);
-	    System.out.println(questionList);
-	     
+	    
+	    // req에 담아온 값들 세팅
 	    req.setAttribute("gosuInfo", gosuInfoVO);
 	  	req.setAttribute("questionList", questionList);
-	  	  
+	  	
+	  	// 페이지 이동
 	    req.getRequestDispatcher("/app/question/questionList.jsp").forward(req, resp);
 	   }
 

@@ -65,35 +65,25 @@
 	</select>
 
 	<!-- gosuManage page -->
-	<select id="gosuInfo" resultType="GosuManageVO"
-		parameterType="map">
+	<select id="gosuInfo" resultType="GosuManageVO"	parameterType="map">
 		select
-		u.user_number,
-		g.gosu_number,
-		u.user_nickname,
-		count(distinct
-		q.question_number) as question_count,
-		count(distinct qr.reply_number)
-		as answer_count,
-		group_concat(distinct f.field_name
-		separator ', ') as
-		field_names
+    		u.user_number,
+   			g.gosu_number,
+    		u.user_nickname,
+    		count(distinct q.question_number) as question_count,
+    		count(distinct case when q.question_status = 1 then q.question_number end) as answer_count,
+    		group_concat(distinct f.field_name separator ', ') as field_names,
+    		(   select count(qr.question_number)
+        		from tbl_question qr
+        		where qr.gosu_number = g.gosu_number
+        		and qr.question_status = 1
+    		) as question_reply_count
 		from tbl_gosu g
-		join tbl_gosu_field gf on
-		g.gosu_number =
-		gf.gosu_number
-		join tbl_field f on gf.field_number =
-		f.field_number
-		join
-		tbl_user u on g.user_number = u.user_number
-		left
-		outer join tbl_question
-		q on g.gosu_number = q.gosu_number
-		left outer
-		join tbl_question_reply qr
-		on g.gosu_number = qr.gosu_number
-		where
-		grade_number = 500
+		join tbl_gosu_field gf on g.gosu_number = gf.gosu_number
+		join tbl_field f on gf.field_number = f.field_number
+		join tbl_user u on g.user_number = u.user_number
+		left outer join tbl_question q on g.gosu_number = q.gosu_number
+		where grade_number = 500
 		<if test="searchWord != null">
 			AND u.user_nickname like concat('%',#{searchWord},'%')
 		</if>

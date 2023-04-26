@@ -6,7 +6,16 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 public class AdminUtils {
-//	비밀번호 암호화
+	
+	// 세션체크
+	public static int sessionCheck(HttpServletRequest req) {
+		Integer adminNumber = (Integer)req.getSession().getAttribute("adminNumber");
+		if(adminNumber == null) {
+			return 0;
+		}else return adminNumber;
+	}
+
+	// 비밀번호 암호화
     public static String pwSha256(String adminPW) {
     	String encrypted = "";
     	try {
@@ -21,8 +30,7 @@ public class AdminUtils {
     	return encrypted;
 	}
 
-    
-//    비밀번호 암호화
+    // 비밀번호 암호화
 	private static String bytesToHex(byte[] bytes) {
         StringBuilder hex = new StringBuilder();
         for (byte b : bytes) {
@@ -31,46 +39,5 @@ public class AdminUtils {
         return hex.toString();
     }
 
-	
-//	세션체크
-	public static int sessionCheck(HttpServletRequest req) {
-		 Integer adminNumber = (Integer)req.getSession().getAttribute("adminNumber");
-		 if(adminNumber == null) {
-			 return 0;
-		 }else return adminNumber;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

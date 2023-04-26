@@ -31,4 +31,10 @@
 		where reply_number = #{replyNumber}
 	</delete>
 	
+	<update id="update" parameterType="questionReplyDTO">
+		update tbl_question_reply
+		set reply_content = #{replyContent}
+		where reply_number = #{replyNumber}
+	</update>
+	
 </mapper>

@@ -26,6 +26,7 @@ public class QuestionFileDAO {
 	
 	public void delete(int questionNumber) {
 		System.out.println("questionfile delete 메소드");
+		System.out.println("questionNumber = " + questionNumber);
 		sqlSession.delete("questionFile.delete", questionNumber);
 	}
 }

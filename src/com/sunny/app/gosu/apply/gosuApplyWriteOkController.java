@@ -20,6 +20,7 @@ import com.sunny.app.gosu.dao.GosuDAO;
 import com.sunny.app.gosu.dto.GosuDTO;
 import com.sunny.app.gosu.field.dao.GosuFieldDAO;
 import com.sunny.app.gosu.field.dto.GosuFieldDTO;
+import com.sunny.app.util.UserUtils;
 
 public class gosuApplyWriteOkController implements Execute {
 	@Override
@@ -34,9 +35,14 @@ public class gosuApplyWriteOkController implements Execute {
 		GosuApplyFileDAO gosuApplyFileDAO = new GosuApplyFileDAO();
 		GosuApplyFileDTO gosuApplyFileDTO = new GosuApplyFileDTO();
 		
-		//세션체크
-		int userNumber = (Integer)req.getSession().getAttribute("userNumber");
-		System.out.println("Session : userNumber = " + userNumber);
+		// 세션체크
+		int userNumber = 0;
+		if (UserUtils.sessionCheck(req) == 0) {
+			resp.sendRedirect("/user/login.us?login=noInfo");
+			return;
+		} else {
+			userNumber = UserUtils.sessionCheck(req);
+		}
 		
 		// 파일 사이즈 , 업로드 경로 설정
         int maxSize  = 1024*1024*30;
