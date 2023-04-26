@@ -9,12 +9,12 @@ let $headerMypage = $('#header-mypage');
 $headerMypage.addClass('header-active');
 
 // 식집사/식고수 gradeNumber에 따라 텍스트 바꿔주기
-function showGrade(){
-	let text ='';
-	if(gradeNumber==500 ){
-		text ='식고수';
-	}else{
-		text ='식집사';
+function showGrade() {
+	let text = '';
+	if (gradeNumber == 500) {
+		text = '식고수';
+	} else {
+		text = '식집사';
 	}
 	$('.grade').text(text);
 	console.log(text);
@@ -24,12 +24,12 @@ showGrade();
 
 //=====================================================
 // 내가 팔로우하고있는지 아닌지 확인
-function checkFollowNow(){
+function checkFollowNow() {
 	let text = '';
-	if(checkFollow ==0){
-		text ='팔로우';
-	}else{
-		text='팔로잉';
+	if (checkFollow == 0)  {
+		text = '팔로우';
+	} else {
+		text = '팔로잉';
 		$('.user-follow').addClass("following");
 	}
 	$('.user-follow').text(text);
@@ -37,7 +37,7 @@ function checkFollowNow(){
 checkFollowNow();
 
 // 팔로우버튼 눌렀을 때 저장/삭제
-$('.user-follow').on('click', function(){
+$('.user-follow').on('click', function() {
 	let userNumber = $(this).data('usernumber');
 	let target = this;
 	console.log(userNumber);
@@ -159,17 +159,17 @@ $(".basic-photo").on("click", function() {
 	let srcB = '/assets/img/myPage/logo.png';
 	$profilePhoto.attr("src", srcB);
 	$(".photo-modal-box").toggleClass("none");
-	
+
 	//원래있던프로필사진 지우기
 	$.ajax({
 		url: '/userFile/userFileDelete.uf',
-			type: 'get',
-			success: function() {
-				console.log("삭제성공");
-			},
-			error: function(a, b, c) {
-				console.log(c);
-			}
+		type: 'get',
+		success: function() {
+			console.log("삭제성공");
+		},
+		error: function(a, b, c) {
+			console.log(c);
+		}
 	});
 });
 
@@ -225,51 +225,59 @@ $(".profile-introduce").on("click", ".modify-btn-done", function() {
 let $answerBtn = $('.answer-btn');
 let questionStatus = $answerBtn.data("questionstatus");
 
-if(gradeNumber==500){
+if (gradeNumber == 500) {
 	questionAjax(questionStatus);
 	console.log("고수다!")
 }
 
-function questionAjax(status){
+function questionAjax(status) {
 	$.ajax({
-		url : '/user/myPageQuestionList.us',
-		type : 'get',
-		data : {
-			questionStatus : status,
-			userNumber : userNumber
+		url: '/user/myPageQuestionList.us',
+		type: 'get',
+		data: {
+			questionStatus: status,
+			userNumber: userNumber
 		},
-		dataType : 'json',
-		success : showQuestionList
+		dataType: 'json',
+		success: showQuestionList
 	});
 	console.log('ajax실행!');
 }
 
-function showQuestionList(questions){
+function showQuestionList(questions) {
+	console.log(questions);
 	let text = '';
-	questions.forEach(question =>{
-		console.log(question.fileSystemName);
-		text +=`
+	if (questions[0] != null) {
+		questions.forEach(question => {
+			console.log(question.fileSystemName);
+
+
+			text += `
 									<li class="story-list question-list">
 										<a href="${contextPath}/question/questionReadOk.qs?questionNumber=${question.questionNumber}">
 											<div class="cover-div">
 											`
-		if(!question.fileSystemName){
-						text +=`<img src="${contextPath}/assets/img/myPage/logo.png" />`
-		}else{
-						text +=`<img
+			if (!question.fileSystemName) {
+				text += `<img src="${contextPath}/assets/img/myPage/logo.png" />`
+			} else {
+				text += `<img
 											src="${contextPath}/upload/questionUpload/${question.fileSystemName}"
 											alt="" />`
-		}
-		
-		text +=`
+			}
+
+			text += `
 											</div>
 											<p>${question.questionTitle}</p>
 										</a>
 									</li>
 		`
-	});
+		});
+		}else{
+			text +=`<div class="empty">등록된 질문이 없습니다.</div>`
+		}
 	$('.question-list-ul').html(text);
-};
+	
+		};
 
 $answerBtn.on("click", function() {
 	// console.log(this);

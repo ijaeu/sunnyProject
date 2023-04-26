@@ -73,13 +73,15 @@
             <div class="title user-phone-number">
               <p>연락처</p>
               <div class="content">
-                <input type="text" value="${userInfo.getUserPhone()}" name="userPhone"/>
+                <input type="text" value="${userInfo.getUserPhone()}" name="userPhone" id="user-phone"/>
+                <p class="check-msg" id="check-phone-msg"></p>
               </div>
             </div>
             <div class="title user-email">
               <p>이메일</p>
               <div class="content">
-                <input type="email" value="${userInfo.getUserEmail()}" name="userEmail"/>
+                <input type="email" value="${userInfo.getUserEmail()}" name="userEmail" id="user-email"/>
+                <p class="check-msg" id="check-email-msg"></p>
               </div>
             </div>
             <div class="title user-password-question">
