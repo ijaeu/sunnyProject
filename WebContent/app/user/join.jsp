@@ -108,6 +108,7 @@
     </div>
     <div class="main-container">
       <div class="mem-join">
+      <a href="/main/mainOk.ma" class="logo-link">
         <div class="logo">
           <svg xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 384 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -117,6 +118,7 @@
           <div class="text-logo">
             볕 들 무렵
           </div>
+          </a>
           <div class="join-logo"> 회원가입</div>
         </div>
         <form action="${pageContext.request.contextPath}/user/joinOk.us" method="post">

@@ -38,6 +38,10 @@
   /* font-family: "SpoqaHanSans-Regular"; */
 }
 
+.logo-link{
+	text-decoration: none;
+}
+
 .logo1{
   display: flex;
   justify-content: center;
