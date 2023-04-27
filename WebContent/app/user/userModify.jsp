@@ -88,9 +88,23 @@
               <p>비밀번호 찾기 질문</p>
               <div class="content">
                 <select name="findQuestionNumber" id="">
-                  <option value="1">가장 좋아하는 색깔은?</option>
+              <c:choose>
+              	<c:when test="${userInfo.getFindQuestionNumber()==1}">
+                  <option value="1" selected>가장 좋아하는 색깔은?</option>
                   <option value="2">가장 좋아하는 계절은?</option>
                   <option value="3">가장 소중한 것은?</option>
+                  </c:when>
+                  <c:when test="${userInfo.getFindQuestionNumber()==2}">
+                  <option value="1">가장 좋아하는 색깔은?</option>
+                  <option value="2" selected>가장 좋아하는 계절은?</option>
+                  <option value="3">가장 소중한 것은?</option>
+                  </c:when>
+                  <c:when test="${userInfo.getFindQuestionNumber()==3}">
+                  <option value="1">가장 좋아하는 색깔은?</option>
+                  <option value="2">가장 좋아하는 계절은?</option>
+                  <option value="3" selected>가장 소중한 것은?</option>
+                  </c:when>
+               </c:choose>
                 </select>
               </div>
             </div>

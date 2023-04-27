@@ -32,7 +32,7 @@ public class UserFileOkController implements Execute {
 		
 		
 	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/profileUpload/";
-	      int fileSize = 1024 * 1024 * 5; //5MB
+	      int fileSize = 1024 * 1024 * 30; //5MB
 	      System.out.println(uploadPath);
 	      
 	      MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
