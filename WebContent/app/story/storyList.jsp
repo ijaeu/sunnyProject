@@ -24,7 +24,7 @@
 				<div class="loopslider" data-pagertype="bullets">
 					<ul class="swiper-wrapper">
 						<li class="swiper-slide"><a
-							href="${pageContext.request.contextPath}/main/mainOk.ma">
+							href="${pageContext.request.contextPath}/story/storyWrite.st">
 								<div class="wraphover">
 									<img
 										src="https://www.shouse.garden/data/banner/220729_024730_734200p.jpg"

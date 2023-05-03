@@ -133,7 +133,7 @@
 	<!-- 질문 답변자가 페이지의 고수일때 questionStatus 변경 -->
  	<update id="updateQuestionStatus" parameterType="map">
 		update tbl_question 
-		set question_status = IF((select count(*) from tbl_question_reply tqr 
+		set question_status = IF((select count(*) from tbl_question_reply tqr
 		where tqr.gosu_number = (select gosu_number  from tbl_gosu where user_number  = ${userNumber})
 		and tqr.question_number = ${questionNumber}) > 0,  1, 0)
 		where question_number = ${questionNumber}
