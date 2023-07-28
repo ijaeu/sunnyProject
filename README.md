@@ -1,4 +1,4 @@
-## JSP Project sunny
+# JSP Project sunny
 JSP 반려식물 커뮤니티 + 멘토멘티 서비스 + 식물 추천알고리즘 사이트
 
 
