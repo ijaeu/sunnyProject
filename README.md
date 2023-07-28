@@ -1,5 +1,5 @@
 # JSP Project sunny
-JSP 반려식물 커뮤니티 + 멘토멘티 서비스 + 식물 추천알고리즘 사이트
+반려식물 커뮤니티 + 멘토멘티 서비스 + 식물 추천알고리즘 사이트
 
 
 ## 🍃프로젝트 소개
@@ -74,8 +74,11 @@ JSP 반려식물 커뮤니티 + 멘토멘티 서비스 + 식물 추천알고리�
 - 식고수 신청 관리
 
 ## 흐름도
+<img src="[/uploads/1848994ad25765da30fa8ef3684c67bc/캡처.PNG](https://github.com/ijaeu/sunnyProject/blob/main/WebContent/assets/img/git/erd%20%EC%B5%9C%EC%A2%85.png)"  width="700" height="370">
+https://github.com/ijaeu/sunnyProject/blob/main/WebContent/assets/img/git/erd%20%EC%B5%9C%EC%A2%85.png![image](https://github.com/ijaeu/sunnyProject/assets/126428545/11f0ab61-9596-4585-8765-2ac0f1680ef4)
 
 ## ERD
+https://github.com/ijaeu/sunnyProject/blob/main/WebContent/assets/img/git/%ED%9D%90%EB%A6%84%EB%8F%84.png![image](https://github.com/ijaeu/sunnyProject/assets/126428545/3abe7f63-a325-4520-bf4a-1ae418a3fe25)
 
 ## 배운점 & 아쉬운점
 
