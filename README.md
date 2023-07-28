@@ -33,44 +33,44 @@ JSP 반려식물 커뮤니티 + 멘토멘티 서비스 + 식물 추천알고리�
 - 반려식물 찾기 테스트 배너
 
   
-#### 로그인 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Login)" >상세보기 - WIKI 이동</a>
+#### 로그인 - <a href="" >상세보기 - WIKI 이동</a>
 - 로그인 시 쿠키(Cookie) 및 세션(Session) 생성
 
   
-#### 회원가입 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Member)" >상세보기 - WIKI 이동</a>
+#### 회원가입 - <a href="" >상세보기 - WIKI 이동</a>
 - ID, 닉네임 중복 검사
 - 비밀번호 정규 표현식 텍스트 입력
 
     
-#### 비밀번호찾기 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Member)" >상세보기 - WIKI 이동</a>
+#### 비밀번호찾기 - <a href="" >상세보기 - WIKI 이동</a>
 - 비밀번호 찾기 질문과 답변으로 확인
 - 비밀번호 재설정
 
 
-#### 마이 페이지 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(Member)" >상세보기 - WIKI 이동</a>
+#### 마이 페이지 - <a href="" >상세보기 - WIKI 이동</a>
 - 주소 API 연동
 - 회원정보 변경
 
 
-#### 스토리 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EC%98%81%ED%99%94-%EC%98%88%EB%A7%A4)" >상세보기 - WIKI 이동</a>
+#### 스토리 - <a href="" >상세보기 - WIKI 이동</a>
 - 스토리 작성
 - SummerNote 사용
 - 파일 첨부 가능
 - 수정, 삭제 가능
 
 
-#### 식고수에게 질문하기 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EB%A9%94%EC%9D%B8-Page)" >상세보기 - WIKI 이동</a>
+#### 식고수에게 질문하기 - <a href="" >상세보기 - WIKI 이동</a>
 - 식고수 리스트(검색기능)
 - SummerNote사용
 - 파일 첨부 가능
 
 
-#### 식고수 신청 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EB%A9%94%EC%9D%B8-Page)" >상세보기 - WIKI 이동</a>
+#### 식고수 신청 - <a href="" >상세보기 - WIKI 이동</a>
 - SummerNote사용
 - 고수 분야 선택(다중선택가능)
 - 파일 첨부 가능
 
-#### 관리자 페이지 
+#### 관리자 페이지 - <a href="" >상세보기 - WIKI 이동</a>
 - 관리자 로그인
 - 일반회원관리(검색기능)
 - 식고수회원관리(검색기능)
