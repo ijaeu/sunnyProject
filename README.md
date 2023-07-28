@@ -74,10 +74,10 @@
 - 식고수 신청 관리
 
 ## 흐름도
-![흐름도](./flowMap/ERD.png)
+![흐름도](./image/flowMap.png)
 
 ## ERD
-![ERD](./ERD/ERD.png)
+![ERD](./image/ERD.png)
 
 ## 배운점 & 아쉬운점
 
