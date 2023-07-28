@@ -27,7 +27,7 @@ JSP 반려식물 커뮤니티 + 멘토멘티 서비스 + 식물 추천알고리�
 
 
 ## 📌 주요 기능
-#### 메인 페이지 - <a href="https://github.com/chaehyuenwoo/SpringBoot-Project-MEGABOX/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C(%EB%A9%94%EC%9D%B8-Page)" >상세보기 - WIKI 이동</a>
+#### 메인 페이지 - <a href="" >상세보기 - WIKI 이동</a>
 - 스토리 게시물 최신순으로 6개 노출
 - 등록된 질문이 가장 많은 식고수 1명의 프로필 노출
 - 반려식물 찾기 테스트 배너
