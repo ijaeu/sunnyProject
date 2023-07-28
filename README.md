@@ -74,12 +74,10 @@
 - 식고수 신청 관리
 
 ## 흐름도
-![흐름도](.image/ERD.png)
-<img src="[/uploads/1848994ad25765da30fa8ef3684c67bc/캡처.PNG](https://github.com/ijaeu/sunnyProject/blob/main/WebContent/assets/img/git/erd%20%EC%B5%9C%EC%A2%85.png)"  width="700" height="370">
-https://github.com/ijaeu/sunnyProject/blob/main/WebContent/assets/img/git/erd%20%EC%B5%9C%EC%A2%85.png![image](https://github.com/ijaeu/sunnyProject/assets/126428545/11f0ab61-9596-4585-8765-2ac0f1680ef4)
+![흐름도](./flowMap/ERD.png)
 
 ## ERD
-https://github.com/ijaeu/sunnyProject/blob/main/WebContent/assets/img/git/%ED%9D%90%EB%A6%84%EB%8F%84.png![image](https://github.com/ijaeu/sunnyProject/assets/126428545/3abe7f63-a325-4520-bf4a-1ae418a3fe25)
+![ERD](./ERD/ERD.png)
 
 ## 배운점 & 아쉬운점
 
