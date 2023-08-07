@@ -79,9 +79,10 @@
 
 ## 맡은 서비스
 ### - Footer  - <a href="https://github.com/ijaeu/sunnyProject/wiki/Footer" >상세보기 - WIKI 이동</a>
-### - 식고수에게 질문하기  - <a href="" >상세보기 - WIKI 이동</a>
-### - 식고수 신청  - <a href="" >상세보기 - WIKI 이동</a>
-### - 관리자 페이지  - <a href="" >상세보기 - WIKI 이동</a>
+### - 식고수에게 질문하기  - <a href="https://github.com/ijaeu/sunnyProject/wiki/%EC%8B%9D%EA%B3%A0%EC%88%98%EC%97%90%EA%B2%8C-%EC%A7%88%EB%AC%B8%ED%95%98%EA%B8%B0" >상세보기 - WIKI 이동</a>
+### - 식고수에게 질문하기 댓글  - <a href="https://github.com/ijaeu/sunnyProject/wiki/%EC%8B%9D%EA%B3%A0%EC%88%98%EC%97%90%EA%B2%8C-%EC%A7%88%EB%AC%B8%ED%95%98%EA%B8%B0-%EB%8C%93%EA%B8%80" >상세보기 - WIKI 이동</a>
+### - 식고수 신청  - <a href="https://github.com/ijaeu/sunnyProject/wiki/%EC%8B%9D%EA%B3%A0%EC%88%98-%EC%8B%A0%EC%B2%AD" >상세보기 - WIKI 이동</a>
+### - 관리자 페이지  - <a href="https://github.com/ijaeu/sunnyProject/wiki/%EA%B4%80%EB%A6%AC%EC%9E%90-%ED%8E%98%EC%9D%B4%EC%A7%80" >상세보기 - WIKI 이동</a>
 
 
 ##  흐름도
