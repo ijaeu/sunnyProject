@@ -85,6 +85,3 @@
 ## ERD
 ![ERD](./image/ERD.png)
 
-## 배운점 & 아쉬운점
-
-
