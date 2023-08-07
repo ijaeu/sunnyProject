@@ -78,7 +78,7 @@
 - 식고수 신청 관리
 
 ## 맡은 서비스
-### - Footer  - <a href="" >상세보기 - WIKI 이동</a>
+### - Footer  - <a href="https://github.com/ijaeu/sunnyProject/wiki/Footer" >상세보기 - WIKI 이동</a>
 ### - 식고수에게 질문하기  - <a href="" >상세보기 - WIKI 이동</a>
 ### - 식고수 신청  - <a href="" >상세보기 - WIKI 이동</a>
 ### - 관리자 페이지  - <a href="" >상세보기 - WIKI 이동</a>
